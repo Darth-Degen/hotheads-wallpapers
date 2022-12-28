@@ -8,16 +8,16 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button: FC<Props> = (props: Props) => {
   const { children, className, ...componentProps } = props;
-  const styles: string =
-    "w-56 h-10 bg-indigo-600 dark:bg-indigo-500 text-white dark:text-white text-sm";
+  const styles: string = "w-56 h-10 bg-dark text-white text-sm";
 
   return (
-    <motion.div {...tapAnimation}>
+    <motion.div
+      {...tapAnimation}
+      className="transition-colors duration-200 bg-red-400 hover:bg-orange-300 active:bg-red-400  p-0.5 rounded "
+    >
       <button
-        className={`${className} ${styles} relative flex justify-center border border-gray-300 rounded text-center p-2 font-semibold ${
-          componentProps.disabled
-            ? "cursor-not-allowed"
-            : "hover:outline hover:outline-indigo-300 "
+        className={`${className} ${styles} relative flex justify-center items-center rounded text-center p-2 ${
+          componentProps.disabled ? "cursor-not-allowed" : " "
         }`}
         {...componentProps}
       >

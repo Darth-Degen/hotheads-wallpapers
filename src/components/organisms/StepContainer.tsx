@@ -1,6 +1,5 @@
 import { ReactNode, FC } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 
 interface Props {
   step: number;
@@ -13,15 +12,11 @@ interface Props {
 const StepContainer: FC<Props> = (props: Props) => {
   const { step, current, previous, children, zIndex } = props;
 
-  const { systemTheme, theme } = useTheme();
-  const currentTheme: string | undefined =
-    theme === "system" ? systemTheme : theme;
-
   const isCurrent: boolean = step === current;
   const isPrevious: boolean = step === previous;
   const isPast: boolean = step < previous;
   const isPastOrPrevious: boolean = isPast || isPrevious;
-  const isDark: boolean = currentTheme === "dark";
+  const isDark: boolean = true;
 
   const startDuration: number = 2;
 
@@ -37,7 +32,7 @@ const StepContainer: FC<Props> = (props: Props) => {
     initial: {
       y: isCurrent ? -yValue : 0,
       padding: startPadding,
-      backgroundColor: isDark ? "#3730a3" : "#e5e7eb",
+      backgroundColor: "#121212",
     },
 
     animate: {
@@ -48,9 +43,7 @@ const StepContainer: FC<Props> = (props: Props) => {
         ? isDark
           ? "#121212"
           : "#ffffff"
-        : isDark
-        ? "#3730a3"
-        : "#e5e7eb",
+        : "#CF1714",
     },
     transition: { duration: startDuration, ease: "easeInOut", delay: delay },
   };

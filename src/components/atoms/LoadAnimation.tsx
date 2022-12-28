@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const LoadAnimation: FC = () => {
   return (
     <motion.div
-      className="absolute top-[40%] left-[46%] w-6 h-6 bg-white dark:bg-indigo-400 dark:text-black "
+      className="absolute top-[40%] left-[46%] w-6 h-6 bg-red-400 text-black "
       animate={{
         scale: [1, 2, 2.2, 1.2, 1],
         rotate: [-90, 90, 180, 180, 0],

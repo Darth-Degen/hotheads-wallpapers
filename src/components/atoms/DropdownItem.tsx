@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import { Collection } from "@types";
 
 interface Props {
@@ -10,21 +9,14 @@ interface Props {
 
 const DropdownItem: FC<Props> = (props: Props) => {
   const { item, handleClick } = props;
-
-  const { systemTheme, theme } = useTheme();
-
-  const currentTheme: string | undefined =
-    theme === "system" ? systemTheme : theme;
-  const isDark: boolean = currentTheme === "dark";
-
-  const styles: string = "w-56 h-10 bg-white dark:bg-[#121212] text-sm";
+  const styles: string = "w-56 h-10 bg-dark text-sm";
 
   return (
     <motion.li
       key={item?.id}
-      className={`${styles} px-2 cursor-pointer flex items-center hover:bg-[#f1f1f1] hover:dark:bg-[#6366f1]`}
+      className={`${styles} px-2 cursor-pointer flex items-center hover:bg-[#6366f1]`}
       whileTap={{
-        backgroundColor: isDark ? "#4f46e5" : "#e4e4e4",
+        backgroundColor: "#4f46e5",
       }}
       transition={{ duration: 0.05, ease: "easeInOut" }}
       onClick={() => handleClick(item)}

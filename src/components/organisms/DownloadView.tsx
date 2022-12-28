@@ -1,5 +1,19 @@
-import { FC, useCallback, useEffect, useRef, useState } from "react";
-import { TextInput, CheckBox, Button, LoadAnimation } from "@components";
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import {
+  TextInput,
+  CheckBox,
+  Button,
+  LoadAnimation,
+  NumberInput,
+} from "@components";
 import { Collection } from "@types";
 import { fastExitAnimation, exitAnimation } from "@constants";
 import Image from "next/image";
@@ -14,10 +28,11 @@ import html2canvas from "html2canvas";
 interface Props {
   collection: Collection;
   tokenId: number;
+  setTokenId: Dispatch<SetStateAction<number>>;
 }
 
 const DownloadView: FC<Props> = (props: Props) => {
-  const { collection, tokenId } = props;
+  const { collection, tokenId, setTokenId } = props;
   const [text, setText] = useState<string>();
   const [showLogo, setShowLogo] = useState<boolean>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,9 +40,7 @@ const DownloadView: FC<Props> = (props: Props) => {
   const timeoutRef = useRef<NodeJS.Timeout>();
   const controls = useDragControls();
 
-  const [background, setBackground] = useState<string>(
-    "bg-gray-100 dark:bg-indigo-00"
-  );
+  const [background, setBackground] = useState<string>("bg-[#CF1714]");
 
   const src = `${
     collection.url +
@@ -76,18 +89,14 @@ const DownloadView: FC<Props> = (props: Props) => {
     return () => clearTimeout(timeoutRef.current);
   }, [handleLoad]);
 
-  /*
-   * TODO:
-   * move code (form + "mobile border") into /molecules
-   * image error handling - if logo doesnt exist set hasLogo to false and hide
-   * image error handling - if token doesnt load set didUriLoad to false and show error message
-   * if api fails use /constants/collections
-   */
-
   return (
-    <div className="flex flex-col sm:flex-row gap-10 sm:gap-20 items-center sm:items-start">
+    <div className="flex flex-col sm:flex-row gap-8 sm:gap-20 items-start pt-10">
       {/* form */}
-      <div className="flex flex-col gap-2 mt-8">
+      <div className="flex flex-col gap-3 mt-8 bg-customMidGray py-8 px-10 rounded-lg border border-orange-300 font-mono">
+        <h2 className="text-xl text-center font-mono text-gray-200 pb-4">
+          Customizations
+        </h2>
+        <NumberInput supply={100} handleInput={setTokenId} />
         <CheckBox label="Show Logo" handleToggle={setShowLogo} />
         <TextInput handleInput={setText} />
         <div className="sm:mt-10">
@@ -97,64 +106,66 @@ const DownloadView: FC<Props> = (props: Props) => {
         </div>
       </div>
       {/* mobile border */}
-      <div className="overflow-hidden p-2.5">
-        <div className="relative rounded-2xl h-[562.5px] w-[275px] ">
-          {/* mobile frame */}
-          <div className="absolute rounded-2xl h-[562.5px] w-[275px] outline outline-[11px] outline-[#121212] z-50" />
-          <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-5 w-20 bg-[#121212] rounded-b-lg z-50" />
-          {tokenId > 0 && (
-            <>
-              {isLoading ? (
-                <motion.div key="loading" {...exitAnimation}>
-                  <LoadAnimation />
-                </motion.div>
-              ) : (
-                <>
-                  <motion.div
-                    key="wallpaper"
-                    id="wallpaper"
-                    className={`flex flex-col justify-end items-center h-full transition-colors ease-in-out duration-200 z-20`}
-                    style={{ backgroundColor: background }}
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <motion.img
-                      src={collection.logo.path}
-                      height={collection.logo.height}
-                      width={collection.logo.width}
-                      alt="Logo"
-                      className={`pt-24 px-6 z-50 cursor-pointer ${
-                        showLogo ? "visbile" : "invisible"
-                      }`}
-                      drag
-                      dragControls={controls}
-                    />
-                    <motion.p
-                      className="motion.px-5 py-2 cursor-pointer text-black text-center font-mono z-50 "
-                      drag
-                      dragControls={controls}
-                    >
-                      {text}
-                    </motion.p>
-                    {/* token image */}
+      <div className="bg-orange-300 p-0.5 rounded-3xl">
+        <div className="overflow-hidden p-2.5">
+          <div className="relative rounded-2xl h-[562.5px] w-[275px] ">
+            {/* mobile frame */}
+            <div className="absolute rounded-2xl h-[562.5px] w-[275px] outline outline-[11px] outline-dark z-50" />
+            <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-5 w-20 bg-dark rounded-b-lg z-50" />
+            {tokenId > 0 && (
+              <>
+                {isLoading ? (
+                  <motion.div key="loading" {...exitAnimation}>
+                    <LoadAnimation />
+                  </motion.div>
+                ) : (
+                  <>
                     <motion.div
-                      {...fastExitAnimation}
-                      className="transition-all ease-in-out duration-500  rounded-b-2xl"
-                      id="token-image"
+                      key="wallpaper"
+                      id="wallpaper"
+                      className={`flex flex-col justify-end items-center h-full transition-colors ease-in-out duration-200 z-20`}
                       style={{ backgroundColor: background }}
                     >
-                      <Image
-                        src={src}
-                        height={500}
-                        width={500}
-                        alt="NFT"
-                        className="rounded-b-2xl"
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <motion.img
+                        src={collection.logo.path}
+                        height={collection.logo.height}
+                        width={collection.logo.width}
+                        alt="Logo"
+                        className={`pt-24 px-6 z-50 cursor-pointer ${
+                          showLogo ? "visbile" : "invisible"
+                        }`}
+                        drag
+                        dragControls={controls}
                       />
+                      <motion.p
+                        className="motion.px-5 py-2 cursor-pointer text-black text-center font-mono z-50 "
+                        drag
+                        dragControls={controls}
+                      >
+                        {text}
+                      </motion.p>
+                      {/* token image */}
+                      <motion.div
+                        {...fastExitAnimation}
+                        className="transition-all ease-in-out duration-500  rounded-b-2xl"
+                        id="token-image"
+                        style={{ backgroundColor: background }}
+                      >
+                        <Image
+                          src={src}
+                          height={500}
+                          width={500}
+                          alt="NFT"
+                          className="rounded-b-2xl"
+                        />
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
-                </>
-              )}
-            </>
-          )}
+                  </>
+                )}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

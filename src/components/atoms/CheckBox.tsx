@@ -9,7 +9,7 @@ const CheckBox: FC<Props> = (props: Props) => {
   const { label, handleToggle } = props;
   const [checked, setChecked] = useState<boolean>(true);
 
-  const styles: string = "w-56 h-10 bg-white dark:bg-[#121212] text-sm";
+  const styles: string = "w-56 h-10 bg-dark text-sm";
 
   //add max length check
   const onChange = (): void => {
@@ -22,15 +22,16 @@ const CheckBox: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`relative flex justify-between ${styles} border border-gray-300 rounded items-center p-2 `}
+      className={`relative flex justify-between ${styles} transition-all duration-200 border border-dark hover:border-orange-300 active:border-red-400 rounded items-center p-2 text-gray-400 cursor-pointer`}
+      onClick={() => onChange()}
     >
-      <p>{label}</p>
+      <p className="">{label}</p>
       <input
         onChange={() => onChange()}
         placeholder="Add Text"
         type="checkbox"
         checked={checked}
-        className="accent-indigo-600 dark:accent-indigo-300"
+        className="accent-red-300 cursor-pointer"
       />
     </div>
   );

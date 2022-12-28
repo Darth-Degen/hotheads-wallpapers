@@ -19,7 +19,17 @@ a {
   box-sizing: border-box;
 }
 
+@layer base {
+  html {
+    @apply bg-gradient-to-t from-red-400 to-orange-300 bg-dark text-gray-200;
+  }
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  background-color: orange;
 }
 

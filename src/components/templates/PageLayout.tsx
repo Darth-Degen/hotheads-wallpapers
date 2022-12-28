@@ -11,12 +11,12 @@ const PageLayout: FC<Props> = (props: Props) => {
   const { children } = props;
   return (
     <motion.div
-      className="flex flex-col justify-between min-h-screen transition-colors ease-in-out duration-500 bg-white dark:bg-[#121212]"
+      className="flex flex-col justify-between min-h-screen transition-colors ease-in-out duration-500 bg-dark"
       {...enterAnimation}
     >
       <PageHead
-        title="Degen Papers"
-        description="Download your favoriate Solana NFTs as your phone wallpaper"
+        title="Hot Heads"
+        description="Welcome to your Hot Heads asset portfolio"
       />
       <Header />
 
