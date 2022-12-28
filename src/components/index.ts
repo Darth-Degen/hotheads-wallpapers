@@ -22,6 +22,7 @@ const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
 const StepContainer = dynamic(()=> import("./organisms/StepContainer"))
 const Form = dynamic(() => import("./organisms/Form") )
+const MobileDisplay = dynamic(() => import("./organisms/MobileDisplay") )
 //templates
 const PageLayout = dynamic(()=> import("./templates/PageLayout"))
 const DownloadView = dynamic(()=> import("./templates/DownloadView"))
@@ -46,5 +47,6 @@ export {
   Button,
   DownloadView,
   LoadAnimation,
-  Form
+  Form,
+  MobileDisplay
 }

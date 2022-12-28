@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
-import { tapAnimation } from "@constants";
 import { motion } from "framer-motion";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -12,14 +11,21 @@ const Button: FC<Props> = (props: Props) => {
 
   return (
     <motion.div
-      {...tapAnimation}
-      className="transition-colors duration-200 bg-red-400 p-0.5 rounded"
+      whileTap={{ scale: componentProps.disabled ? 1 : 0.97 }}
+      className={`transition-colors duration-200 bg-red-400 p-0.5 rounded ${
+        componentProps.disabled
+          ? "cursor-not-allowed bg-customDarkGray border-customDarkGray"
+          : ""
+      }`}
     >
       <button
-        className={`${className} ${styles} transition-colors duration-200 relative flex justify-center items-center rounded text-center p-2 hover:bg-red-400  ${
-          componentProps.disabled ? "cursor-not-allowed" : " "
+        className={`${className} ${styles} transition-colors duration-200 relative flex justify-center items-center rounded text-center p-2 ${
+          componentProps.disabled
+            ? "cursor-not-allowed  bg-customDarkGray border-customDarkGray"
+            : "hover:bg-red-400  "
         }`}
         {...componentProps}
+        disabled={componentProps.disabled}
       >
         {children}
       </button>

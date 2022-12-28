@@ -33,7 +33,10 @@ const Form: FC<Props> = (props: Props) => {
       />
       <TextInput handleInput={setText} disabled={tokenId === 0 || isLoading} />
       <div className="sm:mt-10">
-        <Button onClick={() => handleDownload()} disabled={isLoading}>
+        <Button
+          onClick={() => handleDownload()}
+          disabled={tokenId === 0 || isLoading}
+        >
           Download
         </Button>
       </div>
