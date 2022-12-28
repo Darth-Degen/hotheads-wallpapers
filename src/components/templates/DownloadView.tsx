@@ -27,16 +27,11 @@ const DownloadView: FC<Props> = (props: Props) => {
   const [text, setText] = useState<string>("");
   const [showLogo, setShowLogo] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [src, setSrc] = useState<string>("");
 
   const timeoutRef = useRef<NodeJS.Timeout>();
 
   const [background, setBackground] = useState<string>("bg-[#CF1714]");
-
-  const src = `${
-    collection.url +
-    (tokenId - 1) +
-    (collection.url.includes("degods") ? "-dead" : "")
-  }.png`;
 
   //download image
   const handleDownload = async () => {
@@ -79,8 +74,24 @@ const DownloadView: FC<Props> = (props: Props) => {
     return () => clearTimeout(timeoutRef.current);
   }, [handleLoad]);
 
+  useEffect(() => {
+    if (tokenId === 0) {
+      return;
+    }
+
+    setSrc(
+      `/images/hotheads/hothead_character_${
+        tokenId < 10 ? "00" : "0"
+      }${tokenId}.png`
+    );
+  }, [tokenId]);
+
+  useEffect(() => {
+    console.log("src ", src);
+  }, [src]);
+
   return (
-    <div className="flex flex-col sm:flex-row gap-8 sm:gap-20 items-start pt-10">
+    <div className="flex flex-col md:flex-row gap-8 sm:gap-20 items-start px-5">
       <Form
         tokenId={tokenId}
         isLoading={isLoading}

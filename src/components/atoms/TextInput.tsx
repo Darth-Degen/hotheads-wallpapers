@@ -21,12 +21,12 @@ const NumberInput: FC<Props> = (props: Props) => {
 
   return (
     <input
-      className={`${className} relative flex justify-between ${styles} transition-all duration-200 border border-dark rounded items-center p-2 ${
+      className={`${className} relative flex justify-between ${styles} transition-all duration-200 border  rounded items-center p-2 ${
         value && value.length >= charLim ? "text-red-500" : ""
       } ${
         componentProps.disabled
           ? "cursor-not-allowed bg-customDarkGray border-customDarkGray"
-          : "hover:border-orange-300 focus:border-red-400 active:outline-none focus:outline-none"
+          : "hover:border-orange-300 focus:border-red-400 active:outline-none focus:outline-none border-dark"
       }`}
       onInput={(e) => onInput(e)}
       placeholder="Add Text"

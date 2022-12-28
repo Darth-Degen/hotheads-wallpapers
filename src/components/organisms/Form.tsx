@@ -32,7 +32,7 @@ const Form: FC<Props> = (props: Props) => {
         disabled={tokenId === 0 || isLoading}
       />
       <TextInput handleInput={setText} disabled={tokenId === 0 || isLoading} />
-      <div className="sm:mt-10">
+      <div className="mt-6">
         <Button
           onClick={() => handleDownload()}
           disabled={tokenId === 0 || isLoading}

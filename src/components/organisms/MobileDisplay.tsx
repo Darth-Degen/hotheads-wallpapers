@@ -23,12 +23,12 @@ const Form: FC<Props> = (props: Props) => {
       <div className="overflow-hidden p-2.5">
         <div className="relative rounded-2xl h-[562.5px] w-[275px] ">
           {/* mobile frame */}
-          <div className="absolute rounded-2xl h-[562.5px] w-[275px] outline outline-[11px] outline-dark z-50" />
-          <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-5 w-20 bg-dark rounded-b-lg z-50" />
+          <div className="absolute rounded-2xl h-[562.5px] w-[275px] outline outline-[11px] outline-dark" />
+          <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-5 w-20 bg-dark rounded-b-lg " />
           {tokenId > 0 && (
             <>
               {isLoading ? (
-                <motion.div key="loading" {...exitAnimation}>
+                <motion.div key="loading" {...exitAnimation} className="z-100">
                   <LoadAnimation />
                 </motion.div>
               ) : (
@@ -36,7 +36,7 @@ const Form: FC<Props> = (props: Props) => {
                   <motion.div
                     key="wallpaper"
                     id="wallpaper"
-                    className={`flex flex-col justify-end items-center h-full transition-colors ease-in-out duration-200 z-20`}
+                    className={`flex flex-col justify-end items-center h-full transition-colors ease-in-out duration-200`}
                     style={{ backgroundColor: background }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -59,20 +59,22 @@ const Form: FC<Props> = (props: Props) => {
                       {text}
                     </motion.p>
                     {/* token image */}
-                    <motion.div
-                      {...fastExitAnimation}
-                      className="transition-all ease-in-out duration-500  rounded-b-2xl"
-                      id="token-image"
-                      style={{ backgroundColor: background }}
-                    >
-                      <Image
-                        src={src}
-                        height={500}
-                        width={500}
-                        alt="NFT"
-                        className="rounded-b-2xl"
-                      />
-                    </motion.div>
+                    {src.length > 0 && (
+                      <motion.div
+                        {...fastExitAnimation}
+                        className="transition-all ease-in-out duration-500 -mb-2 rounded-b-2xl"
+                        id="token-image"
+                        style={{ backgroundColor: background }}
+                      >
+                        <Image
+                          src={src}
+                          height={500}
+                          width={500}
+                          alt="NFT"
+                          className="rounded-b-2xl"
+                        />
+                      </motion.div>
+                    )}
                   </motion.div>
                 </>
               )}

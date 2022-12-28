@@ -19,7 +19,7 @@ const Button: FC<Props> = (props: Props) => {
       }`}
     >
       <button
-        className={`${className} ${styles} transition-colors duration-200 relative flex justify-center items-center rounded text-center p-2 ${
+        className={`${className} ${styles} transition-colors duration-200 relative flex justify-center items-center rounded text-center text-gray-200 p-2 ${
           componentProps.disabled
             ? "cursor-not-allowed  bg-customDarkGray border-customDarkGray"
             : "hover:bg-red-400  "

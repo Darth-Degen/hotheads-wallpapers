@@ -5,6 +5,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        pressStart: ["PressStart"],
+      },
       colors: {
         dark: "#121212",
         lightRed: "#ff9596",
