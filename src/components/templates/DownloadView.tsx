@@ -7,13 +7,7 @@ import {
   useRef,
   useState,
 } from "react";
-import {
-  TextInput,
-  CheckBox,
-  Button,
-  LoadAnimation,
-  NumberInput,
-} from "@components";
+import { LoadAnimation, Form } from "@components";
 import { Collection } from "@types";
 import { fastExitAnimation, exitAnimation } from "@constants";
 import Image from "next/image";
@@ -33,8 +27,8 @@ interface Props {
 
 const DownloadView: FC<Props> = (props: Props) => {
   const { collection, tokenId, setTokenId } = props;
-  const [text, setText] = useState<string>();
-  const [showLogo, setShowLogo] = useState<boolean>();
+  const [text, setText] = useState<string>("");
+  const [showLogo, setShowLogo] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const timeoutRef = useRef<NodeJS.Timeout>();
@@ -91,20 +85,15 @@ const DownloadView: FC<Props> = (props: Props) => {
 
   return (
     <div className="flex flex-col sm:flex-row gap-8 sm:gap-20 items-start pt-10">
-      {/* form */}
-      <div className="flex flex-col gap-3 mt-8 bg-customMidGray py-8 px-10 rounded-lg border border-orange-300 font-mono">
-        <h2 className="text-xl text-center font-mono text-gray-200 pb-4">
-          Customizations
-        </h2>
-        <NumberInput supply={100} handleInput={setTokenId} />
-        <CheckBox label="Show Logo" handleToggle={setShowLogo} />
-        <TextInput handleInput={setText} />
-        <div className="sm:mt-10">
-          <Button onClick={() => handleDownload()} disabled={isLoading}>
-            Download
-          </Button>
-        </div>
-      </div>
+      <Form
+        tokenId={tokenId}
+        isLoading={isLoading}
+        setTokenId={setTokenId}
+        setShowLogo={setShowLogo}
+        setText={setText}
+        handleDownload={handleDownload}
+      />
+
       {/* mobile border */}
       <div className="bg-orange-300 p-0.5 rounded-3xl">
         <div className="overflow-hidden p-2.5">
@@ -128,9 +117,9 @@ const DownloadView: FC<Props> = (props: Props) => {
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <motion.img
-                        src={collection.logo.path}
-                        height={collection.logo.height}
-                        width={collection.logo.width}
+                        src={"/images/logo_base.png"}
+                        height={40}
+                        width={200}
                         alt="Logo"
                         className={`pt-24 px-6 z-50 cursor-pointer ${
                           showLogo ? "visbile" : "invisible"

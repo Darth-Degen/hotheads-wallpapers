@@ -1,11 +1,11 @@
-import { FC, useState } from "react";
+import { FC, InputHTMLAttributes, useState } from "react";
 
-interface Props {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   handleInput: (value: string) => void;
 }
 
 const NumberInput: FC<Props> = (props: Props) => {
-  const { handleInput } = props;
+  const { handleInput, className, ...componentProps } = props;
 
   const [value, setValue] = useState<string>();
 
@@ -21,13 +21,18 @@ const NumberInput: FC<Props> = (props: Props) => {
 
   return (
     <input
-      className={`relative flex justify-between ${styles} transition-all duration-200 border border-dark hover:border-orange-300 focus:border-red-400 active:outline-none focus:outline-none rounded items-center p-2 ${
+      className={`${className} relative flex justify-between ${styles} transition-all duration-200 border border-dark rounded items-center p-2 ${
         value && value.length >= charLim ? "text-red-500" : ""
+      } ${
+        componentProps.disabled
+          ? "cursor-not-allowed"
+          : "hover:border-orange-300 focus:border-red-400 active:outline-none focus:outline-none"
       }`}
       onInput={(e) => onInput(e)}
       placeholder="Add Text"
       type="text"
       maxLength={charLim}
+      disabled={componentProps.disabled}
     />
   );
 };

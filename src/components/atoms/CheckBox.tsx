@@ -1,12 +1,12 @@
-import { FC, useEffect, useState } from "react";
+import { FC, InputHTMLAttributes, useEffect, useState } from "react";
 
-interface Props {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   handleToggle: (value: boolean) => void;
 }
 
 const CheckBox: FC<Props> = (props: Props) => {
-  const { label, handleToggle } = props;
+  const { label, handleToggle, className, ...componentProps } = props;
   const [checked, setChecked] = useState<boolean>(true);
 
   const styles: string = "w-56 h-10 bg-dark text-sm";
@@ -22,7 +22,11 @@ const CheckBox: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`relative flex justify-between ${styles} transition-all duration-200 border border-dark hover:border-orange-300 active:border-red-400 rounded items-center p-2 text-gray-400 cursor-pointer`}
+      className={`${className} relative flex justify-between ${styles} transition-all duration-200 border border-dark  rounded items-center p-2 text-gray-400 ${
+        componentProps.disabled
+          ? "cursor-not-allowed"
+          : "hover:border-orange-300 active:border-red-400 cursor-pointer"
+      }`}
       onClick={() => onChange()}
     >
       <p className="">{label}</p>
@@ -32,6 +36,7 @@ const CheckBox: FC<Props> = (props: Props) => {
         type="checkbox"
         checked={checked}
         className="accent-red-300 cursor-pointer"
+        disabled={componentProps.disabled}
       />
     </div>
   );

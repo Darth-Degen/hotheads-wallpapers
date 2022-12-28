@@ -13,10 +13,10 @@ const Button: FC<Props> = (props: Props) => {
   return (
     <motion.div
       {...tapAnimation}
-      className="transition-colors duration-200 bg-red-400 hover:bg-orange-300 active:bg-red-400  p-0.5 rounded "
+      className="transition-colors duration-200 bg-red-400 p-0.5 rounded"
     >
       <button
-        className={`${className} ${styles} relative flex justify-center items-center rounded text-center p-2 ${
+        className={`${className} ${styles} transition-colors duration-200 relative flex justify-center items-center rounded text-center p-2 hover:bg-red-400  ${
           componentProps.disabled ? "cursor-not-allowed" : " "
         }`}
         {...componentProps}

@@ -21,9 +21,10 @@ const Dropdown = dynamic(()=> import("./molecules/Dropdown"))
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
 const StepContainer = dynamic(()=> import("./organisms/StepContainer"))
-const DownloadView = dynamic(()=> import("./organisms/DownloadView"))
+const Form = dynamic(() => import("./organisms/Form") )
 //templates
 const PageLayout = dynamic(()=> import("./templates/PageLayout"))
+const DownloadView = dynamic(()=> import("./templates/DownloadView"))
 
 export {
   PageHead,
@@ -44,5 +45,6 @@ export {
   CheckBox,
   Button,
   DownloadView,
-  LoadAnimation
+  LoadAnimation,
+  Form
 }
