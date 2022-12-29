@@ -14,6 +14,11 @@ export const smallClickAnimation: Variants = {
   whileTap: { scale: 1 },
 };
 
+export const linkClickAnimation: Variants = {
+  whileHover: { scale: 1.04 },
+  whileTap: { scale: 1 },
+};
+
 //tap animations
 export const tapAnimation = {
   whileTap: { scale: 0.97 },

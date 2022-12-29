@@ -15,9 +15,6 @@ module.exports = {
         customDarkGray: "#222222",
         customMidGray: "#303030",
         customRed: "#cf1714",
-        // silver: "#f1f1f1",
-        // purps: "#3730a3"
-        // light-purps: "#818cf8"
       },
     },
   },

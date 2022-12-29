@@ -1,5 +1,7 @@
 import { FC } from "react";
 import { DiscordIcon, TwitterIcon } from "@components";
+import { motion } from "framer-motion";
+import { linkClickAnimation } from "@constants";
 
 const Footer: FC = () => {
   return (
@@ -29,10 +31,31 @@ const Footer: FC = () => {
         <h2 className="w-1/3 font-pressStart mb-0.5 text-2xl text-dark">
           HotHeads
         </h2>
-        <div className="w-1/3 flex flex-col gap-4 items-center justify-center text-customMidGray">
-          <a>Live Auctions</a>
-          <a>Exchange Art</a>
-          <a>Magic Eden</a>
+        <div className="w-1/3 flex flex-col gap-4 items-center justify-center text-customMidGray text-lg font-pressStart">
+          <motion.a
+            {...linkClickAnimation}
+            href="https://exchange.art/hot-heads/nfts"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Live Auctions
+          </motion.a>
+          <motion.a
+            {...linkClickAnimation}
+            href="https://exchange.art/series/Hot%20Heads/nfts"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Exchange Art
+          </motion.a>
+          <motion.a
+            {...linkClickAnimation}
+            href="https://magiceden.io/marketplace/hot_heads"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Magic Eden
+          </motion.a>
         </div>
         <div className="w-1/3 flex justify-end gap-4">
           <DiscordIcon />

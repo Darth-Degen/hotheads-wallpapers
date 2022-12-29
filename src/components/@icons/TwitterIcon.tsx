@@ -9,6 +9,7 @@ const TwitterIcon: FC = () => {
       {...midClickAnimation}
       href="https://twitter.com/HotHeadsSOL"
       rel="noreferrer"
+      target="_blank"
     >
       <Image src="/images/twitter.png" width={37} height={41} alt="discord" />
     </motion.a>

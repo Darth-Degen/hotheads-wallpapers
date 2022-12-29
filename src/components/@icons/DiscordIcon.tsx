@@ -9,6 +9,7 @@ const DiscordIcon: FC = () => {
       {...midClickAnimation}
       href="https://discord.com/invite/hotheadsq"
       rel="noreferrer"
+      target="_blank"
     >
       <Image src="/images/discord.png" width={37} height={41} alt="discord" />
     </motion.a>
