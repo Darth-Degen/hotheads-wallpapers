@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 const SunIcon = dynamic(()=> import("./@icons/SunIcon"))
 const MoonIcon = dynamic(()=> import("./@icons/MoonIcon"))
 const ArrowIcon = dynamic(()=> import("./@icons/ArrowIcon"))
+const TwitterIcon = dynamic(()=> import("./@icons/TwitterIcon"))
+const DiscordIcon = dynamic(()=> import("./@icons/DiscordIcon"))
 //atoms
 const DropdownButton = dynamic(()=> import("./atoms/DropdownButton"))
 const DropdownItem = dynamic(()=> import("./atoms/DropdownItem"))
@@ -48,5 +50,7 @@ export {
   DownloadView,
   LoadAnimation,
   Form,
-  MobileDisplay
+  MobileDisplay,
+  TwitterIcon,
+  DiscordIcon
 }

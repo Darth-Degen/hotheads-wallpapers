@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         pressStart: ["PressStart"],
+        daysOne: ["DaysOne"],
       },
       colors: {
         dark: "#121212",

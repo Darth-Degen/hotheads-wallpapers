@@ -20,7 +20,7 @@ const PageLayout: FC<Props> = (props: Props) => {
       />
       <Header />
 
-      <main className="flex flex-col flex-grow justify-start items-center ">
+      <main className="flex flex-col flex-grow justify-start items-center pt-14 pb-28">
         {children}
       </main>
 
