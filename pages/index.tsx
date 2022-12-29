@@ -5,7 +5,7 @@ import { NextPage } from "next";
 
 const Home: NextPage = () => {
   const [didMount, setDidMount] = useState<boolean>(false);
-  const [tokenId, setTokenId] = useState<number>(0);
+  const [tokenId, setTokenId] = useState<number>(-1);
 
   useEffect(() => {
     setDidMount(true);

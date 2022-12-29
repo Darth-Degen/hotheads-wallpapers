@@ -35,7 +35,7 @@ const DownloadView: FC<Props> = (props: Props) => {
 
   //download image
   const handleDownload = async () => {
-    const scale = { scale: 12 };
+    const scale = { scale: 15 };
     const element = document.getElementById("wallpaper");
 
     if (element) {
@@ -75,7 +75,7 @@ const DownloadView: FC<Props> = (props: Props) => {
   }, [handleLoad]);
 
   useEffect(() => {
-    if (tokenId === 0) {
+    if (tokenId < 0) {
       return;
     }
 

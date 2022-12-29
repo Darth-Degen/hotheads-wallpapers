@@ -29,13 +29,13 @@ const Form: FC<Props> = (props: Props) => {
       <CheckBox
         label="Show Logo"
         handleToggle={setShowLogo}
-        disabled={tokenId === 0 || isLoading}
+        disabled={tokenId < 0 || isLoading}
       />
-      <TextInput handleInput={setText} disabled={tokenId === 0 || isLoading} />
+      <TextInput handleInput={setText} disabled={tokenId < 0 || isLoading} />
       <div className="mt-6">
         <Button
           onClick={() => handleDownload()}
-          disabled={tokenId === 0 || isLoading}
+          disabled={tokenId < 0 || isLoading}
         >
           Download
         </Button>

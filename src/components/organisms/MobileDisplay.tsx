@@ -23,8 +23,8 @@ const Form: FC<Props> = (props: Props) => {
       <div className="overflow-hidden p-2.5">
         <div className="relative rounded-2xl h-[562.5px] w-[275px] ">
           {/* mobile frame */}
-          <div className="absolute rounded-2xl h-[562.5px] w-[275px] outline outline-[11px] outline-dark" />
-          <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-5 w-20 bg-dark rounded-b-lg " />
+          <div className="absolute rounded-2xl h-[562.5px] w-[275px] outline outline-[11px] outline-dark z-50" />
+          <div className="absolute left-1/2 -translate-x-1/2 -top-1 h-5 w-20 bg-dark rounded-b-lg z-50" />
           {tokenId > 0 && (
             <>
               {isLoading ? (
@@ -62,7 +62,7 @@ const Form: FC<Props> = (props: Props) => {
                     {src.length > 0 && (
                       <motion.div
                         {...fastExitAnimation}
-                        className="transition-all ease-in-out duration-500 -mb-2 rounded-b-2xl"
+                        className="transition-all ease-in-out duration-500 -mb-3 rounded-b-2xl"
                         id="token-image"
                         style={{ backgroundColor: background }}
                       >
