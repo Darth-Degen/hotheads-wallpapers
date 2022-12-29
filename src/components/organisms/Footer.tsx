@@ -26,12 +26,12 @@ const Footer: FC = () => {
     // </footer>
 
     <footer className="px-10 py-12 relative bg-gradient-to-t from-red-400 to-orange-300">
-      <div className="flex items-center">
+      <div className="flex flex-col md:flex-row items-center gap-6">
         {/* <h2 className="w-1/3 font-pressStart mb-0.5 text-2xl bg-gradient-to-t from-red-500 to-yellow-300 text-transparent bg-clip-text"> */}
-        <h2 className="w-1/3 font-pressStart mb-0.5 text-2xl text-dark">
+        <h2 className="md:w-1/3 font-pressStart mb-0.5 text-2xl text-dark">
           HotHeads
         </h2>
-        <div className="w-1/3 flex flex-col gap-4 items-center justify-center text-customMidGray text-lg font-pressStart">
+        <div className="md:w-1/3 flex flex-col gap-4 items-center justify-center text-customMidGray text-lg font-pressStart">
           <motion.a
             {...linkClickAnimation}
             href="https://exchange.art/hot-heads/nfts"
@@ -57,14 +57,13 @@ const Footer: FC = () => {
             Magic Eden
           </motion.a>
         </div>
-        <div className="w-1/3 flex justify-end gap-4">
+        <div className="md:w-1/3 flex justify-end gap-4">
           <DiscordIcon />
           <TwitterIcon />
         </div>
-      </div>
-
-      <div className="absolute bottom-2 left-10 text-customMidGray">
-        Powered by EXP
+        <div className="md:absolute md:bottom-2 md:left-10 text-customMidGray">
+          Powered by EXP
+        </div>
       </div>
     </footer>
   );
