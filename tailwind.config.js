@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        primary: ["PressStart", "-apple-system", "system-ui", "monospace"],
         pressStart: ["PressStart"],
         daysOne: ["DaysOne"],
       },

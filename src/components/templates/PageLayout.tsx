@@ -18,10 +18,12 @@ const PageLayout: FC<Props> = (props: Props) => {
         title="Hot Heads"
         description="Welcome to your Hot Heads asset portfolio"
       />
-      <Header />
 
-      <main className="flex flex-col flex-grow justify-start items-center pt-14 pb-28">
-        {children}
+      <main className="min-h-screen">
+        <Header />
+        <div className="flex flex-col flex-grow justify-start items-center pt-14 pb-28">
+          {children}
+        </div>
       </main>
 
       <Footer />

@@ -21,10 +21,8 @@ const Form: FC<Props> = (props: Props) => {
   } = props;
 
   return (
-    <div className="flex flex-col gap-3 mt-8 bg-customMidGray py-8 px-10 rounded-lg border border-orange-300 font-mono">
-      <h2 className="text-xl text-center font-mono text-gray-200 pb-4">
-        Customize
-      </h2>
+    <div className="flex flex-col gap-3 mt-8 bg-customMidGray py-8 px-10 rounded-lg border border-orange-300 ">
+      <h2 className="text-xl text-center text-gray-200 pb-4">Customize</h2>
       <NumberInput supply={100} handleInput={setTokenId} disabled={isLoading} />
       <CheckBox
         label="Show Logo"
