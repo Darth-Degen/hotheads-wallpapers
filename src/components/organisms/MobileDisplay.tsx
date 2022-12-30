@@ -1,8 +1,8 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { FC } from "react";
 import { LoadAnimation } from "@components";
-import { fastExitAnimation, exitAnimation } from "@constants";
+import { fastExitAnimation, exitAnimation, midExitAnimation } from "@constants";
 import Image from "next/image";
-import { motion, useDragControls } from "framer-motion";
+import { AnimatePresence, motion, useDragControls } from "framer-motion";
 
 interface Props {
   background: string;
@@ -40,19 +40,23 @@ const Form: FC<Props> = (props: Props) => {
                     style={{ backgroundColor: background }}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <motion.img
-                      src={"/images/logo_base.png"}
-                      height={40}
-                      width={200}
-                      alt="Logo"
-                      className={`pt-24 px-6 z-50 cursor-pointer ${
-                        showLogo ? "visbile" : "invisible"
-                      }`}
-                      drag
-                      dragControls={controls}
-                    />
+                    <AnimatePresence mode="wait">
+                      {showLogo && (
+                        <motion.img
+                          src={"/images/logo_base.png"}
+                          height={40}
+                          width={200}
+                          alt="Logo"
+                          className={`pt-24 px-6 z-50 cursor-pointer`}
+                          drag
+                          dragControls={controls}
+                          id="logo"
+                          {...fastExitAnimation}
+                        />
+                      )}
+                    </AnimatePresence>
                     <motion.p
-                      className="motion.px-5 py-2 cursor-pointer text-black text-center font-mono z-50 "
+                      className="motion.px-5 py-2 cursor-pointer text-black text-center  z-50 "
                       drag
                       dragControls={controls}
                     >

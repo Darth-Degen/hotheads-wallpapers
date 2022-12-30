@@ -1,5 +1,5 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
-import { TextInput, CheckBox, Button, Dropdown } from "@components";
+import { TextInput, ButtonBar, Button, Dropdown } from "@components";
 import { collections } from "@constants";
 
 interface Props {
@@ -46,7 +46,7 @@ const Form: FC<Props> = (props: Props) => {
         }
         collections={collections}
       />
-      <CheckBox
+      <ButtonBar
         label="Show Logo"
         handleToggle={setShowLogo}
         disabled={tokenId < 0 || isLoading}

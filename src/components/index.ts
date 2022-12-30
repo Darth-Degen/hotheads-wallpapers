@@ -20,6 +20,7 @@ const PageHead = dynamic(()=> import("./molecules/PageHead"))
 const Logo = dynamic(()=> import("./molecules/Logo"))
 const ThemeChanger = dynamic(()=> import("./molecules/ThemeChanger"))
 const Dropdown = dynamic(()=> import("./molecules/Dropdown"))
+const ButtonBar = dynamic(()=> import("./molecules/ButtonBar"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -54,5 +55,6 @@ export {
   MobileDisplay,
   TwitterIcon,
   DiscordIcon,
-  LoadCircle
+  LoadCircle,
+  ButtonBar
 }

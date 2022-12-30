@@ -11,7 +11,7 @@ interface Props {
 const DropdownButton: FC<Props> = (props: Props) => {
   const { isActive, label } = props;
 
-  const styles: string = "w-56 h-10 bg-dark text-xs";
+  const styles: string = "w-56 h-10 bg-dark text-[9px]";
 
   return (
     <motion.button
