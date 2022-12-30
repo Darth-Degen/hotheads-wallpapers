@@ -1,20 +1,20 @@
 import { Variants } from "framer-motion"
 
 //click animations
-export const largeClickAnimation: Variants = {
+export const largeClickAnimation = {
   whileHover: { scale: 1.1 },
   whileTap: { scale: 1 },
 };
-export const midClickAnimation: Variants = {
+export const midClickAnimation = {
   whileHover: { scale: 1.06 },
   whileTap: { scale: 1 },
 };
-export const smallClickAnimation: Variants = {
+export const smallClickAnimation = {
   whileHover: { scale: 1.02 },
   whileTap: { scale: 1 },
 };
 
-export const linkClickAnimation: Variants = {
+export const linkClickAnimation = {
   whileHover: { scale: 1.04 },
   whileTap: { scale: 1 },
 };
@@ -30,6 +30,12 @@ export const exitAnimation = {
   animate:{ opacity: 1 },
   exit:{ opacity: 0 },
   transition:{ duration: 0.7, ease: "easeInOut" },
+}
+export const midExitAnimation = {
+  initial:{ opacity: 0 },
+  animate:{ opacity: 1 },
+  exit:{ opacity: 0 },
+  transition:{ duration: 0.4, ease: "easeInOut" },
 }
 export const fastExitAnimation = {
   initial:{ opacity: 0 },
@@ -51,7 +57,7 @@ export const enterAnimation = {
 }
 
 //variants
-export const arrowVariants = {
+export const arrowVariants: Variants = {
   start: {
     rotate: 0,
     transition: {
@@ -59,7 +65,7 @@ export const arrowVariants = {
     },
   },
   end: {
-    rotate: -180,
+    rotate: 180,
     transition: {
       duration: 0.4,
     },

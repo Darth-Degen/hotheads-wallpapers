@@ -10,6 +10,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     setDidMount(true);
   }, []);
+
   return (
     <PageLayout>
       <h1 className="text-xl lg:text-3xl font-pressStart md:pb-10 text-red-400 text-center px-5">

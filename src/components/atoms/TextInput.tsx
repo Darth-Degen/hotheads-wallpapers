@@ -10,7 +10,7 @@ const NumberInput: FC<Props> = (props: Props) => {
   const [value, setValue] = useState<string>();
 
   const charLim: number = 30;
-  const styles: string = "w-56 h-10 bg-dark text-sm";
+  const styles: string = "w-56 h-10 bg-dark text-xs";
 
   //add max length check
   const onInput = (event: React.FormEvent<HTMLInputElement>): void => {

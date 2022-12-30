@@ -9,7 +9,7 @@ const CheckBox: FC<Props> = (props: Props) => {
   const { label, handleToggle, className, ...componentProps } = props;
   const [checked, setChecked] = useState<boolean>(true);
 
-  const styles: string = "w-56 h-10 bg-dark text-sm";
+  const styles: string = "w-56 h-10 bg-dark text-xs";
 
   //add max length check
   const onChange = (): void => {
