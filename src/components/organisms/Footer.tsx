@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { DiscordIcon, TwitterIcon } from "@components";
 import { motion } from "framer-motion";
-import { linkClickAnimation } from "@constants";
 
 const Footer: FC = () => {
   return (
@@ -31,28 +30,41 @@ const Footer: FC = () => {
         <h2 className="md:w-1/3 font-pressStart mb-0.5 text-2xl text-dark">
           HotHeads
         </h2>
-        <div className="md:w-1/3 flex flex-col gap-4 items-center justify-center text-customMidGray text-sm font-pressStart">
+        <div className="md:w-1/3 flex flex-col items-center justify-center text-customMidGray text-sm font-pressStart">
           <motion.a
-            {...linkClickAnimation}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
             href="https://exchange.art/hot-heads/nfts"
             rel="noreferrer"
             target="_blank"
+            className="p-2 w-[250px] text-center rounded-xs"
+            whileHover={{
+              textDecoration: "underline",
+              textDecorationThickness: "3px",
+            }}
           >
             Live Auctions
           </motion.a>
           <motion.a
-            {...linkClickAnimation}
             href="https://exchange.art/series/Hot%20Heads/nfts"
             rel="noreferrer"
             target="_blank"
+            className="p-2 w-[250px] text-center rounded-xs"
+            whileHover={{
+              textDecoration: "underline",
+              textDecorationThickness: "3px",
+            }}
           >
             Exchange Art
           </motion.a>
           <motion.a
-            {...linkClickAnimation}
             href="https://magiceden.io/marketplace/hot_heads"
             rel="noreferrer"
             target="_blank"
+            className="p-2 w-[250px] text-center rounded-xs"
+            whileHover={{
+              textDecoration: "underline",
+              textDecorationThickness: "3px",
+            }}
           >
             Magic Eden
           </motion.a>
@@ -61,7 +73,7 @@ const Footer: FC = () => {
           <DiscordIcon />
           <TwitterIcon />
         </div>
-        <div className="md:absolute md:bottom-2 md:left-10 text-customMidGray font-daysOne">
+        <div className="md:absolute md:bottom-2 md:left-10 text-customMidGray font-daysOne text-[10px]">
           Powered by EXP
         </div>
       </div>

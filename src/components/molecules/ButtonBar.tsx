@@ -32,7 +32,6 @@ const ButtonBar: FC<Props> = (props: Props) => {
             ? "cursor-not-allowed bg-customDarkGray border-customDarkGray"
             : ""
         }`}
-        // onClick={() => onChange()}
       >
         <p className="cursor-default">{label}</p>
       </div>
