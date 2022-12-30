@@ -66,3 +66,10 @@ export const arrowVariants = {
   },
 };
 
+
+export const backgroundAnimations = {
+  whileHover: { backgroundColor: "#f87171" },
+  whileTap: { backgroundColor: "#f87171", },
+  transition:{ duration: 0.4, ease: "easeInOut" },
+}
+

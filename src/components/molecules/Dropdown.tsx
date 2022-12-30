@@ -5,38 +5,34 @@ import { Dispatch, FC, SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
-  handleClick: (item: Collection) => void;
-  handleHover: Dispatch<SetStateAction<number>>;
-  show: boolean;
+  handleClick: (id: number) => void;
+  setDidHover: Dispatch<SetStateAction<boolean>>;
+  didHover: boolean;
   label: string;
   collections: Collection[];
 }
 
 const Dropdown: FC<Props> = (props: Props) => {
-  const { handleClick, handleHover, show, label, collections } = props;
+  const { handleClick, setDidHover, didHover, label, collections } = props;
 
   return (
     <div
-      onMouseEnter={() => handleHover(1)}
-      onMouseLeave={() => handleHover(0)}
+      onMouseEnter={() => setDidHover(true)}
+      onMouseLeave={() => setDidHover(false)}
     >
-      <DropdownButton isActive={show} label={label} />
+      <DropdownButton isActive={didHover} label={label} />
       <AnimatePresence mode="wait">
-        {show && (
-          <motion.div className="absolute pt-2 " {...fastExitAnimation}>
-            <ul className="rounded-sm border border-gray-300 divide-y shadow max-h-[200px] overflow-y-auto">
+        {didHover && (
+          <motion.div className="absolute z-50 pt-2 " {...fastExitAnimation}>
+            <ul className="rounded-sm border divide-y shadow max-h-[200px] overflow-y-auto">
               {collections &&
-                collections
-                  .sort((a: Collection, b: Collection) =>
-                    b.name.localeCompare(a.name)
-                  )
-                  .map((item: Collection) => (
-                    <DropdownItem
-                      item={item}
-                      handleClick={handleClick}
-                      key={item.id}
-                    />
-                  ))}
+                collections.map((item: Collection) => (
+                  <DropdownItem
+                    item={item}
+                    handleClick={handleClick}
+                    key={item.id}
+                  />
+                ))}
             </ul>
           </motion.div>
         )}

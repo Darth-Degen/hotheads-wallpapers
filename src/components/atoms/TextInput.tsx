@@ -21,7 +21,7 @@ const NumberInput: FC<Props> = (props: Props) => {
 
   return (
     <input
-      className={`${className} relative flex justify-between ${styles} transition-all duration-200 border  rounded items-center p-2 ${
+      className={`${className} relative flex justify-between ${styles} transition-all duration-500 border  rounded items-center p-2 ${
         value && value.length >= charLim ? "text-red-500" : ""
       } ${
         componentProps.disabled

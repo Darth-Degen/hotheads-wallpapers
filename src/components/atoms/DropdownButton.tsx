@@ -11,11 +11,13 @@ interface Props {
 const DropdownButton: FC<Props> = (props: Props) => {
   const { isActive, label } = props;
 
-  const styles: string = "w-56 h-10 bg-dark text-sm";
+  const styles: string = "w-56 h-10 bg-dark text-xs";
 
   return (
     <button
-      className={`relative flex justify-between ${styles} border border-gray-300 rounded items-center p-2 cursor-pointer`}
+      className={`relative flex justify-between ${styles} border border-dark hover:border-orange-300 rounded items-center p-2 cursor-pointer transition-colors duration-500 ${
+        isActive ? "border-red-400" : ""
+      }`}
     >
       {label}
       <motion.div animate={isActive ? "end" : "start"} variants={arrowVariants}>

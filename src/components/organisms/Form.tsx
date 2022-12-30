@@ -1,5 +1,6 @@
-import { Dispatch, FC, SetStateAction } from "react";
-import { TextInput, CheckBox, Button, NumberInput } from "@components";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { TextInput, CheckBox, Button, Dropdown } from "@components";
+import { collections } from "@constants";
 
 interface Props {
   tokenId: number;
@@ -22,10 +23,29 @@ const Form: FC<Props> = (props: Props) => {
     handleDownload,
   } = props;
 
+  const [didHover, setDidHover] = useState<boolean>(false);
+
+  const selectClick = (id: number) => {
+    setTokenId(id);
+    setDidHover(false);
+  };
+
   return (
-    <div className="flex flex-col gap-3 mt-8 bg-customMidGray py-8 px-10 rounded-lg border border-orange-300 ">
+    <div className="flex flex-col gap-3 mt-8 bg-customMidGray py-8 px-10 rounded-lg border border-orange-300">
       <h2 className="text-xl text-center text-gray-200 pb-4">Customize</h2>
-      <NumberInput supply={100} handleInput={setTokenId} disabled={isLoading} />
+      <Dropdown
+        handleClick={selectClick}
+        setDidHover={setDidHover}
+        didHover={didHover}
+        label={
+          tokenId === -1
+            ? "Select ID"
+            : tokenId < 10
+            ? `00${tokenId}`
+            : `0${tokenId}`
+        }
+        collections={collections}
+      />
       <CheckBox
         label="Show Logo"
         handleToggle={setShowLogo}
