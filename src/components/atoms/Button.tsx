@@ -31,7 +31,7 @@ const Button: FC<Props> = (props: Props) => {
       >
         <AnimatePresence mode="wait">
           {isLoading ? (
-            <LoadCircle />
+            <LoadCircle color="#f87171" />
           ) : (
             <span id="button-text">{children}</span>
           )}
