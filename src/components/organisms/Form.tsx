@@ -4,6 +4,7 @@ import { TextInput, CheckBox, Button, NumberInput } from "@components";
 interface Props {
   tokenId: number;
   isLoading: boolean;
+  isDownloading: boolean;
   setTokenId: Dispatch<SetStateAction<number>>;
   setShowLogo: Dispatch<SetStateAction<boolean>>;
   setText: Dispatch<SetStateAction<string>>;
@@ -14,6 +15,7 @@ const Form: FC<Props> = (props: Props) => {
   const {
     tokenId,
     isLoading,
+    isDownloading,
     setTokenId,
     setShowLogo,
     setText,
@@ -34,6 +36,7 @@ const Form: FC<Props> = (props: Props) => {
         <Button
           onClick={() => handleDownload()}
           disabled={tokenId < 0 || isLoading}
+          isLoading={isDownloading}
         >
           Download
         </Button>

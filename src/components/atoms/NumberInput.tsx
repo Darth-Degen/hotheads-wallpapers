@@ -40,6 +40,7 @@ const NumberInput: FC<Props> = (props: Props) => {
         type="number"
         min={1}
         max={supply}
+        disabled={componentProps.disabled}
       />
     </div>
   );

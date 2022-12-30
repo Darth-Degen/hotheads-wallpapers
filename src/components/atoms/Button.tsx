@@ -1,12 +1,14 @@
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { LoadCircle } from "@components";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
+  isLoading?: boolean;
 }
 
 const Button: FC<Props> = (props: Props) => {
-  const { children, className, ...componentProps } = props;
+  const { children, isLoading = false, className, ...componentProps } = props;
   const styles: string = "w-56 h-10 bg-dark text-white text-sm";
 
   return (
@@ -27,7 +29,13 @@ const Button: FC<Props> = (props: Props) => {
         {...componentProps}
         disabled={componentProps.disabled}
       >
-        {children}
+        <AnimatePresence mode="wait">
+          {isLoading ? (
+            <LoadCircle />
+          ) : (
+            <span id="button-text">{children}</span>
+          )}
+        </AnimatePresence>
       </button>
     </motion.div>
   );

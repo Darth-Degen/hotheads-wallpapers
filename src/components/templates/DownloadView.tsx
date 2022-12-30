@@ -27,9 +27,11 @@ const DownloadView: FC<Props> = (props: Props) => {
   const [text, setText] = useState<string>("");
   const [showLogo, setShowLogo] = useState<boolean>(true);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [src, setSrc] = useState<string>("");
 
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const downloadRef = useRef<NodeJS.Timeout>();
 
   const [background, setBackground] = useState<string>("bg-[#CF1714]");
 
@@ -38,12 +40,20 @@ const DownloadView: FC<Props> = (props: Props) => {
     const scale = { scale: 15 };
     const element = document.getElementById("wallpaper");
 
-    if (element) {
+    if (!element) {
+      return;
+    }
+
+    const interval = Math.floor(Math.random() * (3000 - 1000) + 1000);
+
+    setIsDownloading(true);
+    downloadRef.current = setTimeout(async () => {
       await html2canvas(element, scale).then((canvas) => {
         const data = canvas.toDataURL("image/png");
         download(data, "degen-wallpaper.png", "image/png");
       });
-    }
+      setIsDownloading(false);
+    }, interval);
   };
 
   //extract background from image
@@ -63,16 +73,22 @@ const DownloadView: FC<Props> = (props: Props) => {
   const handleLoad = useCallback(() => {
     if (!tokenId || !collection) return;
 
+    const interval = Math.floor(Math.random() * (3000 - 1000) + 1000);
+
     setIsLoading(true);
     timeoutRef.current = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, interval);
   }, [tokenId, collection]);
 
   useEffect(() => {
     handleLoad();
     return () => clearTimeout(timeoutRef.current);
   }, [handleLoad]);
+
+  useEffect(() => {
+    return () => clearTimeout(downloadRef.current);
+  }, []);
 
   useEffect(() => {
     if (tokenId < 0) {
@@ -86,19 +102,16 @@ const DownloadView: FC<Props> = (props: Props) => {
     );
   }, [tokenId]);
 
-  useEffect(() => {
-    console.log("src ", src);
-  }, [src]);
-
   return (
     <div className="flex flex-col md:flex-row gap-8 sm:gap-20 items-start px-5">
       <Form
         tokenId={tokenId}
-        isLoading={isLoading}
+        isLoading={isLoading || isDownloading}
         setTokenId={setTokenId}
         setShowLogo={setShowLogo}
         setText={setText}
         handleDownload={handleDownload}
+        isDownloading={isDownloading}
       />
       <MobileDisplay
         background={background}
