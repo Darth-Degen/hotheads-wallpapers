@@ -31,7 +31,7 @@ const Form: FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className="flex flex-col gap-3 mt-8 bg-customMidGray py-8 px-10 rounded-lg border border-orange-300">
+    <div className="flex flex-col gap-3 mt-8 bg-custom-mid-gray py-8 px-10 rounded-lg border border-orange-300">
       <h2 className="text-xl text-center text-gray-200 pb-4">Customize</h2>
       <Dropdown
         handleClick={selectClick}

@@ -29,7 +29,7 @@ const ButtonBar: FC<Props> = (props: Props) => {
       <div
         className={`${className} coursrelative flex justify-between ${styles} transition-all duration-200 rounded items-center p-2 text-gray-400 ${
           componentProps.disabled
-            ? "cursor-not-allowed bg-customDarkGray border-customDarkGray"
+            ? "cursor-not-allowed bg-custom-dark-gray border-custom-dark-gray"
             : ""
         }`}
       >

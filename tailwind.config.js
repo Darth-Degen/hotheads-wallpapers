@@ -11,11 +11,12 @@ module.exports = {
         daysOne: ["DaysOne"],
       },
       colors: {
-        dark: "#121212",
         lightRed: "#ff9596",
-        customDarkGray: "#222222",
-        customMidGray: "#303030",
         customRed: "#cf1714",
+        dark: "#121212",
+        "custom-black": "#121212",
+        "custom-dark-gray": "#222222",
+        "custom-mid-gray": "#303030",
         // orange -> #fdba74
         // red -> #f87171
       },
