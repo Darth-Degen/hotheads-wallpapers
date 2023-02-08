@@ -25,6 +25,7 @@ const ButtonBar = dynamic(()=> import("./molecules/ButtonBar"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
+const Navigation = dynamic(()=> import("./organisms/Navigation"))
 const StepContainer = dynamic(()=> import("./organisms/StepContainer"))
 const Form = dynamic(() => import("./organisms/Form") )
 const MobileDisplay = dynamic(() => import("./organisms/MobileDisplay") )
@@ -58,5 +59,6 @@ export {
   DiscordIcon,
   LoadCircle,
   ButtonBar,
-  ExpIcon
+  ExpIcon,
+  Navigation
 }

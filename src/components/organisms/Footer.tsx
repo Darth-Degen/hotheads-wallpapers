@@ -1,30 +1,42 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { ExpIcon } from "@components";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Footer: FC = () => {
+  const [animate, setAnimate] = useState<boolean>(false);
+
+  const containerAnimation = {
+    animate: {
+      opacity: 1,
+      rotate: animate ? -90 : 0,
+    },
+    exit: { opacity: 0 },
+    transition: { duration: 0.5, ease: "easeInOut" },
+  };
+
   return (
     <footer className="px-10 py-4 relative">
-      <div className="flex items-center">
-        <h2 className="w-1/3 font-pressStart mb-0.5 text-2xl bg-gradient-to-t from-red-500 to-yellow-300 text-transparent bg-clip-text">
+      <div className="flex flex-col md:flex-row items-center gap-4">
+        <h2 className="md:w-1/3 font-pressStart mb-0.5 text-2xl bg-gradient-to-t from-red-500 to-yellow-300 text-transparent bg-clip-text">
           {/* <h2 className="w-1/3 font-pressStart mb-0.5 text-2xl text-orange-300"> */}
           HotHeads
         </h2>
-        <div className="w-1/3 flex justify-center text-xs gap-8 font-daysOne">
+        <div className="md:w-1/3 flex flex-col md:flex-row items-center justify-center text-xs gap-1 md:gap-4 lg:gap-8 font-daysOne">
           <div className="cursor-pointer hover:underline underline-offset-4">
             twitter
           </div>
           <div className="cursor-pointer hover:underline underline-offset-4">
             discord
           </div>
-          <div className="cursor-pointer hover:underline underline-offset-4">
+          <div className="hidden md:block cursor-pointer hover:underline underline-offset-4">
             about
           </div>
-          <div className="cursor-pointer hover:underline underline-offset-4">
+          <div className="hidden md:block cursor-pointer hover:underline underline-offset-4">
             inventory
           </div>
         </div>
-        <div className="w-1/3 flex justify-end gap-2">
+        <div className="md:w-1/3 flex justify-end gap-2">
           {/* exp */}
           <div className="flex xl:w-1/4 justify-end ">
             <a
@@ -33,15 +45,22 @@ const Footer: FC = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <div className=" flex flex-col items-center font-daysOne">
+              <div className=" flex flex-row-reverse md:flex-col gap-2 md:gap-0 items-center font-daysOne">
                 <div className={`rounded-lg text-3xl w-min border`}>
-                  <ExpIcon color={"#fff"} />
-                  {/* <Image
+                  <motion.div
+                    className="rounded"
+                    {...containerAnimation}
+                    onMouseEnter={() => setAnimate(true)}
+                    onMouseLeave={() => setAnimate(false)}
+                  >
+                    <ExpIcon color={"#fff"} />
+                    {/* <Image
                     src="/images/exp/logo-white.png"
                     height={50}
                     width={50}
                     alt="EXP"
                   /> */}
+                  </motion.div>
                 </div>
                 <p className={`mt-1.5 text-white`}>powered by EXP</p>
               </div>

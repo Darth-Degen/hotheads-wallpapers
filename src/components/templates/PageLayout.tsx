@@ -1,29 +1,32 @@
 import { FC, ReactNode } from "react";
-import { PageHead, Header, Footer } from "@components";
+import { PageHead, Header, Footer, Navigation } from "@components";
 import { motion } from "framer-motion";
 import { enterAnimation } from "@constants";
 
 interface Props {
   children: ReactNode;
+  header?: string;
 }
 
 const PageLayout: FC<Props> = (props: Props) => {
-  const { children } = props;
+  const { children, header } = props;
   return (
     <motion.div
-      className="flex flex-col justify-between lg:h-screen transition-colors ease-in-out duration-500 bg-dark"
+      className="relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-500 bg-dark"
       {...enterAnimation}
     >
       <PageHead
         title="Hot Heads"
         description="Welcome to your Hot Heads asset portfolio"
       />
-
-      <Header />
-      <main className="flex flex-col flex-grow justify-start items-center pt-14 pb-28">
-        <div className="">{children}</div>
+      <Navigation />
+      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-36">
+        <Header />
+        <div className="bg-custom-dark-gray h-full w-full rounded-3xl flex flex-col items-center my-4 py-10 overflow-y-auto">
+          <h2 className="text-orange-300 text-xl lg:text-4xl">About</h2>
+          {children}
+        </div>
       </main>
-
       <Footer />
     </motion.div>
   );

@@ -15,8 +15,9 @@ module.exports = {
         customRed: "#cf1714",
         dark: "#121212",
         "custom-black": "#121212",
-        "custom-dark-gray": "#222222",
+        "custom-dark-gray": "#202020",
         "custom-mid-gray": "#303030",
+        "custom-yellow": "#FFBA21",
         // orange -> #fdba74
         // red -> #f87171
       },

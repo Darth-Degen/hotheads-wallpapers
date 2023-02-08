@@ -3,11 +3,11 @@ import { Logo, ThemeChanger } from "@components";
 
 const Header: FC = () => {
   return (
-    <header className="h-15  transition-colors ease-in-out duration-500">
+    <div className="h-20 w-full">
       <div className="px-4 sm:px-6 lg:px-10 py-4 flex justify-between items-center">
-        <Logo />
+        {/* <Logo /> */}
       </div>
-    </header>
+    </div>
   );
 };
 
