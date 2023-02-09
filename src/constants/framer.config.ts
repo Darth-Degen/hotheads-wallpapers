@@ -56,6 +56,11 @@ export const enterAnimation = {
   transition:{ duration: 1.4, ease: "easeInOut" },
 }
 
+export const midEnterAnimation = {
+  initial:{ opacity: 0 },
+  animate:{ opacity: 1 },
+  transition:{ duration: 0.7, ease: "easeInOut" },
+}
 //variants
 export const arrowVariants: Variants = {
   start: {
