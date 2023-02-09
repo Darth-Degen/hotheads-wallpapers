@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import { PageHead, Header, Footer, Navigation } from "@components";
 import { motion } from "framer-motion";
-import { midEnterAnimation } from "@constants";
+import { midEnterAnimation, enterAnimation } from "@constants";
 
 interface Props {
   children: ReactNode;
@@ -23,17 +23,17 @@ const PageLayout: FC<Props> = (props: Props) => {
       <Navigation />
       <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-40 2xl:px-52">
         <Header />
-        <motion.div
-          className="bg-custom-dark-gray h-full w-full rounded-xl lg:rounded-3xl flex flex-col items-center my-4 py-10 overflow-y-auto"
-          {...midEnterAnimation}
-        >
+        <div className="bg-custom-dark-gray h-full w-full rounded-xl lg:rounded-3xl flex flex-col items-center my-4 py-10 overflow-y-auto">
           {header && (
-            <h2 className="text-custom-yellow text-xl lg:text-4xl uppercase">
+            <motion.h2
+              className="text-custom-yellow text-xl lg:text-4xl uppercase"
+              {...enterAnimation}
+            >
               {header}
-            </h2>
+            </motion.h2>
           )}
-          {children}
-        </motion.div>
+          <motion.div {...midEnterAnimation}>{children}</motion.div>
+        </div>
       </main>
       <Footer />
     </div>

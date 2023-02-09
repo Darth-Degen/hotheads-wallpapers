@@ -23,6 +23,7 @@ const Logo = dynamic(()=> import("./molecules/Logo"))
 const ThemeChanger = dynamic(()=> import("./molecules/ThemeChanger"))
 const Dropdown = dynamic(()=> import("./molecules/Dropdown"))
 const ButtonBar = dynamic(()=> import("./molecules/ButtonBar"))
+const NavItem = dynamic(()=> import("./molecules/NavItem"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -62,5 +63,6 @@ export {
   ButtonBar,
   ExpIcon,
   Navigation,
-  MenuIcon
+  MenuIcon,
+  NavItem
 }

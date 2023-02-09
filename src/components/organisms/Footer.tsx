@@ -23,16 +23,16 @@ const Footer: FC = () => {
           HotHeads
         </h2>
         <div className="md:w-1/3 flex flex-col md:flex-row items-center justify-center text-xs gap-1 md:gap-4 lg:gap-8 font-daysOne text-gray-300">
-          <div className="cursor-pointer hover:underline underline-offset-4">
+          <div className="cursor-pointer hover:text-custom-yellow transition-all duration-300 ">
             twitter
           </div>
-          <div className="cursor-pointer hover:underline underline-offset-4">
+          <div className="cursor-pointer hover:text-custom-yellow transition-all duration-300 ">
             discord
           </div>
-          <div className="hidden md:block cursor-pointer hover:underline underline-offset-4">
+          <div className="hidden md:block cursor-pointer hover:text-custom-yellow transition-all duration-300 ">
             about
           </div>
-          <div className="hidden md:block cursor-pointer hover:underline underline-offset-4">
+          <div className="hidden md:block cursor-pointer hover:text-custom-yellow transition-all duration-300 ">
             inventory
           </div>
         </div>
