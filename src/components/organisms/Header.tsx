@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Logo, ThemeChanger } from "@components";
 
 const Header: FC = () => {
   return (

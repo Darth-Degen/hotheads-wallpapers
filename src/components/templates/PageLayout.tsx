@@ -21,14 +21,16 @@ const PageLayout: FC<Props> = (props: Props) => {
       />
 
       <Navigation />
-      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-36">
+      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-40 2xl:px-52">
         <Header />
         <motion.div
           className="bg-custom-dark-gray h-full w-full rounded-xl lg:rounded-3xl flex flex-col items-center my-4 py-10 overflow-y-auto"
           {...midEnterAnimation}
         >
           {header && (
-            <h2 className="text-orange-300 text-xl lg:text-4xl">{header}</h2>
+            <h2 className="text-custom-yellow text-xl lg:text-4xl uppercase">
+              {header}
+            </h2>
           )}
           {children}
         </motion.div>
