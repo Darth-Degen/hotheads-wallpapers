@@ -64,7 +64,7 @@ const Footer: FC = () => {
                   /> */}
                   </motion.div>
                 </div>
-                <p className={`mt-1.5 text-orange-400`}>powered by EXP</p>
+                <p className={`mt-1.5 text-orange-400`}>Powered by EXP</p>
               </div>
             </a>
           </div>

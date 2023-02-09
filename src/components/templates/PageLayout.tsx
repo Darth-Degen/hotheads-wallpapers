@@ -11,10 +11,7 @@ interface Props {
 const PageLayout: FC<Props> = (props: Props) => {
   const { children, header } = props;
   return (
-    <div
-      className="relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none"
-      // {...midEnterAnimation}
-    >
+    <div className="relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none">
       <PageHead
         title="Hot Heads"
         description="Welcome to your Hot Heads asset portfolio"
@@ -32,7 +29,7 @@ const PageLayout: FC<Props> = (props: Props) => {
               {header}
             </motion.h2>
           )}
-          <motion.div {...midEnterAnimation}>{children}</motion.div>
+          <motion.div {...enterAnimation}>{children}</motion.div>
         </div>
       </main>
       <Footer />
