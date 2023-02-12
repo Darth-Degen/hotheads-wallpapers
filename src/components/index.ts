@@ -17,6 +17,7 @@ const Button = dynamic(()=> import("./atoms/Button"))
 const CheckBox = dynamic(()=> import("./atoms/CheckBox"))
 const LoadAnimation = dynamic(()=> import("./atoms/LoadAnimation"))
 const LoadCircle = dynamic(()=> import("./atoms/LoadCircle"))
+const TabBarItem = dynamic(()=> import("./atoms/TabBarItem"))
 //molecules
 const PageHead = dynamic(()=> import("./molecules/PageHead"))
 const Logo = dynamic(()=> import("./molecules/Logo"))
@@ -24,6 +25,7 @@ const ThemeChanger = dynamic(()=> import("./molecules/ThemeChanger"))
 const Dropdown = dynamic(()=> import("./molecules/Dropdown"))
 const ButtonBar = dynamic(()=> import("./molecules/ButtonBar"))
 const NavItem = dynamic(()=> import("./molecules/NavItem"))
+const TabBar = dynamic(()=> import("./molecules/TabBar"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -64,5 +66,7 @@ export {
   ExpIcon,
   Navigation,
   MenuIcon,
-  NavItem
+  NavItem,
+  TabBarItem,
+  TabBar,
 }

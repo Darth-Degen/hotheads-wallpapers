@@ -23,13 +23,35 @@ a {
 
 @layer base {
   html {
-    @apply bg-gradient-to-t from-red-500 to-orange-500 bg-custom-black text-gray-300;
+    @apply bg-gradient-to-t from-red-500 to-orange-500 bg-custom-black text-gray-300 font-daysOne;
   }
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: DaysOne;
 }
 
+/* scroll bar */
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+  border-radius: 14px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #202020;
+  border-radius: 10px;
+  outline: 2px solid #0A0A0A;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #202020;
+}
