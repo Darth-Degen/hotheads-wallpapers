@@ -16,7 +16,7 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer className="px-10 py-4 fixed bottom-0 w-full">
+    <footer className="px-10 py-4 absolute lg:fixed bottom-0 w-full bg-dark">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <h2 className="md:w-1/3 font-pressStart mb-0.5 text-2xl bg-gradient-to-t from-red-500 to-yellow-300 text-transparent bg-clip-text">
           {/* <h2 className="w-1/3 font-pressStart mb-0.5 text-2xl text-orange-300"> */}

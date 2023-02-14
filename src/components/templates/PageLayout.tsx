@@ -24,7 +24,7 @@ const PageLayout: FC<Props> = (props: Props) => {
       />
 
       <Navigation />
-      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-40 2xl:px-[15%] py-24">
+      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-40 2xl:px-[15%] mb-44 lg:mb-auto lg:py-24">
         {didMount && (
           <>
             <Header />
@@ -37,7 +37,7 @@ const PageLayout: FC<Props> = (props: Props) => {
                   {header}
                 </motion.h2>
               )}
-              <motion.div className=" overflow-y-auto p-2" {...enterAnimation}>
+              <motion.div className=" p-2" {...enterAnimation}>
                 {children}
               </motion.div>
             </div>

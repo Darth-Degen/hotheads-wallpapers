@@ -1,12 +1,18 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { TabBarItem } from "@components";
 
 interface TabBarProps {
   tabs: string[];
+  handleTabChange: (tab: number) => void;
 }
 const TabBar: FC<TabBarProps> = (props: TabBarProps) => {
-  const { tabs } = props;
+  const { tabs, handleTabChange } = props;
   const [tab, setTab] = useState<number>(0);
+
+  useEffect(() => {
+    handleTabChange(tab);
+  }, [handleTabChange, tab]);
+
   return (
     <div className=" bg-custom-light-gray rounded-3xl flex gap-1 items-center p-1.5 w-min">
       {tabs.map((item, index) => (
