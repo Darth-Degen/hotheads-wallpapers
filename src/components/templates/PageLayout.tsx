@@ -37,7 +37,10 @@ const PageLayout: FC<Props> = (props: Props) => {
                   {header}
                 </motion.h2>
               )}
-              <motion.div className=" p-2" {...enterAnimation}>
+              <motion.div
+                className=" lg:overflow-y-auto p-2"
+                {...enterAnimation}
+              >
                 {children}
               </motion.div>
             </div>
