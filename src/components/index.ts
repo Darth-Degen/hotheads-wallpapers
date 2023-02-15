@@ -7,6 +7,7 @@ const ArrowIcon = dynamic(()=> import("./@icons/ArrowIcon"))
 const TwitterIcon = dynamic(()=> import("./@icons/TwitterIcon"))
 const DiscordIcon = dynamic(()=> import("./@icons/DiscordIcon"))
 const ExpIcon = dynamic(()=> import("./@icons/ExpIcon"))
+const ExpandIcon = dynamic(()=> import("./@icons/ExpandIcon"))
 const MenuIcon = dynamic(()=> import("./@icons/MenuIcon"))
 //atoms
 const DropdownButton = dynamic(()=> import("./atoms/DropdownButton"))
@@ -26,6 +27,8 @@ const Dropdown = dynamic(()=> import("./molecules/Dropdown"))
 const ButtonBar = dynamic(()=> import("./molecules/ButtonBar"))
 const NavItem = dynamic(()=> import("./molecules/NavItem"))
 const TabBar = dynamic(()=> import("./molecules/TabBar"))
+const ListItem = dynamic(()=> import("./molecules/ListItem"))
+const ScrollItem = dynamic(()=> import("./molecules/ScrollItem"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -69,4 +72,7 @@ export {
   NavItem,
   TabBarItem,
   TabBar,
+  ListItem,
+  ScrollItem,
+  ExpandIcon
 }

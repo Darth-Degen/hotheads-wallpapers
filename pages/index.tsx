@@ -7,13 +7,6 @@ import { motion } from "framer-motion";
 import { midEnterAnimation } from "@constants";
 
 const Home: NextPage = () => {
-  const [didMount, setDidMount] = useState<boolean>(false);
-  const [tokenId, setTokenId] = useState<number>(-1);
-
-  useEffect(() => {
-    setDidMount(true);
-  }, []);
-
   return (
     <>
       <PageHead
@@ -49,7 +42,7 @@ const Home: NextPage = () => {
           />
         </div>
         <Link href="/about">
-          <div className="outline outline-2 rounded text-gray-300 outline-gray-300 px-5 py-2 cursor-pointer bg-custom-black hover:text-red-400 hover:outline-orange-400 transition-all duration-500">
+          <div className="outline outline-2 rounded text-gray-300 outline-gray-300 px-5 py-2 cursor-pointer bg-custom-black hover:text-orange-300 hover:outline-orange-300 transition-all duration-500">
             Enter the Underworld
           </div>
         </Link>

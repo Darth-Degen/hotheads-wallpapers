@@ -14,7 +14,7 @@ const TabBar: FC<TabBarProps> = (props: TabBarProps) => {
   }, [handleTabChange, tab]);
 
   return (
-    <div className=" bg-custom-light-gray rounded-3xl flex gap-1 items-center p-1.5 w-min">
+    <div className=" bg-custom-light-gray rounded-3xl flex gap-1 items-center p-1.5 w-min whitespace-nowrap">
       {tabs.map((item, index) => (
         <TabBarItem
           key={index}

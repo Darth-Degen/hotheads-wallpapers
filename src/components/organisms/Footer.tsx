@@ -47,7 +47,7 @@ const Footer: FC = () => {
             >
               <div className=" flex flex-row-reverse md:flex-col gap-2 md:gap-0 items-center font-daysOne">
                 <div
-                  className={`rounded-lg text-3xl w-min border border-orange-400`}
+                  className={`rounded-2xl text-3xl w-min border border-white px-3`}
                 >
                   <motion.div
                     className="rounded"
@@ -55,16 +55,10 @@ const Footer: FC = () => {
                     onMouseEnter={() => setAnimate(true)}
                     onMouseLeave={() => setAnimate(false)}
                   >
-                    <ExpIcon color={"#fdba74"} />
-                    {/* <Image
-                    src="/images/exp/logo-white.png"
-                    height={50}
-                    width={50}
-                    alt="EXP"
-                  /> */}
+                    <ExpIcon color={"white"} />
                   </motion.div>
                 </div>
-                <p className={`mt-1.5 text-orange-400`}>Powered by EXP</p>
+                <p className={`mt-1.5 text-white`}>Powered by EXP</p>
               </div>
             </a>
           </div>

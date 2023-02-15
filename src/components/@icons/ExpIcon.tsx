@@ -1,7 +1,4 @@
 import { FC, SVGProps } from "react";
-import { enterAnimation } from "@constants";
-import { motion } from "framer-motion";
-import Image from "next/image";
 
 interface Props extends SVGProps<SVGSVGElement> {
   color?: string;
@@ -11,17 +8,17 @@ interface Props extends SVGProps<SVGSVGElement> {
 const ExpIcon: FC<Props> = (props: Props) => {
   const { color = "white", type = "single" } = props;
   return (
-    <motion.div {...enterAnimation} key="exp-logo">
+    <div key="exp-logo">
       <svg
         version="1.1"
         id="Layer_4"
         xmlns="http://www.w3.org/2000/svg"
         x="0px"
         y="0px"
-        viewBox="0 0 1500 1500"
+        viewBox="150 150 1200 1200"
         fill={color}
-        width={45}
-        height={45}
+        width={40}
+        height={40}
       >
         <g>
           <g>
@@ -82,7 +79,7 @@ const ExpIcon: FC<Props> = (props: Props) => {
           </g>
         </g>
       </svg>
-    </motion.div>
+    </div>
   );
 };
 

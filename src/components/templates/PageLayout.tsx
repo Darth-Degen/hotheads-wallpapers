@@ -1,7 +1,7 @@
 import { FC, ReactNode, useEffect, useState } from "react";
 import { PageHead, Header, Footer, Navigation } from "@components";
 import { motion } from "framer-motion";
-import { midEnterAnimation, enterAnimation } from "@constants";
+import { enterAnimation } from "@constants";
 
 interface Props {
   children: ReactNode;
