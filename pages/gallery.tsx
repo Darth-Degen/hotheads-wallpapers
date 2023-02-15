@@ -4,6 +4,7 @@ import {
   ScrollItem,
   ListItem,
   ExpandIcon,
+  Modal,
 } from "@components";
 import { RefObject, useEffect, useRef, useState } from "react";
 import { NextPage } from "next";
@@ -18,6 +19,8 @@ import Image from "next/image";
 
 const Home: NextPage = () => {
   const [tabId, setTabId] = useState<number>(0);
+  const [imageModal, setImageModal] = useState<string>("");
+  const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
   const ref = useRef() as RefObject<HTMLDivElement> | undefined;
 
@@ -53,7 +56,10 @@ const Home: NextPage = () => {
                     key={index}
                   >
                     <ScrollItem>
-                      <motion.div className="absolute top-2.5 right-2.5 cursor-pointer hover:outline hover:outline-custom-black rounded-full transition-all duration-100">
+                      <motion.div
+                        className="absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 cursor-pointer hover:outline hover:outline-custom-black rounded-full transition-all duration-100"
+                        onClick={() => setImageModal(item.src)}
+                      >
                         <ExpandIcon size={25} />
                       </motion.div>
                       <Image
@@ -81,6 +87,20 @@ const Home: NextPage = () => {
           )}
         </AnimatePresence>
       </div>
+      <Modal
+        show={imageModal.length > 0}
+        close={setImageModal}
+        contentLoaded={imageLoaded}
+      >
+        <Image
+          src={imageModal.replace("-display", "")}
+          fill={true}
+          alt="Image"
+          objectFit="contain"
+          className={`rounded-3xl p-4 `}
+          onLoadingComplete={() => setImageLoaded(true)}
+        />
+      </Modal>
     </PageLayout>
   );
 };

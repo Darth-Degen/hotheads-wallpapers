@@ -9,6 +9,7 @@ const DiscordIcon = dynamic(()=> import("./@icons/DiscordIcon"))
 const ExpIcon = dynamic(()=> import("./@icons/ExpIcon"))
 const ExpandIcon = dynamic(()=> import("./@icons/ExpandIcon"))
 const MenuIcon = dynamic(()=> import("./@icons/MenuIcon"))
+const CloseIcon = dynamic(()=> import("./@icons/CloseIcon"))
 //atoms
 const DropdownButton = dynamic(()=> import("./atoms/DropdownButton"))
 const DropdownItem = dynamic(()=> import("./atoms/DropdownItem"))
@@ -29,6 +30,7 @@ const NavItem = dynamic(()=> import("./molecules/NavItem"))
 const TabBar = dynamic(()=> import("./molecules/TabBar"))
 const ListItem = dynamic(()=> import("./molecules/ListItem"))
 const ScrollItem = dynamic(()=> import("./molecules/ScrollItem"))
+const Modal = dynamic(()=> import("./molecules/Modal"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -74,5 +76,7 @@ export {
   TabBar,
   ListItem,
   ScrollItem,
-  ExpandIcon
+  ExpandIcon,
+  CloseIcon,
+  Modal
 }
