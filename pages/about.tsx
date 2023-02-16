@@ -1,45 +1,13 @@
 import { PageLayout, TabBar, ScrollItem, ListItem } from "@components";
-import { RefObject, useRef, useState } from "react";
+import { useState } from "react";
 import { NextPage } from "next";
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { midExitAnimation } from "@constants";
 
 const About: NextPage = () => {
-  const [scrollDown, setScrollDown] = useState<boolean>(true);
   const [tabId, setTabId] = useState<number>(0);
 
   const tabs: string[] = ["info", "lore"];
-
-  //scroll direction
-  const ref = useRef() as RefObject<HTMLDivElement> | undefined;
-
-  // const scrollRef = useRef<number>();
-  // const { scrollY } = useScroll({ container: ref });
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   // console.log("Page scroll: ", scrollRef.current, latest);
-
-  //   //first instance
-  //   if (scrollRef.current === undefined) {
-  //     scrollRef.current = latest;
-  //     return;
-  //   }
-
-  //   //scroll down
-  //   if (scrollRef.current < latest) {
-  //     setScrollDown(true);
-  //   }
-  //   //scroll up
-  //   else if (scrollRef.current > latest) {
-  //     setScrollDown(false);
-  //   }
-
-  //   scrollRef.current = latest;
-  // });
 
   const handleTabChange = (tab: number) => {
     setTabId(tab);
@@ -55,7 +23,6 @@ const About: NextPage = () => {
           {tabId === 0 ? (
             <motion.div
               className="overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full flex flex-col gap-10 px-2 md:px-5"
-              ref={ref}
               {...midExitAnimation}
               key="info"
             >

@@ -6,13 +6,22 @@ import {
   ExpandIcon,
   Modal,
 } from "@components";
-import { RefObject, useEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  RefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { NextPage } from "next";
 import {
   motion,
   useScroll,
   useMotionValueEvent,
   AnimatePresence,
+  useInView,
 } from "framer-motion";
 import { midExitAnimation, collections, midClickAnimation } from "@constants";
 import Image from "next/image";
@@ -29,11 +38,6 @@ const Home: NextPage = () => {
     setTabId(tab);
   };
 
-  const getId = (id: number): string => {
-    if (id < 10) return ("00" + id) as string;
-    return ("0" + id) as string;
-  };
-
   return (
     <PageLayout header="Gallery">
       <div className="w-full h-full md:p-8 flex flex-col items-center gap-10">
@@ -48,37 +52,7 @@ const Home: NextPage = () => {
               {...midExitAnimation}
               key="info"
             >
-              {/* images */}
-              <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-4 md:px-6 xl:px-20">
-                {collections.map((item, index) => (
-                  <div
-                    className="rounded-lg md:rounded-3xl relative"
-                    key={index}
-                  >
-                    <ScrollItem>
-                      <motion.div
-                        className="absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 cursor-pointer hover:outline hover:outline-custom-black rounded-full transition-all duration-100"
-                        onClick={() => setImageModal(item.src)}
-                      >
-                        <ExpandIcon size={25} />
-                      </motion.div>
-                      <Image
-                        src={item.src}
-                        alt={`HH-${index}`}
-                        width={250}
-                        height={250}
-                        className="rounded-lg md:rounded-3xl"
-                      />
-                      <div className="font-mono text-center pt-4 text-xs">
-                        Hot Heads
-                      </div>
-                      <div className="font-mono text-center  font-bold">
-                        #{getId(index)}
-                      </div>
-                    </ScrollItem>
-                  </div>
-                ))}
-              </div>
+              <Gallery collection={collections} setImageModal={setImageModal} />
             </motion.div>
           ) : (
             <motion.div {...midExitAnimation} key="lore">
@@ -97,11 +71,102 @@ const Home: NextPage = () => {
           fill={true}
           alt="Image"
           objectFit="contain"
-          className={`rounded-3xl p-4 `}
+          className={`rounded-3xl`}
           onLoadingComplete={() => setImageLoaded(true)}
         />
       </Modal>
     </PageLayout>
+  );
+};
+
+import { Collection } from "@types";
+import { useWindowSize } from "@hooks";
+interface GalleryProps {
+  collection: Collection[];
+  setImageModal: Dispatch<SetStateAction<string>>;
+}
+const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
+  const { collection, setImageModal } = props;
+
+  const [winWidth, winHeight] = useWindowSize();
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const getDelayOrder = (index: number): number => {
+    if (winWidth < 767) {
+      return index < 6 ? index % 6 : index % 2;
+    }
+    return index < 6 ? index % 6 : index % 3;
+  };
+
+  return (
+    <motion.div
+      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-4 md:px-6 xl:px-20"
+      variants={container}
+      initial="hidden"
+      animate="show"
+    >
+      {collection.map((item, index) => {
+        // const ref = useRef(null);
+        // const isInView = useInView(ref);
+        return (
+          <ScrollItem
+            duration={1}
+            key={index}
+            index={getDelayOrder(index)}
+            // scrollUpAnimation={false}
+          >
+            <GalleryItem
+              key={index}
+              index={index}
+              setImageModal={setImageModal}
+              src={item.src}
+            />
+          </ScrollItem>
+        );
+      })}
+    </motion.div>
+  );
+};
+
+interface GalleryItemProps {
+  index: number;
+  setImageModal: Dispatch<SetStateAction<string>>;
+  src: string;
+}
+const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
+  const { index, setImageModal, src } = props;
+
+  const getId = (id: number): string => {
+    if (id < 10) return ("00" + id) as string;
+    return ("0" + id) as string;
+  };
+
+  return (
+    <div className="rounded-lg md:rounded-3xl relative" key={index}>
+      <div
+        className="absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 cursor-pointer hover:outline hover:outline-custom-black rounded-full transition-all duration-100"
+        onClick={() => setImageModal(src)}
+      >
+        <ExpandIcon size={25} />
+      </div>
+      <Image
+        src={src}
+        alt={`HH-${index}`}
+        width={250}
+        height={250}
+        className="rounded-lg md:rounded-3xl"
+      />
+      <div className="font-mono text-center pt-4 text-xs">Hot Heads</div>
+      <div className="font-mono text-center  font-bold">#{getId(index)}</div>
+    </div>
   );
 };
 

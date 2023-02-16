@@ -17,14 +17,14 @@ const PageLayout: FC<Props> = (props: Props) => {
   }, []);
 
   return (
-    <div className="relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none">
+    <div className="relative flex flex-col justify-start lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none">
       <PageHead
         title="Hot Heads"
         description="Welcome to your Hot Heads asset portfolio"
       />
 
       <Navigation />
-      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-40 2xl:px-[15%] mb-44 lg:mb-auto lg:py-24">
+      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-40 2xl:px-[15%] mb-0 lg:mb-auto lg:py-24">
         {didMount && (
           <>
             <Header />

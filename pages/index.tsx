@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           HotHeads
         </h2>
         {/* md + screens */}
-        <div className="hidden md:block relative w-full h-1/3 lg:h-1/2 2xl:h-[60%]">
+        <div className="hidden md:block relative w-screen h-1/3 lg:h-1/2 2xl:h-[60%] px-0 mx-0">
           <Image
             src="/images/underworld.png"
             fill={true}
