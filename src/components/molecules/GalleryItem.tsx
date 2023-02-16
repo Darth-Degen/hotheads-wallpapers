@@ -42,19 +42,13 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
         <Image
           src={src}
           alt={`HH-${index}`}
-          width={250}
-          height={250}
+          width={200}
+          height={200}
           className="rounded-lg md:rounded-3xl"
         />
-        <motion.div
-          className={`h-5 bg-custom-green`}
-          initial={{ width: 0 }}
-          animate={{ width: progrss * 100 + "%" }}
-          transition={{ duration: 0.69 }}
-        />
-        <motion.div className="font-mono text-center pt-4 text-xs">
+        <motion.p className="font-mono text-center pt-3 w-full whitespace-nowrap text-xs">
           Hot Heads
-        </motion.div>
+        </motion.p>
         <div className="font-mono text-center font-bold">#{getId(index)}</div>
       </motion.div>
     </div>

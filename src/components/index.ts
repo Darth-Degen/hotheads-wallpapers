@@ -32,6 +32,7 @@ const ListItem = dynamic(()=> import("./molecules/ListItem"))
 const ScrollItem = dynamic(()=> import("./molecules/ScrollItem"))
 const Modal = dynamic(()=> import("./molecules/Modal"))
 const GalleryItem = dynamic(()=> import("./molecules/GalleryItem"))
+const CollabItem = dynamic(()=> import("./molecules/CollabItem"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -84,5 +85,6 @@ export {
   Modal,
   GalleryItem,
   Gallery,
-  Collab
+  Collab,
+  CollabItem,
 }

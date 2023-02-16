@@ -1,17 +1,17 @@
 import { Dispatch, FC, SetStateAction } from "react";
-import { GalleryItem, ScrollItem } from "@components";
+import { CollabItem, GalleryItem, ScrollItem } from "@components";
 
-import { Collection } from "@types";
+import { Collab, Collection } from "@types";
 import { useWindowSize } from "@hooks";
 import { motion } from "framer-motion";
 
 interface GalleryProps {
-  collection: Collection[];
+  collabs: Collab[];
   setImageModal: Dispatch<SetStateAction<string>>;
 }
 
 const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
-  const { collection, setImageModal } = props;
+  const { collabs, setImageModal } = props;
   const [winWidth, winHeight] = useWindowSize();
 
   const container = {
@@ -34,28 +34,27 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
   return (
     <motion.div
-      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-4 md:px-6 xl:px-20"
+      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-8 md:px-6 xl:px-20"
       variants={container}
       initial="hidden"
       animate="show"
     >
-      {collection.map((item, index) => {
+      {collabs.map((item: Collab, index) => {
         return (
-          <ScrollItem
-            duration={1}
-            key={index}
-            index={getDelayOrder(index)}
-            enableY={true}
-            // scrollUpAnimation={false}
-            isInViewOnce={true}
-          >
-            <GalleryItem
-              key={index}
-              index={index}
-              setImageModal={setImageModal}
-              src={item.src}
-            />
-          </ScrollItem>
+          <div className={` ${item.isBanner ? "col-span-3" : ""}`} key={index}>
+            <ScrollItem
+              duration={1}
+              index={getDelayOrder(index)}
+              enableY={true}
+              isInViewOnce={true}
+            >
+              <CollabItem
+                index={index}
+                setImageModal={setImageModal}
+                item={item}
+              />
+            </ScrollItem>
+          </div>
         );
       })}
     </motion.div>

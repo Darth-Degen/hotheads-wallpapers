@@ -1,6 +1,5 @@
 import { Dispatch, FC, SetStateAction } from "react";
 import { GalleryItem, ScrollItem } from "@components";
-
 import { Collection } from "@types";
 import { useWindowSize } from "@hooks";
 import { motion } from "framer-motion";
@@ -34,30 +33,30 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
   return (
     <motion.div
-      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-4 md:px-6 xl:px-20"
+      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20"
       variants={container}
       initial="hidden"
       animate="show"
     >
-      {collection.map((item, index) => {
-        return (
-          <ScrollItem
-            duration={1}
-            key={index}
-            index={getDelayOrder(index)}
-            enableY={true}
-            // scrollUpAnimation={false}
-            isInViewOnce={true}
-          >
-            <GalleryItem
+      {collection &&
+        collection.map((item, index) => {
+          return (
+            <ScrollItem
+              duration={1}
               key={index}
-              index={index}
-              setImageModal={setImageModal}
-              src={item.src}
-            />
-          </ScrollItem>
-        );
-      })}
+              index={getDelayOrder(index)}
+              enableY={true}
+              isInViewOnce={true}
+            >
+              <GalleryItem
+                key={index}
+                index={index}
+                setImageModal={setImageModal}
+                src={item.src}
+              />
+            </ScrollItem>
+          );
+        })}
     </motion.div>
   );
 };

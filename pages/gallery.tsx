@@ -2,7 +2,7 @@ import { PageLayout, TabBar, Modal, Collab, Gallery } from "@components";
 import { useState } from "react";
 import { NextPage } from "next";
 import { motion, AnimatePresence } from "framer-motion";
-import { midExitAnimation, collections } from "@constants";
+import { midExitAnimation, collections, collabs } from "@constants";
 import Image from "next/image";
 
 const Home: NextPage = () => {
@@ -14,10 +14,10 @@ const Home: NextPage = () => {
   const handleTabChange = (tab: number) => {
     setTabId(tab);
   };
-
+  console.log("collabs ", collabs);
   return (
     <PageLayout header="Gallery">
-      <motion.div className="w-full h-full md:p-8 flex flex-col items-center gap-10">
+      <motion.div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-10">
         {/* toggle  */}
         <TabBar tabs={tabs} handleTabChange={handleTabChange} />
         {/* content */}
@@ -32,15 +32,13 @@ const Home: NextPage = () => {
               </motion.div>
             ) : (
               <motion.div {...midExitAnimation} key="collab">
-                <Collab
-                  collection={collections}
-                  setImageModal={setImageModal}
-                />
+                <Collab collabs={collabs} setImageModal={setImageModal} />
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </motion.div>
+      {/* modal */}
       <Modal
         show={imageModal.length > 0}
         close={setImageModal}
