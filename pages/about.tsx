@@ -26,7 +26,7 @@ const About: NextPage = () => {
               {...midExitAnimation}
               key="info"
             >
-              <ScrollItem>
+              <ScrollItem key="info-1">
                 <ListItem>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry&apos;s
@@ -35,7 +35,7 @@ const About: NextPage = () => {
                   specimen book. It has survived not only five centuries, but
                 </ListItem>
               </ScrollItem>
-              <ScrollItem>
+              <ScrollItem key="info-2">
                 <ListItem>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry&apos;s
@@ -44,7 +44,7 @@ const About: NextPage = () => {
                   specimen book. It has survived not only five centuries, but
                 </ListItem>
               </ScrollItem>
-              <ScrollItem>
+              <ScrollItem key="info-3">
                 <ListItem>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry&apos;s
@@ -53,7 +53,7 @@ const About: NextPage = () => {
                   specimen book. It has survived not only five centuries, but
                 </ListItem>
               </ScrollItem>
-              <ScrollItem>
+              <ScrollItem key="info-4">
                 <ListItem>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry&apos;s
@@ -62,7 +62,7 @@ const About: NextPage = () => {
                   specimen book. It has survived not only five centuries, but
                 </ListItem>
               </ScrollItem>
-              <ScrollItem>
+              <ScrollItem key="info-5">
                 <ListItem>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry&apos;s
@@ -71,7 +71,7 @@ const About: NextPage = () => {
                   specimen book. It has survived not only five centuries, but
                 </ListItem>
               </ScrollItem>
-              <ScrollItem>
+              <ScrollItem key="info-6">
                 <ListItem>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry&apos;s

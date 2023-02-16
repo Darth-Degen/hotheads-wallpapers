@@ -31,6 +31,7 @@ const TabBar = dynamic(()=> import("./molecules/TabBar"))
 const ListItem = dynamic(()=> import("./molecules/ListItem"))
 const ScrollItem = dynamic(()=> import("./molecules/ScrollItem"))
 const Modal = dynamic(()=> import("./molecules/Modal"))
+const GalleryItem = dynamic(()=> import("./molecules/GalleryItem"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -38,6 +39,8 @@ const Navigation = dynamic(()=> import("./organisms/Navigation"))
 const StepContainer = dynamic(()=> import("./organisms/StepContainer"))
 const Form = dynamic(() => import("./organisms/Form") )
 const MobileDisplay = dynamic(() => import("./organisms/MobileDisplay") )
+const Gallery = dynamic(() => import("./organisms/Gallery") )
+const Collab = dynamic(() => import("./organisms/Collab") )
 //templates
 const PageLayout = dynamic(()=> import("./templates/PageLayout"))
 const DownloadView = dynamic(()=> import("./templates/DownloadView"))
@@ -78,5 +81,8 @@ export {
   ScrollItem,
   ExpandIcon,
   CloseIcon,
-  Modal
+  Modal,
+  GalleryItem,
+  Gallery,
+  Collab
 }

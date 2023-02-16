@@ -1,7 +1,7 @@
 import { FC, ReactNode, useEffect, useState } from "react";
 import { PageHead, Header, Footer, Navigation } from "@components";
-import { motion } from "framer-motion";
 import { enterAnimation } from "@constants";
+import { motion } from "framer-motion";
 
 interface Props {
   children: ReactNode;
@@ -12,12 +12,38 @@ const PageLayout: FC<Props> = (props: Props) => {
   const { children, header } = props;
   const [didMount, setDidMount] = useState<boolean>(false);
 
+  //scroll direction
+  // const [scrollDown, setScrollDown] = useState<boolean>(true);
+  // const containerRef = useRef() as RefObject<HTMLElement> | undefined;
+  // const scrollRef = useRef<number>();
+  // const { scrollY } = useScroll();
+
+  // useMotionValueEvent(scrollY, "change", (latest) => {
+  //   console.log("window scroll: ", scrollRef.current, latest);
+  //   //first instance
+  //   if (scrollRef.current === undefined) {
+  //     scrollRef.current = latest;
+  //     return;
+  //   }
+
+  //   //scroll down
+  //   if (scrollRef.current < latest) {
+  //     setScrollDown(true);
+  //   }
+  //   //scroll up
+  //   else if (scrollRef.current > latest) {
+  //     setScrollDown(false);
+  //   }
+
+  //   scrollRef.current = latest;
+  // });
+
   useEffect(() => {
     setDidMount(true);
   }, []);
 
   return (
-    <div className="relative flex flex-col justify-start lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none">
+    <div className="relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none">
       <PageHead
         title="Hot Heads"
         description="Welcome to your Hot Heads asset portfolio"
@@ -38,7 +64,7 @@ const PageLayout: FC<Props> = (props: Props) => {
                 </motion.h2>
               )}
               <motion.div
-                className=" lg:overflow-y-auto p-2"
+                className="lg:overflow-y-auto p-2"
                 {...enterAnimation}
               >
                 {children}
