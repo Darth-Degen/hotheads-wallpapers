@@ -12,7 +12,9 @@ const Navigation: FC = () => {
             <NavItem href="/about">About</NavItem>
             <NavItem href="/gallery">Gallery</NavItem>
             <NavItem href="/inventory">Inventory</NavItem>
-            <NavItem href="/merch">Merch</NavItem>
+            <NavItem href="/merch" disabled={true}>
+              Merch
+            </NavItem>
             <NavItem href="/faq">FAQ</NavItem>
           </div>
         </div>

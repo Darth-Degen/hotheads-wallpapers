@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   const handleTabChange = (tab: number) => {
     setTabId(tab);
   };
-  console.log("collabs ", collabs);
+
   return (
     <PageLayout header="Gallery">
       <motion.div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-10">

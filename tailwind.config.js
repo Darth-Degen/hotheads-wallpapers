@@ -20,6 +20,7 @@ module.exports = {
         "custom-light-gray": "#6F7273",
         "custom-yellow": "#FFBA21",
         "custom-green": "#56BC78",
+        "custom-orange": "#FF5722",
         // orange -> #fdba74
         // red -> #f87171
         // gray-300 -> #d1d5db
