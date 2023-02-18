@@ -14,25 +14,6 @@ const NavItem: FC<Props> = (props: Props) => {
   const router = useRouter();
   const isCurrent = router.pathname === href;
 
-  const Item = () => (
-    <div
-      className={` transition-all duration-300 py-5 ${
-        disabled
-          ? "opacity-20 cursor-default"
-          : isCurrent
-          ? "text-custom-yellow cursor-default"
-          : "text-gray-300 hover:text-custom-yellow cursor-pointer"
-      }`}
-    >
-      {children}
-      <motion.div
-        className={`h-0.5 bg-custom-green`}
-        initial={{ width: 0 }}
-        animate={{ width: isCurrent ? "100%" : 0 }}
-        transition={{ duration: 0.69 }}
-      />
-    </div>
-  );
   const DisabledItem = () => (
     <div
       className={` transition-all duration-300 py-5 opacity-20 cursor-default `}
@@ -47,10 +28,45 @@ const NavItem: FC<Props> = (props: Props) => {
         <DisabledItem />
       ) : (
         <Link href={href}>
-          <Item />
+          <Item isCurrent={isCurrent}>{children}</Item>
         </Link>
       )}
     </>
+  );
+};
+
+interface ItemProps {
+  children: ReactNode;
+  isCurrent: boolean;
+}
+const Item: FC<ItemProps> = (props: ItemProps) => {
+  const { children, isCurrent } = props;
+  return (
+    <div
+      className={` transition-all duration-300 py-5 ${
+        isCurrent
+          ? "text-custom-yellow cursor-default"
+          : "text-gray-300 hover:text-custom-yellow cursor-pointer"
+      }`}
+    >
+      {children}
+      <Underline animate={isCurrent} />
+    </div>
+  );
+};
+
+interface UnderlineProps {
+  animate: boolean;
+}
+const Underline: FC<UnderlineProps> = (props: UnderlineProps) => {
+  const { animate } = props;
+  return (
+    <motion.div
+      className={`h-0.5 bg-custom-green`}
+      initial={{ width: 0 }}
+      animate={{ width: animate ? "100%" : 0 }}
+      transition={{ duration: 0.69 }}
+    />
   );
 };
 

@@ -24,27 +24,24 @@ const PageLayout: FC<Props> = (props: Props) => {
       />
 
       <Navigation />
-      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-8 md:px-16 lg:px-40 2xl:px-[15%] mb-0 lg:mb-auto lg:py-24">
+      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-0 md:px-16 lg:px-44 2xl:px-[15%] mb-0 lg:mb-auto lg:py-24">
         {didMount && (
-          <>
-            <Header />
-            <div className="bg-custom-dark-gray h-full w-full rounded-2xl lg:rounded-[80px] flex flex-col items-center my-4 py-10 px-3  overflow-hidden ">
-              {header && (
-                <motion.h2
-                  className="text-custom-yellow text-xl lg:text-4xl uppercase "
-                  {...enterAnimation}
-                >
-                  {header}
-                </motion.h2>
-              )}
-              <motion.div
-                className="lg:overflow-y-auto p-2 w-full"
+          <div className="bg-custom-dark-gray h-full w-full md:rounded-2xl lg:rounded-[80px] flex flex-col items-center my-4 py-10 px-3  overflow-hidden ">
+            {header && (
+              <motion.h2
+                className="text-custom-yellow text-xl lg:text-4xl uppercase "
                 {...enterAnimation}
               >
-                {children}
-              </motion.div>
-            </div>
-          </>
+                {header}
+              </motion.h2>
+            )}
+            <motion.div
+              className="lg:overflow-y-auto p-2 w-full"
+              {...enterAnimation}
+            >
+              {children}
+            </motion.div>
+          </div>
         )}
       </main>
       <Footer />
