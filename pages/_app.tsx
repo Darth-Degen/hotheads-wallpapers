@@ -12,7 +12,6 @@ import {
   BraveWalletAdapter,
   PhantomWalletAdapter,
   SolflareWalletAdapter,
-  UnsafeBurnerWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
@@ -22,10 +21,13 @@ require("@solana/wallet-adapter-react-ui/styles.css");
 
 const App = ({ Component, pageProps }: AppProps) => {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-  const network = WalletAdapterNetwork.Mainnet;
+  const network = WalletAdapterNetwork.Devnet; //Mainnet;
 
   // You can also provide a custom RPC endpoint.
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+
+  const endpoint =
+    "https://bold-cosmological-daylight.solana-mainnet.discover.quiknode.pro/d6b580eb3a983f95fece05b014d36fe7708d9dea/";
 
   const wallets = useMemo(
     () => [
@@ -33,7 +35,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       new BraveWalletAdapter(),
       new BackpackWalletAdapter(),
       new SolflareWalletAdapter({ network }),
-      new UnsafeBurnerWalletAdapter(),
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
