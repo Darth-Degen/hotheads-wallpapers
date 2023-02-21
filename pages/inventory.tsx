@@ -21,6 +21,7 @@ const Home: NextPage = () => {
   const [metadata, setMetadata] = useState<
     FindNftsByOwnerOutput[] | undefined
   >();
+  const [error, setError] = useState<boolean>(false);
 
   const { connection } = useConnection();
   const { publicKey } = useWallet();
@@ -43,8 +44,9 @@ const Home: NextPage = () => {
       );
       setMetadata(jsonArr);
       console.log("jsonArr ", jsonArr);
-    } catch (e) {
-      console.error("getTokens ", e);
+    } catch (e: any) {
+      console.error("getTokens ", e.message);
+      setError(true);
     }
   }, [connection, publicKey]);
 
@@ -56,19 +58,31 @@ const Home: NextPage = () => {
     setDidMount(true);
   }, []);
 
+  useEffect(() => {
+    if (!connection || !publicKey) {
+      setMetadata(undefined);
+      setError(false);
+    }
+  }, [connection, publicKey]);
+
   return (
     <PageLayout header="Inventory">
       {didMount && (
         <>
           <div className="w-full h-full md:p-6 flex flex-col items-center gap-8">
             <AnimatePresence mode="wait">
+              {error && (
+                <div className="text-red-500 text-sm text-center">
+                  Error retrieving NFTs
+                </div>
+              )}
               {publicKey && connection ? (
                 <motion.div className="" key="connected" {...midExitAnimation}>
                   <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20">
                     {metadata &&
-                      metadata.map((item, index) => (
+                      metadata.map((item: any, index) => (
                         <div key={index} className="flex flex-col">
-                          <Image
+                          <img
                             src={item.image}
                             alt={`NFT-${index}`}
                             width={200}
