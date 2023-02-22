@@ -6,27 +6,32 @@ export const collabs: Collab[] = [
     src:"/images/collabs/000.png",
     label:"Hot Heads x Adam Ape",
     twitter:"https://twitter.com/HotHeadsNFT",
-    isBanner: false,  
+    isBanner: false,
+    url:""  
+
   },
   {
     id: 1,
     src:"/images/collabs/001.png",
     label:"Hot Heads x Adam Ape",
     twitter:"https://twitter.com/HotHeadsNFT",
-    isBanner: false,  
+    isBanner: false,
+    url:""  
   },
   {
     id: 2,
     src:"/images/collabs/002.png",
     label:"Hot Heads x Adam Ape",
     twitter:"https://twitter.com/HotHeadsNFT",
-    isBanner: false,   
+    isBanner: false,
+    url:""   
   },
   {
     id: 3,
     src:"/images/collabs/003.png",
     label:"Hot Heads x Adam Ape",
     twitter:"https://twitter.com/HotHeadsNFT",
-    isBanner: true,  
+    isBanner: true, 
+    url:"" 
   },
 ];

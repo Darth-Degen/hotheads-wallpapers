@@ -7,7 +7,7 @@ const ArrowIcon = dynamic(()=> import("./@icons/ArrowIcon"))
 const TwitterIcon = dynamic(()=> import("./@icons/TwitterIcon"))
 const DiscordIcon = dynamic(()=> import("./@icons/DiscordIcon"))
 const ExpIcon = dynamic(()=> import("./@icons/ExpIcon"))
-const ExpandIcon = dynamic(()=> import("./@icons/ExpandIcon"))
+const ExchangeIcon = dynamic(()=> import("./@icons/ExchangeIcon"))
 const MenuIcon = dynamic(()=> import("./@icons/MenuIcon"))
 const CloseIcon = dynamic(()=> import("./@icons/CloseIcon"))
 //atoms
@@ -81,7 +81,7 @@ export {
   TabBar,
   ListItem,
   ScrollItem,
-  ExpandIcon,
+  ExchangeIcon,
   CloseIcon,
   Modal,
   GalleryItem,

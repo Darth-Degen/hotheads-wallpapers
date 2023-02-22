@@ -1,5 +1,6 @@
 
 export interface Collection {
   id: number;
-  src: string
+  src: string;
+  url: string;
 }

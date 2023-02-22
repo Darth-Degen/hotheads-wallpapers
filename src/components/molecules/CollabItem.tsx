@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ExpandIcon, TwitterIcon } from "@components";
+import { ExchangeIcon, TwitterIcon } from "@components";
 import { Collab } from "@types";
 
 interface CollabItemProps {
@@ -20,10 +20,14 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
   };
 
   return (
-    <motion.div
+    <div
       className={`rounded-lg md:rounded-3xl relative flex flex-col items-center w-full gap-3 py-1`}
     >
-      <div className="relative">
+      <motion.div
+        className="relative cursor-pointer"
+        onClick={() => setImageModal(item.src)}
+        whileHover={{ scale: 1.06 }}
+      >
         <Image
           src={item.src}
           alt={`Colab-${index}`}
@@ -31,22 +35,22 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
           height={200}
           className="rounded-lg md:rounded-3xl"
         />
+      </motion.div>
+      <p className="font-mono text-center w-full whitespace-nowrap text-xs">
+        {item.label}
+      </p>
+      <div className="flex gap-2">
         <div
-          className={`absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 cursor-pointer 
-          hover:outline hover:outline-custom-black rounded-full transition-all duration-100`}
-          onClick={() => setImageModal(item.src)}
+          className={`cursor-pointer hover:outline hover:outline-white rounded-full transition-all duration-100`}
+          onClick={() => window.open(item.url, "_blank", "noreferrer")}
         >
-          <ExpandIcon size={25} />
+          <ExchangeIcon size={30} />
+        </div>
+        <div className=" transition-all duration-100` hover:outline hover:outline-white rounded-full">
+          <TwitterIcon />
         </div>
       </div>
-      <motion.p className="font-mono text-center w-full whitespace-nowrap text-xs">
-        {item.label}
-      </motion.p>
-      <div className=" transition-all duration-100` hover:outline hover:outline-white rounded-full">
-        <TwitterIcon />
-      </div>
-      {/* <div className="font-mono text-center font-bold">#{getId(index)}</div> */}
-    </motion.div>
+    </div>
   );
 };
 

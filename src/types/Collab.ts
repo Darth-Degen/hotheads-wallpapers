@@ -5,4 +5,5 @@ export interface Collab {
   label:string;
   twitter: string;
   isBanner?: boolean;
+  url: string;
 }

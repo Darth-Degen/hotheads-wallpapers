@@ -63,9 +63,9 @@ export const midEnterAnimation = {
 }
 
 export const scaleExitAnimation = {
-  initial:{ opacity: 0, scale: 0.8 },
+  initial:{ opacity: 0, scale: 0.5 },
   animate:{ opacity: 1, scale: 1 },
-  exit:{ opacity: 0, scale: 0.8 },
+  exit:{ opacity: 0, scale: 0.5 },
   transition:{ duration: 0.4, ease: "easeInOut" },
 }
 //variants

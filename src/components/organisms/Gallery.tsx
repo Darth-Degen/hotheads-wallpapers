@@ -33,7 +33,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
   return (
     <motion.div
-      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20"
+      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20 py-5"
       variants={container}
       initial="hidden"
       animate="show"
@@ -53,6 +53,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
                 index={index}
                 setImageModal={setImageModal}
                 src={item.src}
+                url={item.url}
               />
             </ScrollItem>
           );
