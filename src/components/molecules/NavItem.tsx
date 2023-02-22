@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { motion } from "framer-motion";
+import { Underline } from "@components";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -52,21 +52,6 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
       {children}
       <Underline animate={isCurrent} />
     </div>
-  );
-};
-
-interface UnderlineProps {
-  animate: boolean;
-}
-const Underline: FC<UnderlineProps> = (props: UnderlineProps) => {
-  const { animate } = props;
-  return (
-    <motion.div
-      className={`h-0.5 bg-custom-green`}
-      initial={{ width: 0 }}
-      animate={{ width: animate ? "100%" : 0 }}
-      transition={{ duration: 0.69 }}
-    />
   );
 };
 

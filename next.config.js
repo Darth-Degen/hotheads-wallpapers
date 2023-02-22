@@ -3,13 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      "www.arweave.net",
-      "arweave.net",
-      "shdw-drive.genesysgo.net",
-      "magnum-ai-images.s3.us-west-1.amazonaws.com",
-      "content.honey.land",
-    ],
+    domains: ["www.arweave.net", "arweave.net", "shdw-drive.genesysgo.net"],
   },
 };
 
