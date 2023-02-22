@@ -17,12 +17,12 @@ const Home: NextPage = () => {
         className="h-screen w-screen  bg-custom-black flex flex-col justify-evenly items-center"
         {...midEnterAnimation}
       >
-        <h2 className="font-pressStart text-2xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-t from-red-600  to-yellow-300">
+        <h2 className="mt-4 font-pressStart text-2xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-t from-red-600  to-yellow-300">
           {/* <h2 className="font-pressStart mt-3 text-2xl text-orange-300"> */}
           HotHeads
         </h2>
         {/* md + screens */}
-        <div className="hidden md:block relative w-screen h-1/3 lg:h-1/2 2xl:h-[60%] px-0 mx-0">
+        <div className="hidden md:block relative w-screen h-1/3 lg:h-1/2 2xl:h-[70%] px-0 mx-0">
           <Image
             src="/images/underworld.png"
             fill={true}
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           />
         </div>
         <Link href="/about">
-          <div className="outline outline-2 rounded text-gray-300 outline-gray-300 px-5 py-2 cursor-pointer bg-custom-black hover:text-orange-300 hover:outline-orange-300 transition-all duration-500">
+          <div className="mb-4 outline outline-2 rounded text-gray-300 outline-gray-300 px-5 py-2 cursor-pointer bg-custom-black hover:text-orange-300 hover:outline-orange-300 transition-all duration-500">
             Enter the Underworld
           </div>
         </Link>

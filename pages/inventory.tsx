@@ -71,27 +71,27 @@ const Home: NextPage = () => {
   return (
     <PageLayout header="Inventory">
       {didMount && (
-        <>
-          <div className="h-full px-0 md:px-6 flex flex-col items-center mx-0 lg:mx-10">
-            <div className="h-6 py-7 md:pt-6 md:pb-8 flex items-center justify-center">
-              <AnimatePresence mode="wait">
-                {error && (
-                  <div className="text-red-500 text-sm text-center">
-                    Error retrieving NFTs
-                  </div>
-                )}
-                {/* has hot head */}
-                {/* {publicKey &&
+        <div className="h-full px-0 md:px-6 lg:px-10 flex flex-col w-full items-center gap-4">
+          <div className="text-sm text-center h-6 py-7 md:pt-6 md:pb-4 flex flex-col w-full items-center justify-center">
+            <AnimatePresence mode="wait">
+              {error && (
+                <div className="text-red-500 text-sm text-center">
+                  Error retrieving NFTs
+                </div>
+              )}
+              {/* has hot head */}
+              {publicKey &&
                 connection &&
                 !error &&
                 metadata &&
                 metadata.length > 0 && (
                   <motion.div
-                    className=""
+                    className="flex gap-0.5 md:gap-4 w-full font-mono items-start justify-center bg-custom-black 
+                      rounded md:rounded-2xl h-[150px] px-2"
                     key="connected"
                     {...midExitAnimation}
                   >
-                    <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20">
+                    {/* <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20">
                       {metadata.map((item: any, index) => (
                         <div key={index} className="flex flex-col">
                           <p className="font-mono text-center pt-3 w-full whitespace-nowrap text-xs">
@@ -99,42 +99,37 @@ const Home: NextPage = () => {
                           </p>
                         </div>
                       ))}
-                    </div>
+                    </div> */}
                   </motion.div>
-                )} */}
-                {/* no hot heads found */}
-                {publicKey &&
-                  connection &&
-                  !error &&
-                  metadata &&
-                  metadata.length === 0 && (
-                    <div className="text-red-500 text-sm text-center w-full">
-                      No Hot Heads found
-                    </div>
-                  )}
-                {/* error fetching nfts */}
-                {publicKey && connection && error && (
-                  <div className="text-red-500 text-sm text-center w-full">
-                    Error fetching NFTs
+                )}
+              {/* no hot heads found */}
+              {publicKey &&
+                connection &&
+                !error &&
+                metadata &&
+                metadata.length === 0 && (
+                  <div className="text-red-500 ">No Hot Heads found</div>
+                )}
+              {/* error fetching nfts */}
+              {publicKey && connection && error && (
+                <div className="text-red-500">Error fetching NFTs</div>
+              )}
+              {/* not signed in */}
+              {(!publicKey || !connection) && !error && (
+                <motion.div
+                  className=""
+                  key="disconnected"
+                  {...midExitAnimation}
+                >
+                  <div className="text-custom-green text-sm text-center h-6 py-7 md:pt-6 md:pb-4 flex flex-col w-full  items-center justify-center">
+                    Connect wallet to view your specific Hot Heads Assets
                   </div>
-                )}
-                {/* not signed in */}
-                {(!publicKey || !connection) && !error && (
-                  <motion.div
-                    className=""
-                    key="disconnected"
-                    {...midExitAnimation}
-                  >
-                    <div className="text-custom-green text-sm text-center">
-                      Connect wallet to view your specific Hot Heads Assets
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-            <InventoryTabs hasToken={metadata && metadata.length > 0} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-        </>
+          <InventoryTabs hasToken={metadata && metadata.length > 0} />
+        </div>
       )}
     </PageLayout>
   );
