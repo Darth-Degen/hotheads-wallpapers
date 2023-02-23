@@ -24,16 +24,25 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
   };
 
   const getDelayOrder = (index: number): number => {
-    // return index % 6;
-    if (winWidth < 767) {
-      return index < 6 ? index % 6 : index % 2;
+    if (winWidth >= 2160) {
+      return index <= 20 ? index % 20 : index % 5;
+    } else if (winWidth >= 1536) {
+      return index <= 8 ? index % 8 : index % 4;
+    } else if (winWidth > 768) {
+      return index <= 15 ? index % 15 : index % 3;
+    } else {
+      return index <= 6 ? index % 6 : index % 2;
     }
-    return index < 6 ? index % 6 : index % 3;
+
+    // else if (winWidth < 767) {
+    //   return index < 6 ? index % 6 : index % 2;
+    // }
+    // return index < 6 ? index % 6 : index % 3;
   };
 
   return (
     <motion.div
-      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20 py-5"
+      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20 py-5"
       variants={container}
       initial="hidden"
       animate="show"

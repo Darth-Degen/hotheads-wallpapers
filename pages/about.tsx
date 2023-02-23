@@ -22,7 +22,7 @@ const About: NextPage = () => {
         <AnimatePresence mode="wait">
           {tabId === 0 ? (
             <motion.div
-              className="overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full flex flex-col gap-10 px-2 md:px-5"
+              className="overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full flex flex-col gap-10 px-2 md:px-10"
               {...midExitAnimation}
               key="info"
             >

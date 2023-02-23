@@ -36,7 +36,7 @@ const PageLayout: FC<Props> = (props: Props) => {
               </motion.h2>
             )}
             <motion.div
-              className="lg:overflow-y-auto p-2 w-full flex flex-col"
+              className="lg:overflow-y-auto p-2 2xl:px-14 w-full flex flex-col"
               {...enterAnimation}
             >
               {children}

@@ -25,6 +25,10 @@ module.exports = {
         // red -> #f87171
         // gray-300 -> #d1d5db
       },
+      screens: {
+        "3xl": "2160px",
+        "4xl": "3000px",
+      },
     },
   },
   plugins: [],
