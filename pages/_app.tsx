@@ -36,7 +36,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       new PhantomWalletAdapter(),
       new BraveWalletAdapter(),
       new BackpackWalletAdapter(),
-      new SolflareWalletAdapter({ network }),
+      // new SolflareWalletAdapter({ network }),
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]

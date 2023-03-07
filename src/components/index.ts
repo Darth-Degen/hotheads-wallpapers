@@ -11,6 +11,7 @@ const ExchangeIcon = dynamic(()=> import("./@icons/ExchangeIcon"))
 const MenuIcon = dynamic(()=> import("./@icons/MenuIcon"))
 const CloseIcon = dynamic(()=> import("./@icons/CloseIcon"))
 const MenuCloseIcon = dynamic(()=> import("./@icons/MenuCloseIcon"))
+const DownloadIcon = dynamic(()=> import("./@icons/DownloadIcon"))
 //atoms
 const DropdownButton = dynamic(()=> import("./atoms/DropdownButton"))
 const DropdownItem = dynamic(()=> import("./atoms/DropdownItem"))
@@ -36,6 +37,7 @@ const Modal = dynamic(()=> import("./molecules/Modal"))
 const GalleryItem = dynamic(()=> import("./molecules/GalleryItem"))
 const CollabItem = dynamic(()=> import("./molecules/CollabItem"))
 const Menu = dynamic(() => import("./molecules/Menu"))
+const InventoryItem = dynamic(() => import("./molecules/InventoryItem") )
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -45,6 +47,7 @@ const Form = dynamic(() => import("./organisms/Form") )
 const MobileDisplay = dynamic(() => import("./organisms/MobileDisplay") )
 const Gallery = dynamic(() => import("./organisms/Gallery") )
 const Collab = dynamic(() => import("./organisms/Collab") )
+const InventoryTabs = dynamic(() => import("./organisms/InventoryTabs") )
 //templates
 const PageLayout = dynamic(()=> import("./templates/PageLayout"))
 const DownloadView = dynamic(()=> import("./templates/DownloadView"))
@@ -92,5 +95,8 @@ export {
   Collab,
   CollabItem,
   Underline,
-  Menu
+  Menu,
+  InventoryTabs,
+  InventoryItem,
+  DownloadIcon
 }
