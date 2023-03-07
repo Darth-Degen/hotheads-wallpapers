@@ -36,22 +36,24 @@ html {
 /* width */
 /* ::-webkit-scrollbar {
   width: 10px;
+  width: auto;
 } */
 
 /* Track */
-/* ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: #0A0A0A;
-  border-radius: 14px;
-} */
+  /* border-radius: 14px; */
+}
 
 /* Handle */
-/* ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #202020;
-  border-radius: 10px;
-  outline: 2px solid #0A0A0A;
-} */
+  /* border-radius: 10px;
+  outline: 2px solid #0A0A0A; */
+  border: 2px solid #0A0A0A
+}
 
 /* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #202020;
-} */
+}

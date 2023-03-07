@@ -2,24 +2,24 @@ import { Inventory } from "@types";
 
 export const inventory: Inventory[] = [
   {
-    id: 0, // ** hot head number **
-    hash: "",
+    id: 0, 
+    hash: "0",
     pfp: ["/images/hotheads/hothead_character_000.png" ],
     banners:["/images/hotheads/hothead_character_003.png" ],
     wallpapers: ["/images/hotheads/hothead_character_004.png"],
     memes:["/images/hotheads/hothead_character_005.png" ],
   },
   {
-    id: 1, // ** hot head number **
-    hash: "",
+    id: 1, 
+    hash: "1",
     pfp: ["/images/hotheads/hothead_character_001.png" ],
     banners:["/images/hotheads/hothead_character_006.png" ],
     wallpapers: ["/images/hotheads/hothead_character_007.png"],
     memes:["/images/hotheads/hothead_character_008.png" ],
   },
   {
-    id: 2, // ** hot head number **
-    hash: "",
+    id: 2, 
+    hash: "2",
     pfp: ["/images/hotheads/hothead_character_002.png" ],
     banners:["/images/hotheads/hothead_character_009.png" ],
     wallpapers: ["/images/hotheads/hothead_character_010.png"],
@@ -27,7 +27,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 3, 
-    hash: "",
+    hash: "3",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -35,7 +35,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 4, 
-    hash: "",
+    hash: "Hot Head #004",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -43,7 +43,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 5, 
-    hash: "",
+    hash: "Hot Head #005",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -51,7 +51,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 6, 
-    hash: "",
+    hash: "Hot Head #006",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -59,7 +59,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 7, 
-    hash: "",
+    hash: "Hot Head #007",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -67,7 +67,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 8, 
-    hash: "",
+    hash: "Hot Head #008",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -75,7 +75,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 9, 
-    hash: "",
+    hash: "Hot Head #009",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -83,7 +83,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 10, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -91,7 +91,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 11, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -99,7 +99,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 12, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -107,7 +107,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 13, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -115,7 +115,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 14, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -123,7 +123,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 15, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -131,7 +131,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 16, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -139,7 +139,7 @@ export const inventory: Inventory[] = [
   },
   {
     id:17, 
-    hash: "",
+    hash: "Hot Head #01",
     pfp: [],
     banners:[],
     wallpapers: [],
@@ -147,7 +147,7 @@ export const inventory: Inventory[] = [
   },
   {
     id: 18, 
-    hash: "",
+    hash: "Hot Head #018",
     pfp: ["/images/hotheads/hothead_character_018.png" ],
     banners:["/images/hotheads/hothead_character_018.png" ],
     wallpapers: ["/images/hotheads/hothead_character_018.png"],

@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { midExitAnimation } from "@constants";
 import { getTokensByOwner } from "@helpers";
-import { FindNftsByOwnerOutput } from "@metaplex-foundation/js";
+import { FindNftsByOwnerOutput, Metadata } from "@metaplex-foundation/js";
 import axios from "axios";
 
 const Home: NextPage = () => {
@@ -119,7 +119,7 @@ const Home: NextPage = () => {
             hasToken={metadata && metadata.length > 0}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
-            tokens={metadata}
+            tokens={metadata as Metadata[] | undefined}
           />
         </div>
       )}
