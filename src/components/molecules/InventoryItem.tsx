@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { midEnterAnimation } from "@constants";
 import Image from "next/image";
 import { DownloadIcon } from "@components";
+import download from "downloadjs";
 
 interface InventoryItemProps {
   src: string;
@@ -23,7 +24,9 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
         height={200}
         className="rounded-xl"
       />
-      <DownloadIcon />
+      <div className="" onClick={() => download(src)}>
+        <DownloadIcon />
+      </div>
     </motion.div>
   );
 };

@@ -45,7 +45,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
   return (
     <div
       className="flex flex-col w-full font-mono items-center justify-start bg-custom-black 
-    rounded md:rounded-2xl lg:rounded-[80px py-8 min-h-[300px] px-2"
+    rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[300px] px-2"
     >
       <div className="flex gap-0.5 items-start justify-center md:gap-4 w-full py-2">
         {_tabs.map((item: Tab, index) => (
