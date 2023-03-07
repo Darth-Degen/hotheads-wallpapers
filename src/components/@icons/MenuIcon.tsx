@@ -8,13 +8,13 @@ interface Props extends SVGProps<SVGSVGElement> {
 }
 
 const MenuIcon: FC<Props> = (props: Props) => {
-  const { hoverColor = "#fdba74", className, color = "#d1d5db" } = props;
+  const { hoverColor = "white", className, color = "#9ca3af" } = props;
 
   const [didHover, setDidHover] = useState<boolean>(false);
 
   return (
     <div
-      className="cursor-pointer transition-all duration-200 rounded h-min p-2"
+      className="cursor-pointer rounded h-min p-2"
       onMouseEnter={() => setDidHover(true)}
       onMouseLeave={() => setDidHover(false)}
     >
@@ -22,30 +22,38 @@ const MenuIcon: FC<Props> = (props: Props) => {
         width="40"
         height="40"
         viewBox="0 0 24 24"
-        fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={`${className} `}
+        className={`${className ? className : ""} `}
+        // initial={{ stroke: color }}
+        // whileHover={{
+        //   stroke: didHover ? hoverColor : color,
+        //   transition: { duration: 2.5, ease: "easeInOut" },
+        // }}
+        // transition={{ duration: 2.5, ease: "easeInOut" }}
       >
-        <motion.path
+        <path
           d="M5 7H19"
           strokeWidth="2"
           strokeLinecap="round"
-          initial={{ stroke: color }}
-          animate={{ stroke: didHover ? hoverColor : color }}
+          className={` transition-all duration-300 ${
+            didHover ? "stroke-white" : "stroke-gray-400 "
+          }`}
         />
-        <motion.path
+        <path
           d="M5 12H15"
           strokeWidth="2"
           strokeLinecap="round"
-          initial={{ stroke: color }}
-          animate={{ stroke: didHover ? hoverColor : color }}
+          className={` transition-all duration-400 ${
+            didHover ? "stroke-white" : "stroke-gray-400 "
+          }`}
         />
-        <motion.path
+        <path
           d="M5 17H11"
           strokeWidth="2"
           strokeLinecap="round"
-          initial={{ stroke: color }}
-          animate={{ stroke: didHover ? hoverColor : color }}
+          className={` transition-all duration-300 ${
+            didHover ? "stroke-white" : "stroke-gray-400 "
+          }`}
         />
       </svg>
     </div>

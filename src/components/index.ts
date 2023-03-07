@@ -10,6 +10,7 @@ const ExpIcon = dynamic(()=> import("./@icons/ExpIcon"))
 const ExchangeIcon = dynamic(()=> import("./@icons/ExchangeIcon"))
 const MenuIcon = dynamic(()=> import("./@icons/MenuIcon"))
 const CloseIcon = dynamic(()=> import("./@icons/CloseIcon"))
+const MenuCloseIcon = dynamic(()=> import("./@icons/MenuCloseIcon"))
 //atoms
 const DropdownButton = dynamic(()=> import("./atoms/DropdownButton"))
 const DropdownItem = dynamic(()=> import("./atoms/DropdownItem"))
@@ -34,6 +35,7 @@ const ScrollItem = dynamic(()=> import("./molecules/ScrollItem"))
 const Modal = dynamic(()=> import("./molecules/Modal"))
 const GalleryItem = dynamic(()=> import("./molecules/GalleryItem"))
 const CollabItem = dynamic(()=> import("./molecules/CollabItem"))
+const Menu = dynamic(() => import("./molecules/Menu"))
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -83,10 +85,12 @@ export {
   ScrollItem,
   ExchangeIcon,
   CloseIcon,
+  MenuCloseIcon,
   Modal,
   GalleryItem,
   Gallery,
   Collab,
   CollabItem,
-  Underline
+  Underline,
+  Menu
 }

@@ -1,20 +1,21 @@
 import { FC, useEffect, useState } from "react";
-import { Logo, MenuIcon, NavItem } from "@components";
+import { Logo, MenuIcon, NavItem, Menu, MenuCloseIcon } from "@components";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
-import { enterAnimation } from "@constants";
+import { AnimatePresence, motion } from "framer-motion";
+import { enterAnimation, fastExitAnimation } from "@constants";
 
 const Navigation: FC = () => {
   const router = useRouter();
   const [didMount, setDidMount] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   useEffect(() => {
     setDidMount(true);
   }, []);
 
   return (
-    <header>
+    <header className="">
       {didMount && (
         <>
           {/* lg + screens */}
@@ -35,9 +36,29 @@ const Navigation: FC = () => {
             </div>
           </div>
           {/* md - screens */}
-          <div className="lg:hidden flex justify-between px-4 md:px-8 py-2">
+          <div className="lg:hidden flex justify-between px-4 md:px-8 py-2 relative">
             <Logo />
-            <MenuIcon />
+            <AnimatePresence mode="wait">
+              {!openMenu ? (
+                <motion.div
+                  key="menu-icon"
+                  onClick={() => setOpenMenu(true)}
+                  {...fastExitAnimation}
+                >
+                  <MenuIcon />
+                </motion.div>
+              ) : (
+                <motion.div
+                  onClick={() => setOpenMenu(false)}
+                  className="cursor-pointer z-[100]"
+                  {...fastExitAnimation}
+                >
+                  <MenuCloseIcon />
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <Menu toggleMenu={setOpenMenu} open={openMenu} />
           </div>
           {router.asPath === "/inventory" && (
             <motion.div

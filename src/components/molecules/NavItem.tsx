@@ -15,11 +15,7 @@ const NavItem: FC<Props> = (props: Props) => {
   const isCurrent = router.pathname === href;
 
   const DisabledItem = () => (
-    <div
-      className={` transition-all duration-300 py-5 opacity-20 cursor-default `}
-    >
-      {children}
-    </div>
+    <div className={`py-5 opacity-20 cursor-default `}>{children}</div>
   );
 
   return (
@@ -43,7 +39,7 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
   const { children, isCurrent } = props;
   return (
     <div
-      className={` transition-all duration-300 py-5 ${
+      className={` transition-all duration-500 py-5 ${
         isCurrent
           ? "text-custom-yellow cursor-default"
           : "text-gray-300 hover:text-custom-yellow cursor-pointer"

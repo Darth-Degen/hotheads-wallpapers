@@ -42,7 +42,7 @@ const Home: NextPage = () => {
           />
         </div>
         <Link href="/about">
-          <div className="mb-4 outline outline-2 rounded text-gray-300 outline-gray-300 px-5 py-2 cursor-pointer bg-custom-black hover:text-orange-300 hover:outline-orange-300 transition-all duration-500">
+          <div className="mb-4 outline outline-2 rounded-[2px] text-gray-500 outline-gray-500 px-5 py-2 cursor-pointer bg-custom-black hover:text-white hover:outline-white transition-all duration-500">
             Enter the Underworld
           </div>
         </Link>

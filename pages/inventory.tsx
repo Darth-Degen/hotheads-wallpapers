@@ -1,20 +1,21 @@
 import { PageLayout } from "@components";
-import { FC, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { NextPage } from "next";
 import { AnimatePresence, motion } from "framer-motion";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { midExitAnimation } from "@constants";
+import { midExitAnimation, inventory, midEnterAnimation } from "@constants";
 import { getTokensByOwner } from "@helpers";
-import { TokenAccount } from "@types";
-import {
-  Metadata,
-  JsonMetadata,
-  Nft,
-  Sft,
-  FindNftsByOwnerOutput,
-} from "@metaplex-foundation/js";
+import { FindNftsByOwnerOutput } from "@metaplex-foundation/js";
 import axios from "axios";
 import Image from "next/image";
+import { Inventory, InventoryItem } from "src/types";
 
 const Home: NextPage = () => {
   const [didMount, setDidMount] = useState<boolean>(false);
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
     FindNftsByOwnerOutput[] | undefined
   >();
   const [error, setError] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   const { connection } = useConnection();
   const { publicKey } = useWallet();
@@ -60,7 +62,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     setDidMount(true);
   }, []);
-
+  //reset data on disconnect
   useEffect(() => {
     if (!connection || !publicKey) {
       setMetadata(undefined);
@@ -122,22 +124,23 @@ const Home: NextPage = () => {
                   {...midExitAnimation}
                 >
                   <div className="text-custom-green text-sm text-center h-6 py-7 md:pt-6 md:pb-4 flex flex-col w-full  items-center justify-center">
-                    Connect wallet to view your specific Hot Heads Assets
+                    Connect wallet to view your Hot Heads
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-          <InventoryTabs hasToken={metadata && metadata.length > 0} />
+          <InventoryTabs
+            hasToken={metadata && metadata.length > 0}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
         </div>
       )}
     </PageLayout>
   );
 };
 
-interface InventoryTabsProps {
-  hasToken?: boolean;
-}
 interface Tab {
   name: string;
   icon: string;
@@ -162,36 +165,82 @@ const _tabs: Tab[] = [
   },
 ];
 
-const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
-  const { hasToken } = props;
+interface InventoryTabsProps {
+  hasToken?: boolean;
+  activeTab: number;
+  setActiveTab: Dispatch<SetStateAction<number>>;
+}
 
-  const [activeTab, setActiveTab] = useState<number>(0);
+const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
+  const { hasToken, activeTab, setActiveTab } = props;
+  const [tabName, setTabName] = useState<string>();
+
+  const tabs: string[] = ["pfp", "banners", "wallpapers", "memes"];
+
+  // const PFP
 
   return (
     <div
-      className="flex gap-0.5 md:gap-4 w-full font-mono items-start justify-center bg-custom-black 
+      className="flex flex-col w-full font-mono items-center justify-start bg-custom-black 
     rounded md:rounded-2xl lg:rounded-[80px py-8 min-h-[300px] px-2"
     >
-      {_tabs.map((item: Tab, index) => (
-        <div
-          className={`text-xs sm:text-sm cursor-pointer transition duration-300 py-1.5 px-4 rounded flex gap-1.5  ${
-            activeTab === index
-              ? "bg-[#FFB300] text-white"
-              : "hover:text-white text-gray-400"
-          }`}
-          key={index}
-          onClick={() => setActiveTab(index)}
+      <div className="flex gap-0.5 items-start justify-center md:gap-4 w-full">
+        {_tabs.map((item: Tab, index) => (
+          <div
+            className={`text-xs sm:text-sm cursor-pointer transition duration-300 py-1.5 px-4 rounded flex gap-1.5  ${
+              activeTab === index
+                ? "bg-[#FFB300] text-white"
+                : "hover:text-white text-gray-400"
+            }`}
+            key={index}
+            onClick={() => setActiveTab(index)}
+          >
+            <Image
+              src={`/images/icons/${item.icon}`}
+              width={20}
+              height={20}
+              alt={item.name}
+              className="hidden sm:block"
+            />
+            <p className="sm:whitespace-nowrap">{item.name}</p>
+          </div>
+        ))}
+      </div>
+      {/* <div className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-4 md:gap-x-8 md:gap-y-3 md:px-6 xl:px-20 py-5 overflow-y-auto"> */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          className="flex flex-wrap gap-4 overflow-x-clip overflow-y-auto h-full px-4 py-8"
+          key="inventory-grid"
+          {...midEnterAnimation}
         >
-          <Image
-            src={`/images/icons/${item.icon}`}
-            width={20}
-            height={20}
-            alt={item.name}
-            className="hidden sm:block"
-          />
-          <p className="sm:whitespace-nowrap">{item.name}</p>
-        </div>
-      ))}
+          {inventory.map((item: Inventory) => {
+            if (
+              item[tabs[activeTab] as keyof Inventory] &&
+              Array.isArray(item[tabs[activeTab] as keyof Inventory])
+            ) {
+              //@ts-ignore
+              return item[tabs[activeTab] as keyof Inventory].map(
+                (src: string, index: number) => (
+                  <motion.div
+                    className="rounded-xl"
+                    key={index}
+                    {...midEnterAnimation}
+                  >
+                    <Image
+                      src={src}
+                      alt="Inventory"
+                      width={200}
+                      height={200}
+                      className="rounded-xl"
+                    />
+                  </motion.div>
+                )
+              );
+            }
+            // return <div className="bg-red-800 ">{item.id}</div>;
+          })}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };

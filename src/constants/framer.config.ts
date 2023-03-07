@@ -118,3 +118,11 @@ export const dropdownItemsAnimations = {
   },
 }
 
+export const fadeVariants = {
+  closed: {
+    opacity: 0,
+    transition: { duration: 0.2 },
+  },
+  open: { opacity: 1, transition: { delay: 0.5, duration: 0.5 } },
+};
+

@@ -49,30 +49,4 @@ const PageLayout: FC<Props> = (props: Props) => {
   );
 };
 
-//scroll direction
-// const [scrollDown, setScrollDown] = useState<boolean>(true);
-// const containerRef = useRef() as RefObject<HTMLElement> | undefined;
-// const scrollRef = useRef<number>();
-// const { scrollY } = useScroll();
-
-// useMotionValueEvent(scrollY, "change", (latest) => {
-//   console.log("window scroll: ", scrollRef.current, latest);
-//   //first instance
-//   if (scrollRef.current === undefined) {
-//     scrollRef.current = latest;
-//     return;
-//   }
-
-//   //scroll down
-//   if (scrollRef.current < latest) {
-//     setScrollDown(true);
-//   }
-//   //scroll up
-//   else if (scrollRef.current > latest) {
-//     setScrollDown(false);
-//   }
-
-//   scrollRef.current = latest;
-// });
-
 export default PageLayout;
