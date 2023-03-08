@@ -1,4 +1,4 @@
-import { PageLayout, InventoryTabs } from "@components";
+import { PageLayout, InventoryTabs, Modal } from "@components";
 import { useCallback, useEffect, useState } from "react";
 import { NextPage } from "next";
 import { AnimatePresence, motion } from "framer-motion";
@@ -7,6 +7,7 @@ import { midExitAnimation } from "@constants";
 import { getTokensByOwner } from "@helpers";
 import { FindNftsByOwnerOutput, Metadata } from "@metaplex-foundation/js";
 import axios from "axios";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   const [didMount, setDidMount] = useState<boolean>(false);
@@ -15,6 +16,8 @@ const Home: NextPage = () => {
   >();
   const [error, setError] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [imageModal, setImageModal] = useState<string>("");
+  const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
   const { connection } = useConnection();
   const { publicKey } = useWallet();
@@ -120,9 +123,25 @@ const Home: NextPage = () => {
             activeTab={activeTab}
             setActiveTab={setActiveTab}
             tokens={metadata as Metadata[] | undefined}
+            setImageModal={setImageModal}
           />
         </div>
       )}
+      {/* modal */}
+      <Modal
+        show={imageModal.length > 0}
+        close={setImageModal}
+        contentLoaded={imageLoaded}
+      >
+        <Image
+          src={imageModal}
+          fill={true}
+          alt="Image"
+          objectFit="contain"
+          className={`rounded-3xl`}
+          // onLoadingComplete={() => setImageLoaded(true)}
+        />
+      </Modal>
     </PageLayout>
   );
 };

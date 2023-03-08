@@ -35,7 +35,7 @@ const Modal: FC<Props> = (props: Props) => {
             <div className="rounded-3xl">
               <motion.div
                 className="cursor-pointer absolute top-3 right-3 z-50
-              rounded-full transition-all duration-100 bg-white p-0.5 hover:outline hover:outline-custom-black"
+              rounded-full transition-all duration-100 bg-white p-0.5 hover:outline hover:outline-white"
                 onClick={() => close("")}
                 whileTap={{ scale: 0.96 }}
               >

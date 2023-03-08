@@ -4,11 +4,7 @@ import { inventory, midEnterAnimation } from "@constants";
 import Image from "next/image";
 import { Inventory } from "@types";
 import { InventoryItem } from "@components";
-import {
-  FindNftsByOwnerOutput,
-  Metadata,
-  token,
-} from "@metaplex-foundation/js";
+import { Metadata } from "@metaplex-foundation/js";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 
 interface Tab {
@@ -40,10 +36,11 @@ interface InventoryTabsProps {
   activeTab: number;
   setActiveTab: Dispatch<SetStateAction<number>>;
   tokens: Metadata[] | undefined;
+  setImageModal: Dispatch<SetStateAction<string>>;
 }
 
 const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
-  const { hasToken, activeTab, setActiveTab, tokens } = props;
+  const { hasToken, activeTab, setActiveTab, tokens, setImageModal } = props;
   const tabs: string[] = ["pfp", "banners", "wallpapers", "memes"];
 
   const { connection } = useConnection();
@@ -52,7 +49,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
   return (
     <div
       className="flex flex-col w-full font-mono items-center justify-start bg-custom-black 
-    rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[450px] px-2"
+    rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[500px] lg:min-h-[560px] px-2"
     >
       <div className="flex gap-0.5 items-start justify-center md:gap-4 w-full py-2">
         {_tabs.map((item: Tab, index) => (
@@ -78,7 +75,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
       </div>
       <AnimatePresence mode="wait">
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5  items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 py-8"
+          className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
           key="inventory-grid"
           {...midEnterAnimation}
         >
@@ -111,10 +108,14 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
                 //@ts-ignore
                 return item[tabs[activeTab] as keyof Inventory].map(
                   (src: string, index: number) => (
-                    <InventoryItem key={index} src={src} />
+                    <InventoryItem
+                      key={index}
+                      src={src}
+                      isBanner={activeTab === 1}
+                      setImageModal={setImageModal}
+                    />
                   )
                 );
-                // }
               }
             })}
         </motion.div>
