@@ -14,21 +14,25 @@ const Home: NextPage = () => {
         description="Welcome to your Hot Heads asset portfolio"
       />
       <motion.div
-        className="h-screen w-screen  bg-custom-black flex flex-col justify-evenly items-center"
+        className="h-screen w-screen bg-custom-black flex flex-col justify-center items-center "
         {...midEnterAnimation}
       >
-        <h2 className="mt-4 font-pressStart text-2xl lg:text-5xl text-transparent bg-clip-text bg-gradient-to-t from-red-600  to-yellow-300">
-          {/* <h2 className="font-pressStart mt-3 text-2xl text-orange-300"> */}
-          HotHeads
-        </h2>
+        <div className="px-12 md:px-8 flex-grow flex items-center ">
+          <Image
+            src="/images/logo_base.png"
+            width={3992 / 10}
+            height={1560 / 10}
+            alt="Logo"
+          />
+        </div>
         {/* md + screens */}
-        <div className="hidden md:block relative w-screen h-1/3 lg:h-1/2 2xl:h-[70%] px-0 mx-0">
+        {/* <div className="hidden md:block relative w-screen h-1/3 lg:h-1/2 2xl:h-[70%] px-0 mx-0 py-10"> */}
+        <div className="hidden md:block relative w-screen min-h-1/2">
           <Image
             src="/images/underworld.png"
-            fill={true}
             alt="Underworld"
-            objectFit="contain"
-            className=""
+            width={3000}
+            height={1002}
           />
         </div>
         {/* sm - screens */}
@@ -41,11 +45,17 @@ const Home: NextPage = () => {
             className=""
           />
         </div>
-        <Link href="/about">
-          <div className="mb-4 outline outline-2 rounded-[2px] text-gray-500 outline-gray-500 px-5 py-2 cursor-pointer bg-custom-black hover:text-white hover:outline-white transition-all duration-500">
-            Enter the Underworld
-          </div>
-        </Link>
+        <div className="px-12 md:px-8 flex-grow flex items-center hover:saturate-200">
+          <Link href="/about">
+            <Image
+              src="/images/enter_button.png"
+              alt="Underworld"
+              width={544 / 3}
+              height={173 / 3}
+              className="transition-all duration-200 opacity-70 hover:opacity-100"
+            />
+          </Link>
+        </div>
       </motion.div>
     </>
   );
