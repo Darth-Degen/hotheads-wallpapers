@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         description="Welcome to your Hot Heads asset portfolio"
       />
       <motion.div
-        className="h-screen w-screen bg-custom-black flex flex-col justify-center items-center "
+        className="bg-main bg-cover bg-fixed h-screen w-screen bg-custom-black flex flex-col justify-center items-center "
         {...midEnterAnimation}
       >
         <div className="px-12 md:px-8 flex-grow flex items-center ">
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
               alt="Underworld"
               width={544 / 3}
               height={173 / 3}
-              className="transition-all duration-200 opacity-70 hover:opacity-100"
+              className="transition-all duration-200 opacity-70 hover:opacity-100 hover:!bg-yellow-400 rounded"
             />
           </Link>
         </div>

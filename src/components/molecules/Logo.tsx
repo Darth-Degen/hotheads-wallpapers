@@ -10,9 +10,9 @@ const Logo: FC = () => {
       <Link href="/">
         <motion.div {...midClickAnimation}>
           <Image
-            src="/images/head_transparent.png"
-            height={60}
-            width={60}
+            src="/images/logo.png"
+            height={384 / 14}
+            width={616 / 14}
             alt="hot head icon"
           />
         </motion.div>

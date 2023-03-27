@@ -61,6 +61,11 @@ export const midEnterAnimation = {
   animate:{ opacity: 1 },
   transition:{ duration: 0.7, ease: "easeInOut" },
 }
+export const fastEnterAnimation = {
+  initial:{ opacity: 0 },
+  animate:{ opacity: 1 },
+  transition:{ duration: 0.3, ease: "easeInOut" },
+}
 
 export const scaleExitAnimation = {
   initial:{ opacity: 0, scale: 0.5 },

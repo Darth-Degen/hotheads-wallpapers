@@ -17,7 +17,7 @@ const PageLayout: FC<Props> = (props: Props) => {
   }, []);
 
   return (
-    <div className="relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none">
+    <div className="bg-main bg-cover bg-fixed relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-00 bg-dark overflow-none">
       <PageHead
         title="Hot Heads"
         description="Welcome to your Hot Heads asset portfolio"

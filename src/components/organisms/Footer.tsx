@@ -2,6 +2,7 @@ import { FC, useState } from "react";
 import { ExpIcon } from "@components";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { midEnterAnimation } from "@constants";
 
 const Footer: FC = () => {
   const [animate, setAnimate] = useState<boolean>(false);
@@ -16,12 +17,19 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer className="px-10 py-4 abolute lg:fixed bottom-0 w-full bg-dark">
+    <footer className="px-8 py-4 abolute lg:fixed bottom-0 w-full bg-transparent">
       <div className="flex flex-col md:flex-row items-center gap-4">
-        <h2 className="md:w-1/3 font-pressStart mb-0.5 text-2xl bg-gradient-to-t from-red-500 to-yellow-300 text-transparent bg-clip-text">
-          {/* <h2 className="w-1/3 font-pressStart mb-0.5 text-2xl text-orange-300"> */}
-          HotHeads
-        </h2>
+        <motion.div
+          className="md:w-1/3"
+          // {...midEnterAnimation}
+        >
+          <Image
+            src="/images/logo_base.png"
+            width={3992 / 26}
+            height={1560 / 26}
+            alt="Logo"
+          />
+        </motion.div>
         <div className="md:w-1/3 flex flex-row items-center justify-center text-xs gap-4 lg:gap-8 font-daysOne text-gray-300">
           <div className="cursor-pointer hover:text-custom-yellow transition-all duration-500 ">
             twitter

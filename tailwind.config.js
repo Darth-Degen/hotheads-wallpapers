@@ -5,6 +5,12 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        main: "url('/images/background.png')",
+        button: "url('/images/button.png')",
+        "menu-gradient": `linear-gradient(350.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 126.82%)`,
+        "menu-selected-gradient": `linear-gradient(350.3deg, #E77975 43.99%, rgba(255, 255, 255, 0) 126.7%)`,
+      },
       fontFamily: {
         primary: ["PressStart"],
         pressStart: ["PressStart"],
@@ -21,6 +27,7 @@ module.exports = {
         "custom-yellow": "#FFBA21",
         "custom-green": "#56BC78",
         "custom-orange": "#FF5722",
+        "custom-red": "#DF1D00",
         // orange -> #fdba74
         // red -> #f87171
         // gray-300 -> #d1d5db
