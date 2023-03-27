@@ -64,8 +64,8 @@ const Item: FC<ItemProps> = (props: ItemProps) => {
       <div
         className={`text-transparent bg-clip-text transition-all duration-500 my-5 p-0 ${
           isCurrent
-            ? "bg-menu-selected-gradient cursor-default"
-            : "bg-menu-gradient hover:to-red-600 cursor-pointer"
+            ? "bg-red-text-gradient cursor-default"
+            : "bg-white-text-gradient hover:to-red-600 cursor-pointer"
         }`}
       >
         {children}

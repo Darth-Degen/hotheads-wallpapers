@@ -15,14 +15,14 @@ const About: NextPage = () => {
 
   return (
     <PageLayout header="About">
-      <div className="w-full h-full md:p-8 flex flex-col items-center gap-10">
+      <div className="w-full h-full md:p-8 flex flex-col items-center gap-5">
         {/* toggle  */}
         <TabBar tabs={tabs} handleTabChange={handleTabChange} />
         {/* content */}
         <AnimatePresence mode="wait">
           {tabId === 0 ? (
             <motion.div
-              className="overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full flex flex-col gap-10 px-2 md:px-10"
+              className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full flex flex-col gap-10 px-2 md:px-10"
               {...midExitAnimation}
               key="info"
             >
@@ -82,7 +82,7 @@ const About: NextPage = () => {
               </ScrollItem>
             </motion.div>
           ) : (
-            <motion.div {...midExitAnimation} key="lore">
+            <motion.div {...midExitAnimation} key="lore" className="container">
               <ListItem>DEEZE NUTS</ListItem>
             </motion.div>
           )}

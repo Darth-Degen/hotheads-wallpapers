@@ -24,19 +24,20 @@ const PageLayout: FC<Props> = (props: Props) => {
       />
 
       <Navigation />
-      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-0 md:px-16 lg:px-44 2xl:px-[15%] mb-0 lg:mb-auto lg:py-24">
+      <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-0 md:px-16 lg:px-44 2xl:px-[15%] mb-0 lg:mb-auto lg:py-12">
         {didMount && (
-          <div className="bg-custom-dark-gray h-full w-full md:rounded-2xl lg:rounded-[80px] flex flex-col items-center my-4 py-10 px-3  overflow-hidden ">
+          // <div className="bg-custom-dark-gray h-full w-full md:rounded-2xl lg:rounded-[80px] flex flex-col items-center my-4 py-10 px-3  overflow-hidden ">
+          <div className="h-full w-full flex flex-col items-center my-4 py-10 px-3 overflow-hidden ">
             {header && (
               <motion.h2
-                className="text-custom-yellow text-xl lg:text-4xl uppercase "
+                className="text-transparent bg-clip-text bg-red-text-gradient  text-xl lg:text-4xl uppercase "
                 {...enterAnimation}
               >
                 {header}
               </motion.h2>
             )}
             <motion.div
-              className="lg:overflow-y-auto p-2 2xl:px-14 w-full flex flex-col"
+              className="lg:overflow-y-auto p-2 2xl:px-14 w-full flex flex-col "
               {...enterAnimation}
             >
               {children}

@@ -8,8 +8,9 @@ module.exports = {
       backgroundImage: {
         main: "url('/images/background.png')",
         button: "url('/images/button.png')",
-        "menu-gradient": `linear-gradient(350.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 126.82%)`,
-        "menu-selected-gradient": `linear-gradient(350.3deg, #E77975 43.99%, rgba(255, 255, 255, 0) 126.7%)`,
+        container: "url('/images/container-transparent.png') 30 round",
+        "white-text-gradient": `linear-gradient(350.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 126.82%)`,
+        "red-text-gradient": `linear-gradient(350.3deg, #E77975 43.99%, rgba(255, 255, 255, 0) 126.7%)`,
       },
       fontFamily: {
         primary: ["PressStart"],

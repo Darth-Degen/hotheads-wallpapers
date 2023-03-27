@@ -23,7 +23,7 @@ a {
 
 @layer base {
   html {
-    @apply bg-gradient-to-t from-red-500 to-orange-500 bg-custom-black text-gray-300 font-daysOne;
+    @apply bg-gradient-to-t from-red-500 to-orange-500 bg-custom-black text-gray-300 font-primary;
   }
 }
 
@@ -33,27 +33,35 @@ html {
 
 /* scroll bar */
 
+.container { 
+  border: 45px solid transparent;
+  padding: 50px;
+  border-image: url("/images/container-transparent.png") 200 round;
+  background-color: #121212;
+}
 /* width */
-/* ::-webkit-scrollbar {
+.container::-webkit-scrollbar {
   width: 10px;
   width: auto;
-} */
+}
 
 /* Track */
-::-webkit-scrollbar-track {
+.container::-webkit-scrollbar-track {
   background: #0A0A0A;
-  /* border-radius: 14px; */
+  border-radius: 14px;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
-  background: #202020;
-  /* border-radius: 10px;
-  outline: 2px solid #0A0A0A; */
-  border: 2px solid #0A0A0A
+.container::-webkit-scrollbar-thumb {
+  /* background: #202020;
+  border-radius: 10px;
+  outline: 2px solid #0A0A0A;
+  border: 2px solid #0A0A0A; */
+  background-image: url("/images/slider.png");
+  background-size: cover;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+.container::-webkit-scrollbar-thumb:hover {
   background: #202020;
 }

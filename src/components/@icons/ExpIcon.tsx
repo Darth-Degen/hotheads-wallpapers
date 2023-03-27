@@ -17,8 +17,8 @@ const ExpIcon: FC<Props> = (props: Props) => {
         y="0px"
         viewBox="150 150 1200 1200"
         fill={color}
-        width={40}
-        height={40}
+        width={60}
+        height={60}
       >
         <g>
           <g>
