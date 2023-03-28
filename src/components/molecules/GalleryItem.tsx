@@ -59,7 +59,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
         Hot Head #{getId(index)}
       </p>
       <p className="lg:hidden hh-name text-center mt-4 mb-1 w-full text-[10px]">
-        {getId(index)}
+        #{getId(index)}
       </p>
     </div>
   );

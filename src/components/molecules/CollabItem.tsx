@@ -24,7 +24,7 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
       className={`rounded-lg md:rounded-3xl relative flex flex-col items-center w-full gap-3 py-1`}
     >
       <motion.div
-        className="relative cursor-pointer"
+        className="medium-frame relative cursor-pointer"
         onClick={() => setImageModal(item.src)}
         whileHover={{ scale: 1.06 }}
       >
@@ -36,9 +36,7 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
           className="rounded-lg md:rounded-3xl"
         />
       </motion.div>
-      <p className="font-mono text-center w-full whitespace-nowrap text-xs">
-        {item.label}
-      </p>
+      <p className="hh-name text-center w-full text-[10px]">{item.label}</p>
       <div className="flex gap-2">
         <div
           className={`cursor-pointer hover:outline hover:outline-white rounded-full transition-all duration-100`}

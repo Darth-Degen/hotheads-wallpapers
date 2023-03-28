@@ -11,7 +11,7 @@ const TabBarItem: FC<TabProps> = (props: TabProps) => {
   const { id, children, isSelected, handleClick } = props;
   return (
     <div
-      className={`text-center rounded-lg py-2 px-4 cursor-pointer transition-all duration-300 uppercase ${
+      className={`w-full text-center rounded-lg py-2 px-4 cursor-pointer transition-all duration-300 uppercase ${
         isSelected ? "bg-custom-dark-gray " : "bg-custom-light-gray"
       }`}
       onClick={() => handleClick(id)}

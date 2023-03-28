@@ -10,14 +10,14 @@ const Home: NextPage = () => {
   const [imageModal, setImageModal] = useState<string>("");
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
-  const tabs: string[] = ["hot heads", "collab"];
+  const tabs: string[] = ["hot heads", "collab items"];
   const handleTabChange = (tab: number) => {
     setTabId(tab);
   };
 
   return (
     <PageLayout header="Gallery">
-      <motion.div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-5">
+      <motion.div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-5 pt-5">
         {/* toggle  */}
         <TabBar tabs={tabs} handleTabChange={handleTabChange} />
         {/* content */}
