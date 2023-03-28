@@ -10,7 +10,7 @@ interface Props {
 const ArrowIcon: FC<Props> = (props: Props) => {
   const {
     color = "#6F7273",
-    animateColor = "#FF5722",
+    animateColor = "#E77975",
     animate = false,
   } = props;
 

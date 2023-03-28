@@ -2,13 +2,11 @@ import { PageLayout, ScrollItem, ArrowIcon } from "@components";
 import { FC, useState } from "react";
 import { NextPage } from "next";
 import { motion, AnimatePresence } from "framer-motion";
-import { midExitAnimation, collections, collabs } from "@constants";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
     <PageLayout header="FAQ">
-      <div className="overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full w-full flex flex-col items-center px-2 md:px-5 py-5 md:py-10">
+      <div className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full w-full flex flex-col items-center px-0 md:px-5 py-5 md:py-10">
         {data.map((item, index) => (
           <ScrollItem key={index}>
             <FAQ question={item.question} answer={item.answer} />
@@ -63,7 +61,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
 
   return (
     <motion.div
-      className="flex flex-col items-center text-center px-10"
+      className="flex flex-col items-center text-center lg:px-10"
       variants={ParentVariants}
       initial="closed"
       animate={open ? "open" : "closed"}
@@ -72,7 +70,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
         toggleOpen(!open);
       }}
     >
-      <div className="text-base lg:text-xl py-4">{question}</div>
+      <div className="text-xs lg:text-sm pb-6">{question}</div>
       <button
         className=" p-3"
         onClick={() => {
@@ -84,7 +82,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
       <AnimatePresence mode="wait">
         {open && (
           <motion.div
-            className="text-custom-orange pt-6"
+            className="text-custom-light-red text-xs lg:text-sm"
             key="child"
             variants={ChildVariants}
             initial={{ opacity: 0 }}
@@ -115,12 +113,15 @@ const data: FAQ[] = [
     answer: "How many Hot heads will there be in the collection?",
   },
   {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
+    question: "How many Hot heads will",
+    answer:
+      "How many Hot heads will there be in the collection? How many Hot heads will there be in the collection?",
   },
   {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
+    question:
+      "How many Hot headHow many Hot heads will there be in the collection?",
+    answer:
+      "How many Hot heads willHow many Hot heads will there be in the collection?  How many Hot heads will there be in the collection?",
   },
   {
     question: "How many Hot heads will there be in the collection?",
