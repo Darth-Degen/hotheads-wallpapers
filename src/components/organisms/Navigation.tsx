@@ -37,7 +37,7 @@ const Navigation: FC = () => {
               className="flex flex-col items-center justify-center h-full pt-[70px]"
               // {...midEnterAnimation}
             >
-              <div className="flex flex-col items-center justify-center 2xl:items-start 2xl:pl-6 pt-4 h-full pb-60 text-sm 2xl:text-lg uppercase font-primary">
+              <div className="flex flex-col items-center justify-center 2xl:items-start 2xl:pl-6 pt-4 h-full text-sm 2xl:text-lg uppercase font-primary">
                 <NavItem href="/about">About</NavItem>
                 <NavItem href="/gallery">Gallery</NavItem>
                 <NavItem href="/inventory">Inventory</NavItem>
@@ -81,7 +81,7 @@ const Navigation: FC = () => {
             <WalletMultiButton
               startIcon={undefined}
               className="bg-button bg-cover !w-[171.5px] !h-[56px] !font-primary !text-xs hover:!bg-yellow-400 text-center !flex !justify-center
-              transition-all duration-200 opacity-70 hover:opacity-100"
+              transition-all duration-200 opacity-70 hover:opacity-100 uppercase"
             >
               {publicKey
                 ? publicKey.toBase58().slice(0, 4) +

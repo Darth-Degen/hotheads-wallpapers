@@ -31,11 +31,12 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
   };
 
   return (
-    <div className="rounded-lg md:rounded-3xl relative" key={index}>
+    <div className="relative flex flex-col items-center" key={index}>
       <motion.div
-        className="cursor-pointer"
+        className="medium-frame cursor-pointer relative"
         key={index}
-        whileHover={{ scale: 1.06 }}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
         onClick={() => setImageModal(src)}
       >
         <Image
@@ -43,19 +44,23 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           alt={`HH-${index}`}
           width={200}
           height={200}
-          className="rounded-lg md:rounded-3xl"
+          className=""
         />
-        <div
-          className="absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 cursor-pointer hover:outline hover:outline-white rounded-full transition-all duration-100"
-          onClick={() => window.open(url, "_blank", "noreferrer")}
-        >
-          <ExchangeIcon size={25} />
-        </div>
+        {url && (
+          <div
+            className="absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 cursor-pointer hover:outline hover:outline-white rounded-full transition-all duration-100"
+            onClick={() => window.open(url, "_blank", "noreferrer")}
+          >
+            <ExchangeIcon size={25} />
+          </div>
+        )}
       </motion.div>
-      <p className="font-mono text-center pt-3 w-full whitespace-nowrap text-xs">
-        Hot Heads
+      <p className="hidden lg:block hh-name text-center mt-4 mb-1 w-full text-[10px]">
+        Hot Head #{getId(index)}
       </p>
-      <div className="font-mono text-center font-bold">#{getId(index)}</div>
+      <p className="lg:hidden hh-name text-center mt-4 mb-1 w-full text-[10px]">
+        {getId(index)}
+      </p>
     </div>
   );
 };
