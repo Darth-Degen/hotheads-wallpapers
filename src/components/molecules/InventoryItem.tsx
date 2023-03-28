@@ -23,17 +23,24 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
         >
           <motion.div
             onClick={() => setImageModal(src)}
-            whileHover={{ scale: 1.06 }}
             className="cursor-pointer"
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             {" "}
+            {/* <motion.div
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="cursor-pointer"
+            > */}
             <Image
               src={src}
               alt="Inventory"
               width={isBanner ? 400 : 200}
               height={200}
-              className="rounded-xl"
+              className="rounded-sm"
             />
+            {/* </motion.div> */}
           </motion.div>
 
           <div className="" onClick={() => download(src)}>

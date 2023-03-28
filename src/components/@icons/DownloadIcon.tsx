@@ -17,7 +17,7 @@ const MenuIcon: FC<Props> = (props: Props) => {
       onMouseEnter={() => setDidHover(true)}
       onMouseLeave={() => setDidHover(false)}
     >
-      <svg
+      {/* <svg
         width="24"
         height="24"
         viewBox="0 0 34 34"
@@ -33,6 +33,567 @@ const MenuIcon: FC<Props> = (props: Props) => {
           strokeLinejoin="round"
           className={` transition-all duration-300 ${
             didHover ? "stroke-[#56BC78]" : "stroke-gray-200 "
+          }`}
+        />
+      </svg> */}
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 39 34"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`${className ? className : ""} cursor-pointer`}
+      >
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 15.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 18.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 13)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 10.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 7.80078)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 5.19922)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(2.60156 2.60059)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(5.19922)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(7.80078)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(10.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(13)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(15.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(20.7988)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(26)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(28.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(31.2012)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(33.8008 2.60059)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 5.19922)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 7.80078)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 10.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 13)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 15.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 18.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 20.7998)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(36.4004 26.001)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(33.8008 28.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(31.2012 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(28.5996 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(26 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(23.4004 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(20.7988 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(15.5996 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(13 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(10.4004 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(7.80078 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(5.19922 31.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(2.60156 28.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 26.001)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(0 20.7998)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(7.80078 15.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(10.4004 18.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(13 20.7998)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(15.5996 23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(15.5996 26.001)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(13 23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(10.4004 20.7998)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(7.80078 18.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 26.001)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(20.7988 23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(20.7988 26.001)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(23.4004 23.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 20.7998)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 18.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 15.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 13)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 10.4004)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 7.80078)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(18.2012 5.19922)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(23.4004 20.7998)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(26 20.7998)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(26 18.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(28.5996 18.2002)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
+          }`}
+        />
+        <rect
+          width="2.60003"
+          height="2.60003"
+          transform="translate(28.5996 15.5996)"
+          className={` transition-all duration-300 ${
+            didHover ? "fill-[#56BC78]" : "fill-gray-200 "
           }`}
         />
       </svg>

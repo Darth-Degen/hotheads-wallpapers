@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { inventory, midEnterAnimation } from "@constants";
 import Image from "next/image";
@@ -38,9 +38,53 @@ interface InventoryTabsProps {
   tokens: Metadata[] | undefined;
   setImageModal: Dispatch<SetStateAction<string>>;
 }
+interface InventoryTabNavProps {
+  index: number;
+  item: Tab;
+  isActive: boolean;
+  setActiveTab: Dispatch<SetStateAction<number>>;
+}
+const InventoryTabNav: FC<InventoryTabNavProps> = (
+  props: InventoryTabNavProps
+) => {
+  const { index, item, setActiveTab, isActive } = props;
 
+  const [didHover, setDidHover] = useState<boolean>(false);
+
+  return (
+    <div
+      className={`text-xs sm:text-sm cursor-pointer text-transparent bg-clip-text transition-all duration-500  py-1.5 px-4 rounded flex gap-1.5  ${
+        isActive ? "bg-red-text-gradient " : "bg-white-text-gradient"
+      }`}
+      key={index}
+      onClick={() => setActiveTab(index)}
+      onMouseEnter={() => setDidHover(true)}
+      onMouseLeave={() => setDidHover(false)}
+    >
+      <div className={`transition-all duration-500 `}>
+        <Image
+          src="/images/arrow.png"
+          alt="arrow"
+          width={14}
+          height={22}
+          className={`transition-all duration-300  ${
+            didHover || isActive ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
+      {/* <Image
+      src={`/images/icons/${item.icon}`}
+      width={20}
+      height={20}
+      alt={item.name}
+      className="hidden sm:block"
+    /> */}
+      <p className="sm:whitespace-nowrap">{item.name}</p>
+    </div>
+  );
+};
 const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
-  const { hasToken, activeTab, setActiveTab, tokens, setImageModal } = props;
+  const { activeTab, setActiveTab, tokens, setImageModal } = props;
   const tabs: string[] = ["pfp", "banners", "wallpapers", "memes"];
 
   const { connection } = useConnection();
@@ -48,34 +92,23 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
 
   return (
     <div
-      className="flex flex-col w-full font-mono items-center justify-start bg-custom-black 
+      className="container flex flex-col w-full  items-center justify-start 
     rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[500px] lg:min-h-[560px] px-2"
     >
       <div className="flex gap-0.5 items-start justify-center md:gap-4 w-full py-2">
         {_tabs.map((item: Tab, index) => (
-          <div
-            className={`text-xs sm:text-sm cursor-pointer transition duration-300 py-1.5 px-4 rounded flex gap-1.5  ${
-              activeTab === index
-                ? "bg-[#FFB300] text-white"
-                : "hover:text-white text-gray-400"
-            }`}
+          <InventoryTabNav
             key={index}
-            onClick={() => setActiveTab(index)}
-          >
-            <Image
-              src={`/images/icons/${item.icon}`}
-              width={20}
-              height={20}
-              alt={item.name}
-              className="hidden sm:block"
-            />
-            <p className="sm:whitespace-nowrap">{item.name}</p>
-          </div>
+            item={item}
+            index={index}
+            isActive={activeTab === index}
+            setActiveTab={setActiveTab}
+          />
         ))}
       </div>
       <AnimatePresence mode="wait">
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
+          className="container-child grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
           key="inventory-grid"
           {...midEnterAnimation}
         >

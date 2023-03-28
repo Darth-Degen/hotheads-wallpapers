@@ -26,7 +26,8 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
       <motion.div
         className="medium-frame relative cursor-pointer"
         onClick={() => setImageModal(item.src)}
-        whileHover={{ scale: 1.06 }}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.2, ease: "easeInOut" }}
       >
         <Image
           src={item.src}
