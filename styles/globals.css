@@ -23,13 +23,16 @@ a {
 
 @layer base {
   html {
-    @apply bg-gradient-to-t from-red-500 to-orange-500 bg-custom-black text-gray-100 font-primary;
+    @apply bg-gradient-to-t from-red-500 to-orange-500 bg-custom-black text-gray-100 font-primary uppercase;
   }
 }
 
 html {
   scroll-behavior: smooth;
+  word-spacing: -2px;
 }
+
+p { }
 
 .medium-frame {
   border: 25px solid transparent;

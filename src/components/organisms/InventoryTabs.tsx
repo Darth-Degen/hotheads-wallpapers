@@ -53,7 +53,7 @@ const InventoryTabNav: FC<InventoryTabNavProps> = (
 
   return (
     <div
-      className={`text-xs sm:text-sm cursor-pointer text-transparent bg-clip-text transition-all duration-500  py-1.5 px-4 rounded flex gap-1.5  ${
+      className={`flex items-center text-xs sm:text-sm cursor-pointer text-transparent bg-clip-text transition-all duration-500  py-1.5 px-4 rounded gap-1.5  ${
         isActive ? "bg-red-text-gradient " : "bg-white-text-gradient"
       }`}
       key={index}
@@ -61,7 +61,7 @@ const InventoryTabNav: FC<InventoryTabNavProps> = (
       onMouseEnter={() => setDidHover(true)}
       onMouseLeave={() => setDidHover(false)}
     >
-      <div className={`transition-all duration-500 `}>
+      <div className={`transition-all duration-500`}>
         <Image
           src="/images/arrow.png"
           alt="arrow"
@@ -72,14 +72,7 @@ const InventoryTabNav: FC<InventoryTabNavProps> = (
           }`}
         />
       </div>
-      {/* <Image
-      src={`/images/icons/${item.icon}`}
-      width={20}
-      height={20}
-      alt={item.name}
-      className="hidden sm:block"
-    /> */}
-      <p className="sm:whitespace-nowrap">{item.name}</p>
+      <p className="">{item.name}</p>
     </div>
   );
 };
@@ -95,7 +88,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
       className="container flex flex-col w-full  items-center justify-start 
     rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[500px] lg:min-h-[560px] px-2"
     >
-      <div className="flex gap-0.5 items-start justify-center md:gap-4 w-full py-2">
+      <div className="flex flex-col md:flex-row gap-0.5 flex-wrap items-center justify-center md:gap-4 w-full py-2">
         {_tabs.map((item: Tab, index) => (
           <InventoryTabNav
             key={index}
@@ -108,7 +101,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
       </div>
       <AnimatePresence mode="wait">
         <motion.div
-          className="container-child grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
+          className="container-child flex flex-wrap items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
           key="inventory-grid"
           {...midEnterAnimation}
         >

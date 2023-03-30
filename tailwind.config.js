@@ -9,8 +9,8 @@ module.exports = {
         main: "url('/images/background.png')",
         button: "url('/images/button.png')",
         container: "url('/images/container-transparent.png') 30 round",
-        "white-text-gradient": `linear-gradient(350.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 126.82%)`,
-        "red-text-gradient": `linear-gradient(350.3deg, #E77975 43.99%, rgba(255, 255, 255, 0) 126.7%)`,
+        "white-text-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
+        "red-text-gradient": `linear-gradient(360.3deg, #E77975 43.99%, rgba(255, 255, 255, 0) 105.7%)`,
       },
       fontFamily: {
         primary: ["PressStart"],

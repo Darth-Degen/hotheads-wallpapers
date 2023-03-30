@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const [imageModal, setImageModal] = useState<string>("");
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
 
-  const tabs: string[] = ["hot heads", "collab items"];
+  const tabs: string[] = ["hot heads", "collabs"];
   const handleTabChange = (tab: number) => {
     setTabId(tab);
   };

@@ -15,7 +15,7 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
   const { src, isBanner = false, setImageModal } = props;
 
   return (
-    <div className={`${isBanner ? "col-span-2" : ""} self-start`}>
+    <div className={`${isBanner ? "col-span-1" : ""} self-start`}>
       <ScrollItem>
         <motion.div
           className={`rounded-xl flex flex-col items-center justify-center gap-4`}
@@ -23,24 +23,17 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
         >
           <motion.div
             onClick={() => setImageModal(src)}
-            className="cursor-pointer"
+            className="cursor-pointer w-[200px] h-[200px] relative"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
-            {" "}
-            {/* <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="cursor-pointer"
-            > */}
             <Image
               src={src}
               alt="Inventory"
-              width={isBanner ? 400 : 200}
-              height={200}
               className="rounded-sm"
+              style={{ objectFit: "cover" }}
+              fill
             />
-            {/* </motion.div> */}
           </motion.div>
 
           <div className="" onClick={() => download(src)}>

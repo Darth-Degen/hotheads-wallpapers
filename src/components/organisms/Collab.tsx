@@ -34,14 +34,14 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
   return (
     <motion.div
-      className="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-4 md:gap-x-8 md:gap-y-8 md:px-6 py-5"
+      className="flex flex-wrap items-center justify-center md:gap-x-8 md:gap-y-8 md:px-6 py-5"
       variants={container}
       initial="hidden"
       animate="show"
     >
       {collabs.map((item: Collab, index) => {
         return (
-          <div className={` ${item.isBanner ? "col-span-2" : ""}`} key={index}>
+          <div className={` ${item.isBanner ? "col-span-1" : ""}`} key={index}>
             <ScrollItem
               duration={1}
               index={getDelayOrder(index)}
