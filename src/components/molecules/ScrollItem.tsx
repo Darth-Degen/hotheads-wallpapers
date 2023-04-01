@@ -1,8 +1,8 @@
-import { FC, ReactNode, useRef } from "react";
+import { FC, HTMLAttributes, ReactNode, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 //used to animate container scrolling in and out of view
-interface ScrollItemProps {
+interface ScrollItemProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   index?: number;
   disableScrollUp?: boolean; //disable
@@ -20,6 +20,7 @@ const ScrollItem: FC<ScrollItemProps> = (props: ScrollItemProps) => {
     enableY = false,
     isInViewOnce = false,
     delay = 0.25,
+    className,
   } = props;
 
   const ref = useRef(null);
@@ -55,6 +56,7 @@ const ScrollItem: FC<ScrollItemProps> = (props: ScrollItemProps) => {
       initial={"hidden"}
       // animate={"visible"}
       animate={isInView ? "visible" : "hidden"}
+      className={className}
     >
       {children}
     </motion.div>

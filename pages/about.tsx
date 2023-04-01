@@ -3,6 +3,7 @@ import { useState } from "react";
 import { NextPage } from "next";
 import { motion, AnimatePresence } from "framer-motion";
 import { midExitAnimation } from "@constants";
+import Image from "next/image";
 
 const About: NextPage = () => {
   const [tabId, setTabId] = useState<number>(0);
@@ -29,85 +30,67 @@ const About: NextPage = () => {
               >
                 <ScrollItem key="info-1">
                   <ListItem>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the
-                    industry&apos;s standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only
-                    five centuries, but
+                    Hot Heads is a 100 Piece 1/1 NFT Collection on the Solana
+                    Blockchain.
                   </ListItem>
                 </ScrollItem>
                 <ScrollItem key="info-2">
                   <ListItem>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the
-                    industry&apos;s standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only
-                    five centuries, but
+                    A new Hot Head is auctioned weekly, only on Exchange Art.
                   </ListItem>
                 </ScrollItem>
                 <ScrollItem key="info-3">
                   <ListItem>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the
-                    industry&apos;s standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only
-                    five centuries, but
+                    The project is founded and created by Sikedelic, a long time
+                    contributor in the Web 3 space
                   </ListItem>
                 </ScrollItem>
                 <ScrollItem key="info-4">
                   <ListItem>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the
-                    industry&apos;s standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only
-                    five centuries, but
-                  </ListItem>
-                </ScrollItem>
-                <ScrollItem key="info-5">
-                  <ListItem>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the
-                    industry&apos;s standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only
-                    five centuries, but
-                  </ListItem>
-                </ScrollItem>
-                <ScrollItem key="info-6">
-                  <ListItem>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the
-                    industry&apos;s standard dummy text ever since the 1500s,
-                    when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only
-                    five centuries, but
+                    Our primary methods of communication are Discord and
+                    Twitter.
                   </ListItem>
                 </ScrollItem>
               </motion.div>
             ) : (
-              <motion.div {...midExitAnimation} key="lore" className="h-full">
-                <ListItem>DEEZE NUTS</ListItem>
+              <motion.div
+                {...midExitAnimation}
+                key="lore"
+                className="h-full text-center py-4 px-0 lg:px-8 2xl:px-20 flex flex-col gap-10 "
+              >
+                <ScrollItem>
+                  Hidden deep within the Earth&apos;s core reside a sinister
+                  cult of one hundred unique magma rocks.
+                </ScrollItem>
+                <ScrollItem>
+                  These devilish creatures are known to many as the{" "}
+                  <span className="bg-gradient-to-t from-[#FF5722] to-[#A70606] text-transparent bg-clip-text">
+                    Hot Heads
+                  </span>
+                  .
+                </ScrollItem>
+                <ScrollItem>
+                  The flame-like beings rule throughout the gruesome Underworld,
+                  watching over all of the tortured souls.
+                </ScrollItem>
+                <ScrollItem>
+                  They&apos;re fierce but fair creatures, until their
+                  temperature rises, then they may not be so forgiving.
+                </ScrollItem>
+                <ScrollItem>
+                  <Image
+                    src="/images/underworld-octo.png"
+                    alt="Underworld"
+                    width={3000 / 2}
+                    height={1002 / 2}
+                    className="rounded mb-6"
+                  />
+                </ScrollItem>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
       </div>
-
-      {/* <h1 className="text-xl lg:text-3xl font-pressStart md:pb-10 text-red-400 text-center px-5">
-        Download your <br />
-        <span className="text-orange-300"> HotHeads Wallpaper</span>
-      </h1>
-      {didMount && (
-        <DownloadView
-          collection={collections[0]}
-          tokenId={tokenId}
-          setTokenId={setTokenId}
-        />
-      )} */}
     </PageLayout>
   );
 };

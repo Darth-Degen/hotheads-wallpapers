@@ -77,12 +77,12 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
           toggleOpen(!open);
         }}
       >
-        <ArrowIcon animate={open} />
+        <ArrowIcon animate={open} type="animated" />
       </button>
       <AnimatePresence mode="wait">
         {open && (
           <motion.div
-            className="text-custom-light-red text-xs lg:text-sm px-4 lg:px-14"
+            className="text-custom-light-red text-xs lg:text-xs px-4 lg:px-8"
             key="child"
             variants={ChildVariants}
             initial={{ opacity: 0 }}
@@ -109,55 +109,31 @@ interface FAQ {
 }
 const data: FAQ[] = [
   {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
-  },
-  {
-    question: "How many Hot heads will",
+    question: "What is Hot Heads?",
     answer:
-      "How many Hot heads will there be in the collection? How many Hot heads will there be in the collection?",
+      "Hot Heads is a 100 Piece 1/1 NFT Collection on the Solana Blockchain.",
   },
   {
-    question:
-      "How many Hot headHow many Hot heads will there be in the collection?",
+    question: "How many Hot Heads will there be?",
+    answer: "100 Hot Heads total, auctioned only on Exchange Art.",
+  },
+  {
+    question: "How can I get a Hot Head?",
     answer:
-      "How many Hot heads willHow many Hot heads will there be in the collection?  How many Hot heads will there be in the collection?",
+      "There is a weekly auction only on Exchange Art for a new Hot Head. Auctions start at 5:00 PM PST on Tuesday. Click here to view our profile → https://exchange.art/hot-heads/nfts",
   },
   {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
+    question: "Are Hot Heads the only entry to the community?",
+    answer:
+      "No, there is a 9 Piece Collab Series that currently grants full access to the Hot Heads Community, you can see those pieces at the following link → https://exchange.art/series/The Underworld Collabs/nfts",
   },
   {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
+    question: "What are the benefits of holding a Hot Head?",
+    answer: "A first class ticket to the Underworld, who wouldn't want that?",
   },
   {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
-  },
-  {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
-  },
-  {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
-  },
-  {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
-  },
-  {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
-  },
-  {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
-  },
-  {
-    question: "How many Hot heads will there be in the collection?",
-    answer: "How many Hot heads will there be in the collection?",
+    question: "Is Hot Heads accepting collaboration or partnerships?",
+    answer: "Unfortunately not at the moment.",
   },
 ];
 
