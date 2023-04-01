@@ -94,9 +94,8 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
               opacity: 0,
               transition: { duration: 0.5, ease: "easeInOut" },
             }}
-          >
-            {answer}
-          </motion.div>
+            dangerouslySetInnerHTML={{ __html: answer }}
+          />
         )}
       </AnimatePresence>
     </motion.div>
@@ -120,12 +119,12 @@ const data: FAQ[] = [
   {
     question: "How can I get a Hot Head?",
     answer:
-      "There is a weekly auction only on Exchange Art for a new Hot Head. Auctions start at 5:00 PM PST on Tuesday. Click here to view our profile → https://exchange.art/hot-heads/nfts",
+      'There is a weekly auction only on Exchange Art for a new Hot Head. Auctions start at 5:00 PM PST on Tuesday. Click here to view our profile → <a href="https://exchange.art/hot-heads/nfts" rel="noreferrer" target="_blank" class="text-blue-600">Exchange Art</a>',
   },
   {
     question: "Are Hot Heads the only entry to the community?",
     answer:
-      "No, there is a 9 Piece Collab Series that currently grants full access to the Hot Heads Community, you can see those pieces at the following link → https://exchange.art/series/The Underworld Collabs/nfts",
+      'No, there is a 9 Piece Collab Series that currently grants full access to the Hot Heads Community, you can see those pieces at the following link → <a href="https://exchange.art/series/The%20Underworld%20Collabs/nfts" rel="noreferrer" target="_blank" class="text-blue-600">Exchange Art</a>',
   },
   {
     question: "What are the benefits of holding a Hot Head?",
