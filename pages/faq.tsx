@@ -70,7 +70,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
         toggleOpen(!open);
       }}
     >
-      <div className="text-xs lg:text-sm pb-6">{question}</div>
+      <div className="pb-6">{question}</div>
       <button
         className=" p-3"
         onClick={() => {
@@ -82,7 +82,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
       <AnimatePresence mode="wait">
         {open && (
           <motion.div
-            className="text-custom-light-red text-xs lg:text-sm"
+            className="text-custom-light-red text-xs lg:text-sm px-4 lg:px-14"
             key="child"
             variants={ChildVariants}
             initial={{ opacity: 0 }}

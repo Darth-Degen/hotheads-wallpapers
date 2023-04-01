@@ -19,11 +19,11 @@ const Navigation: FC = () => {
       {didMount && (
         <>
           {/* lg + screens */}
-          <div className="hidden lg:block fixed left-0 h-full md:w-16 lg:w-44 2xl:w-[15%]">
+          <div className="hidden lg:block fixed left-0 3xl:-top-[14%] h-full lg:w-60 2xl:w-[20%] 3xl:w-[18%]">
             <motion.div className="left-8 top-5 fixed">
               <Logo />
             </motion.div>
-            <motion.div className="flex flex-col items-center justify-center h-full pt-[70px]">
+            <motion.div className="flex flex-col items-center justify-center h-full pb-10">
               <div className="flex flex-col items-center justify-center  pt-4 h-full text-base 2xl:text-xl uppercase font-primary">
                 <NavItem href="/about">About</NavItem>
                 <NavItem href="/gallery">Gallery</NavItem>

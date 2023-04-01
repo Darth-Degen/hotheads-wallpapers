@@ -11,7 +11,7 @@ interface Props {
 
 const DropdownItem: FC<Props> = (props: Props) => {
   const { item, handleClick, variants } = props;
-  const styles: string = "w-56 h-10 bg-dark text-xs z-50";
+  const styles: string = "w-40 h-10 bg-dark text-xs z-50";
 
   return (
     <motion.li
@@ -21,7 +21,11 @@ const DropdownItem: FC<Props> = (props: Props) => {
       onClick={() => handleClick(item?.id)}
     >
       <motion.span variants={variants}>
-        {item.id < 10 ? `00${item.id}` : `0${item.id}`}
+        {item.id === -1
+          ? "CLEAR"
+          : item.id < 10
+          ? `00${item.id}`
+          : `0${item.id}`}
       </motion.span>
     </motion.li>
   );

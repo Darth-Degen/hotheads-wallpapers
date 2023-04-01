@@ -1,9 +1,9 @@
-import { PageLayout, InventoryTabs, Modal } from "@components";
+import { PageLayout, InventoryTabs, Modal, Dropdown } from "@components";
 import { useCallback, useEffect, useState } from "react";
 import { NextPage } from "next";
 import { AnimatePresence, motion } from "framer-motion";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
-import { midExitAnimation } from "@constants";
+import { midExitAnimation, collections } from "@constants";
 import { getTokensByOwner } from "@helpers";
 import { FindNftsByOwnerOutput, Metadata } from "@metaplex-foundation/js";
 import axios from "axios";
@@ -18,7 +18,6 @@ const Home: NextPage = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
   const [imageModal, setImageModal] = useState<string>("");
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
-
   const { connection } = useConnection();
   const { publicKey } = useWallet();
 
@@ -35,10 +34,14 @@ const Home: NextPage = () => {
           if (token.name.includes("Hot Head")) {
             const uri = token.uri;
             // console.log(token.name);
-            await axios.get(uri).then((r) => {
-              // console.log(uri, r.data);
-              jsonArr.push(r.data);
-            });
+            try {
+              await axios.get(uri).then((r) => {
+                // console.log(uri, r.data);
+                jsonArr.push(r.data);
+              });
+            } catch (e: any) {
+              console.error(e.message);
+            }
           }
         })
       );
@@ -138,7 +141,7 @@ const Home: NextPage = () => {
           fill={true}
           alt="Image"
           objectFit="contain"
-          className={`rounded-3xl`}
+          className={`rounded`}
           // onLoadingComplete={() => setImageLoaded(true)}
         />
       </Modal>

@@ -10,8 +10,11 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import {
   BackpackWalletAdapter,
   BraveWalletAdapter,
+  LedgerWalletAdapter,
   PhantomWalletAdapter,
   SolflareWalletAdapter,
+  SolletExtensionWalletAdapter,
+  SolletWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
@@ -34,9 +37,12 @@ const App = ({ Component, pageProps }: AppProps) => {
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
-      new BraveWalletAdapter(),
+      new SolflareWalletAdapter({ network }),
       new BackpackWalletAdapter(),
-      // new SolflareWalletAdapter({ network }),
+      new BraveWalletAdapter(),
+      new LedgerWalletAdapter(),
+      new SolletWalletAdapter({ network }),
+      new SolletExtensionWalletAdapter({ network }),
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]

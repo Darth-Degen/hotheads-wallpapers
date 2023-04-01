@@ -10,17 +10,30 @@ interface Props {
   didHover: boolean;
   label: string;
   collections: Collection[];
+  disabled?: boolean;
 }
 
 const Dropdown: FC<Props> = (props: Props) => {
-  const { handleClick, setDidHover, didHover, label, collections } = props;
+  const {
+    handleClick,
+    setDidHover,
+    didHover,
+    label,
+    collections,
+    disabled = false,
+  } = props;
 
   return (
     <div
-      onMouseEnter={() => setDidHover(true)}
-      onMouseLeave={() => setDidHover(false)}
+      onMouseEnter={() => {
+        if (!disabled) setDidHover(true);
+      }}
+      onMouseLeave={() => {
+        if (!disabled) setDidHover(false);
+      }}
+      className="lg:self-end"
     >
-      <DropdownButton isActive={didHover} label={label} />
+      <DropdownButton isActive={didHover} label={label} disabled={disabled} />
       <AnimatePresence mode="wait">
         {didHover && (
           <motion.div
@@ -30,7 +43,12 @@ const Dropdown: FC<Props> = (props: Props) => {
             initial="hidden"
             animate="show"
           >
-            <motion.ul className="rounded divide-y divide-custom-mid-gray border border-custom-mid-gray shadow max-h-[200px] overflow-y-auto z-50">
+            <motion.ul className="rounded divide-y-4 divide-custom-light-gray-2 border-4 border-custom-light-gray-2 shadow max-h-[200px] overflow-y-auto z-50 ">
+              <DropdownItem
+                item={{ id: -1, src: "", url: "" }}
+                handleClick={handleClick}
+                variants={dropdownItemsAnimations}
+              />
               {collections &&
                 collections.map((item: Collection) => (
                   <DropdownItem

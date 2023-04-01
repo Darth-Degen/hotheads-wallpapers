@@ -1,9 +1,9 @@
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { inventory, midEnterAnimation } from "@constants";
+import { collections, inventory, midEnterAnimation } from "@constants";
 import Image from "next/image";
 import { Inventory } from "@types";
-import { InventoryItem } from "@components";
+import { Dropdown, InventoryItem } from "@components";
 import { Metadata } from "@metaplex-foundation/js";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 
@@ -77,18 +77,50 @@ const InventoryTabNav: FC<InventoryTabNavProps> = (
   );
 };
 const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
-  const { activeTab, setActiveTab, tokens, setImageModal } = props;
+  const {
+    hasToken = false,
+    activeTab,
+    setActiveTab,
+    tokens,
+    setImageModal,
+  } = props;
   const tabs: string[] = ["pfp", "banners", "wallpapers", "memes"];
+
+  const [didHover, setDidHover] = useState<boolean>(false);
+  const [tokenId, setTokenId] = useState<number>(-1);
 
   const { connection } = useConnection();
   const { publicKey } = useWallet();
+
+  const selectClick = (id: number) => {
+    setTokenId(id);
+    setDidHover(false);
+  };
+
+  useEffect(() => {
+    if (publicKey) setTokenId(-1);
+  }, [publicKey]);
 
   return (
     <div
       className="container flex flex-col w-full  items-center justify-start 
     rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[500px] lg:min-h-[560px] px-2"
     >
-      <div className="flex flex-col md:flex-row gap-0.5 flex-wrap items-center justify-center md:gap-4 w-full py-2">
+      <Dropdown
+        handleClick={selectClick}
+        setDidHover={setDidHover}
+        didHover={didHover}
+        label={
+          tokenId === -1
+            ? "SELECT"
+            : tokenId < 10
+            ? `00${tokenId}`
+            : `0${tokenId}`
+        }
+        collections={collections}
+        disabled={hasToken}
+      />
+      <div className="flex flex-col md:flex-row gap-0.5 flex-wrap items-center justify-center md:gap-4 w-full pt-6">
         {_tabs.map((item: Tab, index) => (
           <InventoryTabNav
             key={index}
@@ -107,12 +139,14 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
         >
           {inventory
             .filter((filterItem) => {
-              //show user assets if selected
+              //show user assets if connected
               if (
+                tokenId === -1 &&
                 connection &&
                 publicKey &&
                 tokens &&
                 tokens.reduce((hit, tok) => {
+                  // console.log("tok?.name ", tok?.name);
                   if (tok?.name === filterItem.hash) {
                     return true;
                   }
@@ -120,6 +154,13 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
                 }, false)
               ) {
                 return true;
+              }
+              //show assets if selected
+              if (tokenId > -1 && filterItem.id === tokenId) {
+                console.log(filterItem);
+                return true;
+              } else if (tokenId > -1 && filterItem.id !== tokenId) {
+                return false;
               }
               //show all if disconnected
               if (!connection || !publicKey) {

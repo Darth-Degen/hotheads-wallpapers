@@ -32,7 +32,7 @@ const Modal: FC<Props> = (props: Props) => {
               md:rounded-lg absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 `}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="rounded-3xl">
+            <div className="rounded">
               <motion.div
                 className="cursor-pointer absolute top-3 right-3 z-50
               rounded-full transition-all duration-100 bg-white p-0.5 hover:outline hover:outline-white"

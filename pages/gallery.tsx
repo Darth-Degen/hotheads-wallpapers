@@ -49,7 +49,7 @@ const Home: NextPage = () => {
           fill={true}
           alt="Image"
           objectFit="contain"
-          className={`rounded-3xl`}
+          className={`rounded`}
           onLoadingComplete={() => setImageLoaded(true)}
         />
       </Modal>

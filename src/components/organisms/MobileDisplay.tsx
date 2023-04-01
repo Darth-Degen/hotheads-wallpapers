@@ -19,7 +19,7 @@ const Form: FC<Props> = (props: Props) => {
   const controls = useDragControls();
 
   return (
-    <div className="bg-orange-300 p-0.5 rounded-3xl">
+    <div className="bg-orange-300 p-0.5 rounded">
       <div className="overflow-hidden p-2.5">
         <div className="relative rounded-2xl h-[562.5px] w-[275px] ">
           {/* mobile frame */}

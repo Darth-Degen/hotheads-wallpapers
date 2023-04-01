@@ -21,7 +21,7 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
 
   return (
     <div
-      className={`rounded-lg md:rounded-3xl relative flex flex-col items-center w-full gap-3 py-1`}
+      className={`rounded-lg md:rounded relative flex flex-col items-center w-full gap-3 py-1`}
     >
       <motion.div
         className="medium-frame relative cursor-pointer  w-[200px] h-[200px] "
