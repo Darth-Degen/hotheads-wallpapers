@@ -11,13 +11,13 @@ interface Props {
 
 const DropdownItem: FC<Props> = (props: Props) => {
   const { item, handleClick, variants } = props;
-  const styles: string = "w-40 h-10 bg-dark text-xs z-50";
+  const styles: string = "w-40 h-10 bg-custom-dark-gray text-xs z-50";
 
   return (
     <motion.li
       key={item?.id}
-      className={`${styles} px-2 cursor-pointer flex items-center`}
-      {...backgroundAnimations}
+      className={`${styles} px-2 cursor-pointer flex items-center hover:bg-dark`}
+      // {...backgroundAnimations}
       onClick={() => handleClick(item?.id)}
     >
       <motion.span variants={variants}>
