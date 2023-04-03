@@ -170,5 +170,290 @@ export const collections: Collection[] = [
     id: 33,
     src:"/images/hotheads/hothead_character_033.png",
     url:"https://exchange.art/single/8KRzNNcYNE61nKfKSxZ2wXAg8Nv96FvuddzqjXPNYvNj"
-  }
+  },
+  {
+    id: 34,
+    src:"/images/hotheads/hh_34/PFP/image.png",
+    url:""
+  },
+  {
+    id: 35,
+    src:"/images/hotheads/hh_35/PFP/image.png",
+    url:""
+  },
+  {
+    id: 36,
+    src:"/images/hotheads/hh_36/PFP/image.png",
+    url:""
+  },
+  {
+    id: 37,
+    src:"/images/hotheads/hh_37/PFP/image.png",
+    url:""
+  },
+  {
+    id: 38,
+    src:"/images/hotheads/hh_38/PFP/image.png",
+    url:""
+  },
+  {
+    id: 39,
+    src:"/images/hotheads/hh_39/PFP/image.png",
+    url:""
+  },
+  /* 40's */
+  {
+    id: 40,
+    src:"/images/hotheads/hh_40/PFP/image.png",
+    url:""
+  },
+  {
+    id: 41,
+    src:"/images/hotheads/hh_41/PFP/image.png",
+    url:""
+  },
+  {
+    id: 42,
+    src:"/images/hotheads/hh_42/PFP/image.png",
+    url:""
+  },
+  {
+    id: 43,
+    src:"/images/hotheads/hh_43/PFP/image.png",
+    url:""
+  },
+  {
+    id: 44,
+    src:"/images/hotheads/hh_44/PFP/image.png",
+    url:""
+  },
+  {
+    id: 45,
+    src:"/images/hotheads/hh_45/PFP/image.png",
+    url:""
+  },
+  {
+    id: 46,
+    src:"/images/hotheads/hh_46/PFP/image.png",
+    url:""
+  },
+  {
+    id: 47,
+    src:"/images/hotheads/hh_47/PFP/image.png",
+    url:""
+  },
+  {
+    id: 48,
+    src:"/images/hotheads/hh_48/PFP/image.png",
+    url:""
+  },
+  {
+    id: 49,
+    src:"/images/hotheads/hh_49/PFP/image.png",
+    url:""
+  },
+  /* 50's */
+  {
+    id: 50,
+    src:"/images/hotheads/hh_50/PFP/image.png",
+    url:""
+  },
+  {
+    id: 51,
+    src:"/images/hotheads/hh_51/PFP/image.png",
+    url:""
+  },
+  {
+    id: 52,
+    src:"/images/hotheads/hh_52/PFP/image.png",
+    url:""
+  },
+  {
+    id: 53,
+    src:"/images/hotheads/hh_53/PFP/image.png",
+    url:""
+  },
+  {
+    id: 54,
+    src:"/images/hotheads/hh_54/PFP/image.png",
+    url:""
+  },
+  {
+    id: 55,
+    src:"/images/hotheads/hh_55/PFP/image.png",
+    url:""
+  },
+  {
+    id: 56,
+    src:"/images/hotheads/hh_56/PFP/image.png",
+    url:""
+  },
+  {
+    id: 57,
+    src:"/images/hotheads/hh_57/PFP/image.png",
+    url:""
+  },
+  {
+    id: 58,
+    src:"/images/hotheads/hh_58/PFP/image.png",
+    url:""
+  },
+  {
+    id: 59,
+    src:"/images/hotheads/hh_59/PFP/image.png",
+    url:""
+  },
+  /* 60's */
+  {
+    id: 60,
+    src:"/images/hotheads/hh_60/PFP/image.png",
+    url:""
+  },
+  {
+    id: 61,
+    src:"/images/hotheads/hh_61/PFP/image.png",
+    url:""
+  },
+  {
+    id: 62,
+    src:"/images/hotheads/hh_62/PFP/image.png",
+    url:""
+  },
+  {
+    id: 63,
+    src:"/images/hotheads/hh_63/PFP/image.png",
+    url:""
+  },
+  {
+    id: 64,
+    src:"/images/hotheads/hh_64/PFP/image.png",
+    url:""
+  },
+  // {
+  //   id: 65,
+  //   src:"/images/hotheads/hh_65/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 66,
+  //   src:"/images/hotheads/hh_66/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 67,
+  //   src:"/images/hotheads/hh_67/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 68,
+  //   src:"/images/hotheads/hh_68/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 69,
+  //   src:"/images/hotheads/hh_69/PFP/image.png",
+  //   url:""
+  // },
+  /* 70's */
+  // {
+  //   id: 70,
+  //   src:"/images/hotheads/hh_70/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 71,
+  //   src:"/images/hotheads/hh_71/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 72,
+  //   src:"/images/hotheads/hh_72/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 73,
+  //   src:"/images/hotheads/hh_73/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 74,
+  //   src:"/images/hotheads/hh_74/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 75,
+  //   src:"/images/hotheads/hh_75/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 76,
+  //   src:"/images/hotheads/hh_76/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 77,
+  //   src:"/images/hotheads/hh_77/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 78,
+  //   src:"/images/hotheads/hh_78/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 79,
+  //   src:"/images/hotheads/hh_79/PFP/image.png",
+  //   url:""
+  // },
+  /* 80's */
+  // {
+  //   id: 80,
+  //   src:"/images/hotheads/hh_80/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 81,
+  //   src:"/images/hotheads/hh_81/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 82,
+  //   src:"/images/hotheads/hh_82/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 83,
+  //   src:"/images/hotheads/hh_83/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 84,
+  //   src:"/images/hotheads/hh_84/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 85,
+  //   src:"/images/hotheads/hh_85/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 86,
+  //   src:"/images/hotheads/hh_86/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 87,
+  //   src:"/images/hotheads/hh_87/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 88,
+  //   src:"/images/hotheads/hh_88/PFP/image.png",
+  //   url:""
+  // },
+  // {
+  //   id: 89,
+  //   src:"/images/hotheads/hh_89/PFP/image.png",
+  //   url:""
+  // },
 ];
