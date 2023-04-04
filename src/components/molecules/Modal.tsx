@@ -28,7 +28,7 @@ const Modal: FC<Props> = (props: Props) => {
           {...scaleExitAnimation}
         >
           <div
-            className={`h-[320px] w-[320px] md:h-[600px] md:w-[600px] bg-opacity-50 md:bg-opacity-90
+            className={`h-[320px] w-[320px] md:h-[700px] md:w-[700px] bg-opacity-50 md:bg-opacity-90
               md:rounded-lg absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 `}
             onClick={(e) => e.stopPropagation()}
           >

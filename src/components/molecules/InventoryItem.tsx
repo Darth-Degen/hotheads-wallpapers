@@ -9,11 +9,25 @@ interface InventoryItemProps {
   src: string;
   isBanner?: boolean;
   setImageModal: Dispatch<SetStateAction<string>>;
+  index: number;
+  activeTab: number;
 }
 
 const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
-  const { src, isBanner = false, setImageModal } = props;
+  const { src, isBanner = false, setImageModal, index, activeTab } = props;
 
+  const folder = () => {
+    return activeTab === 0
+      ? "PFP"
+      : activeTab === 1
+      ? "Banner"
+      : activeTab === 2
+      ? "Wallpaper"
+      : "Memes";
+  };
+
+  const formattedSrc = `/images/hotheads/hh_${index}/${folder()}/${src}`;
+  console.log("formattedSrc ", formattedSrc);
   return (
     <div className={`${isBanner ? "col-span-1" : ""} self-start`}>
       <ScrollItem>
@@ -22,21 +36,27 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
           {...midEnterAnimation}
         >
           <motion.div
-            onClick={() => setImageModal(src)}
+            onClick={() => setImageModal(formattedSrc)}
             className="cursor-pointer w-[200px] h-[200px] relative"
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
-            <Image
-              src={src}
-              alt="Inventory"
-              className="rounded-sm"
-              style={{ objectFit: "cover" }}
-              fill
-            />
+            {src.endsWith(".mp4") || src.endsWith(".mov") ? (
+              <video width="300" height="300" controls autoPlay loop>
+                <source src={formattedSrc} type="video/mp4" />
+              </video>
+            ) : (
+              <Image
+                src={formattedSrc}
+                alt={`${folder()}-${index}`}
+                className="rounded-sm"
+                style={{ objectFit: "cover" }}
+                fill
+              />
+            )}
           </motion.div>
 
-          <div className="" onClick={() => download(src)}>
+          <div className="" onClick={() => download(formattedSrc)}>
             <DownloadIcon />
           </div>
         </motion.div>
