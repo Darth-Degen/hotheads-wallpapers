@@ -29,15 +29,21 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >
-        <Image
-          src={item.src}
-          alt={`Colab-${index}`}
-          className="rounded-sm"
-          // height={300}
-          // width={300}
-          style={{ objectFit: "cover" }}
-          fill
-        />
+        {item.isVideo ? (
+          <video width="300" height="300" controls autoPlay loop>
+            <source src={item.src} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src={item.src}
+            alt={`Colab-${index}`}
+            className="rounded-sm"
+            // height={300}
+            // width={300}
+            style={{ objectFit: "cover" }}
+            fill
+          />
+        )}
       </motion.div>
       <p className="hh-name text-center w-full text-[10px] max-w-[200px]">
         {item.label}

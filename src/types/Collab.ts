@@ -5,5 +5,6 @@ export interface Collab {
   label:string;
   twitter: string;
   isBanner?: boolean;
+  isVideo?: boolean;
   url: string;
 }
