@@ -93,51 +93,60 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
           />
         ))}
       </div>
-      <AnimatePresence mode="wait">
-        <motion.div
-          className="container-child flex flex-wrap items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
-          key="inventory-grid"
-          {...midEnterAnimation}
-        >
-          {inventory
-            .filter((filterItem) => {
-              //show user assets if connected
+      <motion.div
+        className="container-child flex flex-wrap items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
+        // className="container-child grid auto-cols-auto items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
+        key="inventory-grid"
+        {...midEnterAnimation}
+      >
+        {inventory
+          .filter((filterItem) => {
+            //show user assets if connected
+            if (
+              selecetdToken === -1 &&
+              connection &&
+              publicKey &&
+              tokens &&
+              tokens.reduce((hit, tok) => {
+                // console.log("tok?.name ", tok?.name);
+                if (tok?.name === filterItem.hash) {
+                  return true;
+                }
+                return hit;
+              }, false)
+            ) {
+              return true;
+            }
+            //show assets if selected
+            if (selecetdToken > -1 && filterItem.id === selecetdToken) {
+              return true;
+            } else if (selecetdToken > -1 && filterItem.id !== selecetdToken) {
+              return false;
+            }
+            //show all if disconnected
+            if (!connection || !publicKey || (publicKey && !hasToken)) {
+              return true;
+            }
+          })
+          .map((item: Inventory, index: number) => {
+            console.log("PRE Map");
+            if (
+              item[tabs[activeTab] as keyof Inventory] &&
+              Array.isArray(item[tabs[activeTab] as keyof Inventory])
+            ) {
               if (
-                selecetdToken === -1 &&
-                connection &&
-                publicKey &&
-                tokens &&
-                tokens.reduce((hit, tok) => {
-                  // console.log("tok?.name ", tok?.name);
-                  if (tok?.name === filterItem.hash) {
-                    return true;
-                  }
-                  return hit;
-                }, false)
+                (selecetdToken > -1 || (publicKey && hasToken)) &&
+                //@ts-ignore
+                item[tabs[activeTab] as keyof Inventory].length === 0
               ) {
-                return true;
+                return (
+                  <div key="empty" className="text-xs">
+                    NO ASSETS FOUND FOR {item.id}
+                  </div>
+                );
               }
-              //show assets if selected
-              if (selecetdToken > -1 && filterItem.id === selecetdToken) {
-                return true;
-              } else if (
-                selecetdToken > -1 &&
-                filterItem.id !== selecetdToken
-              ) {
-                return false;
-              }
-              //show all if disconnected
-              if (!connection || !publicKey) {
-                return true;
-              }
-            })
-            .map((item: Inventory) => {
-              if (
-                item[tabs[activeTab] as keyof Inventory] &&
-                Array.isArray(item[tabs[activeTab] as keyof Inventory])
-              ) {
-                console.log("selecetdToken ", selecetdToken);
-                console.log("item ", item);
+              //@ts-ignore
+              if (item[tabs[activeTab] as keyof Inventory].length > 0) {
                 //@ts-ignore
                 return item[tabs[activeTab] as keyof Inventory].map(
                   (src: string) => (
@@ -152,9 +161,9 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
                   )
                 );
               }
-            })}
-        </motion.div>
-      </AnimatePresence>
+            }
+          })}
+      </motion.div>
     </div>
   );
 };

@@ -14,6 +14,7 @@ interface InventoryItemProps {
 }
 
 const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
+  // console.log("InventoryItem");
   const { src, isBanner = false, setImageModal, index, activeTab } = props;
 
   const folder = () => {
@@ -27,7 +28,7 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
   };
 
   const formattedSrc = `/images/hotheads/hh_${index}/${folder()}/${src}`;
-  console.log("src ", src);
+  // console.log("formattedSrc ", formattedSrc);
   return (
     <div className={`${isBanner ? "col-span-1" : ""} self-start`}>
       <ScrollItem>
