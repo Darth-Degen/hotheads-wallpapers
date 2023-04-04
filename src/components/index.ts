@@ -38,6 +38,7 @@ const GalleryItem = dynamic(()=> import("./molecules/GalleryItem"))
 const CollabItem = dynamic(()=> import("./molecules/CollabItem"))
 const Menu = dynamic(() => import("./molecules/Menu"))
 const InventoryItem = dynamic(() => import("./molecules/InventoryItem") )
+const InventoryTabNav = dynamic(() => import("./molecules/InventoryTabNav") )
 //organisms
 const Header = dynamic(()=> import("./organisms/Header"))
 const Footer = dynamic(()=> import("./organisms/Footer"))
@@ -48,6 +49,7 @@ const MobileDisplay = dynamic(() => import("./organisms/MobileDisplay") )
 const Gallery = dynamic(() => import("./organisms/Gallery") )
 const Collab = dynamic(() => import("./organisms/Collab") )
 const InventoryTabs = dynamic(() => import("./organisms/InventoryTabs") )
+const InventoryItems = dynamic(() => import("./organisms/InventoryItems") )
 //templates
 const PageLayout = dynamic(()=> import("./templates/PageLayout"))
 const DownloadView = dynamic(()=> import("./templates/DownloadView"))
@@ -98,5 +100,7 @@ export {
   Menu,
   InventoryTabs,
   InventoryItem,
-  DownloadIcon
+  DownloadIcon,
+  InventoryItems,
+  InventoryTabNav
 }

@@ -7,15 +7,13 @@ import download from "downloadjs";
 
 interface InventoryItemProps {
   src: string;
-  isBanner?: boolean;
   setImageModal: Dispatch<SetStateAction<string>>;
   index: number;
   activeTab: number;
 }
 
 const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
-  // console.log("InventoryItem");
-  const { src, isBanner = false, setImageModal, index, activeTab } = props;
+  const { src, setImageModal, index, activeTab } = props;
 
   const folder = () => {
     return activeTab === 0
@@ -28,9 +26,9 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
   };
 
   const formattedSrc = `/images/hotheads/hh_${index}/${folder()}/${src}`;
-  // console.log("formattedSrc ", formattedSrc);
+  // console.log("src ", src);
   return (
-    <div className={`${isBanner ? "col-span-1" : ""} self-start`}>
+    <div className={`self-start`}>
       <ScrollItem>
         <motion.div
           className={`rounded-xl flex flex-col items-center justify-center gap-4`}
