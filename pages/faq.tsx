@@ -6,12 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 const Home: NextPage = () => {
   return (
     <PageLayout header="FAQ">
-      <div className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full w-full flex flex-col items-center px-0 md:px-5 py-5 md:py-10">
-        {data.map((item, index) => (
-          <ScrollItem key={index}>
-            <FAQ question={item.question} answer={item.answer} />
-          </ScrollItem>
-        ))}
+      <div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-5 pt-5">
+        <div className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full w-full flex flex-col items-center px-0 md:px-5 py-5 md:py-10">
+          {data.map((item, index) => (
+            <ScrollItem key={index}>
+              <FAQ question={item.question} answer={item.answer} />
+            </ScrollItem>
+          ))}
+        </div>
       </div>
     </PageLayout>
   );
