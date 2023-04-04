@@ -49,18 +49,18 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
   const tabs: string[] = ["pfp", "banners", "wallpapers", "memes"];
 
   const [didHover, setDidHover] = useState<boolean>(false);
-  const [tokenId, setTokenId] = useState<number>(-1);
+  const [selecetdToken, setSelectedToken] = useState<number>(-1);
 
   const { connection } = useConnection();
   const { publicKey } = useWallet();
 
   const selectClick = (id: number) => {
-    setTokenId(id);
+    setSelectedToken(id);
     setDidHover(false);
   };
 
   useEffect(() => {
-    if (publicKey) setTokenId(-1);
+    if (publicKey) setSelectedToken(-1);
   }, [publicKey]);
 
   return (
@@ -73,11 +73,11 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
         setDidHover={setDidHover}
         didHover={didHover}
         label={
-          tokenId === -1
+          selecetdToken === -1
             ? "SELECT"
-            : tokenId < 10
-            ? `00${tokenId}`
-            : `0${tokenId}`
+            : selecetdToken < 10
+            ? `00${selecetdToken}`
+            : `0${selecetdToken}`
         }
         collections={collections}
         disabled={hasToken}
@@ -103,7 +103,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
             .filter((filterItem) => {
               //show user assets if connected
               if (
-                tokenId === -1 &&
+                selecetdToken === -1 &&
                 connection &&
                 publicKey &&
                 tokens &&
@@ -118,10 +118,12 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
                 return true;
               }
               //show assets if selected
-              if (tokenId > -1 && filterItem.id === tokenId) {
-                console.log(filterItem);
+              if (selecetdToken > -1 && filterItem.id === selecetdToken) {
                 return true;
-              } else if (tokenId > -1 && filterItem.id !== tokenId) {
+              } else if (
+                selecetdToken > -1 &&
+                filterItem.id !== selecetdToken
+              ) {
                 return false;
               }
               //show all if disconnected
@@ -129,20 +131,22 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
                 return true;
               }
             })
-            .map((item: Inventory, index: number) => {
+            .map((item: Inventory) => {
               if (
                 item[tabs[activeTab] as keyof Inventory] &&
                 Array.isArray(item[tabs[activeTab] as keyof Inventory])
               ) {
+                console.log("selecetdToken ", selecetdToken);
+                console.log("item ", item);
                 //@ts-ignore
                 return item[tabs[activeTab] as keyof Inventory].map(
                   (src: string) => (
                     <InventoryItem
-                      key={index}
+                      key={item.id}
                       src={src}
                       isBanner={activeTab === 1}
                       setImageModal={setImageModal}
-                      index={tokenId > -1 ? tokenId : index}
+                      index={selecetdToken > -1 ? selecetdToken : item.id}
                       activeTab={activeTab}
                     />
                   )

@@ -27,7 +27,7 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
   };
 
   const formattedSrc = `/images/hotheads/hh_${index}/${folder()}/${src}`;
-  console.log("formattedSrc ", formattedSrc);
+  console.log("src ", src);
   return (
     <div className={`${isBanner ? "col-span-1" : ""} self-start`}>
       <ScrollItem>
