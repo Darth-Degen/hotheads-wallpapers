@@ -41,7 +41,7 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
             {src.endsWith(".mp4") || src.endsWith(".mov") ? (
-              <video width="300" height="300" controls autoPlay loop>
+              <video width="300" height="300" controls loop>
                 <source src={formattedSrc} type="video/mp4" />
               </video>
             ) : (

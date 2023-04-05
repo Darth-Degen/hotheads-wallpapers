@@ -3,12 +3,17 @@ import Image from "next/image";
 interface Props extends SVGProps<SVGSVGElement> {
   color?: string;
   size?: number;
+  url?: string;
 }
 
 const TwitterIcon: FC<Props> = (props: Props) => {
-  const { color = "white", size = 30 } = props;
+  const {
+    color = "white",
+    size = 30,
+    url = "https://twitter.com/HotHeadsNFT",
+  } = props;
   return (
-    <a href="https://twitter.com/HotHeadsNFT" rel="noreferrer" target="_blank">
+    <a href={url} rel="noreferrer" target="_blank">
       <Image
         src="/images/twitter.png"
         width={size}

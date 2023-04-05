@@ -55,10 +55,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           </div>
         )}
       </motion.div>
-      <p className="hidden lg:block hh-name text-center mt-4 mb-1 w-full text-[10px]">
-        Hot Head #{getId(index)}
-      </p>
-      <p className="lg:hidden hh-name text-center mt-4 mb-1 w-full text-[10px]">
+      <p className="hh-name text-center mt-4 mb-1 w-full text-[10px]  max-w-[200px]">
         #{getId(index)}
       </p>
     </div>

@@ -2,6 +2,7 @@ import { PageLayout, ScrollItem, ArrowIcon } from "@components";
 import { FC, useState } from "react";
 import { NextPage } from "next";
 import { motion, AnimatePresence } from "framer-motion";
+import { useWindowSize } from "@hooks";
 
 const Home: NextPage = () => {
   return (
@@ -19,39 +20,6 @@ const Home: NextPage = () => {
   );
 };
 
-const ParentVariants = {
-  closed: {
-    height: "8rem",
-    transition: {
-      duration: "1",
-    },
-  },
-  open: {
-    height: "14rem",
-    transition: {
-      when: "beforeChildren", // <<-- does not work
-      duration: "1", /// <<-- works
-      // delayChildren: "1" // <<-- does not work
-    },
-  },
-};
-
-const ChildVariants = {
-  closed: {
-    // opacity: "0",
-  },
-  open: {
-    // opacity: "1",
-    // transition: {
-    //   delay: "1",
-    //   duration: "1",
-    // },
-  },
-  exit: {
-    // opacity: "0",
-  },
-};
-
 interface FAQProps {
   question: string;
   answer: string;
@@ -60,6 +28,36 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
   const { question, answer } = props;
 
   const [open, toggleOpen] = useState(false);
+  const [winWidth, winHeight] = useWindowSize();
+
+  const getHeight = (): string => {
+    // winWidth < 420 ? : answer.length > 140 ? "15rem" :"14rem" : answer.length > 140 ? "15rem" : "12rem",
+    if (winWidth < 420) {
+      if (answer.length > 140) return "21rem";
+      else return "16rem";
+    } else {
+      if (answer.length > 140) return "15rem";
+      else return "12rem";
+    }
+  };
+  const ParentVariants = {
+    closed: {
+      height: winWidth < 420 ? "11rem" : "8rem",
+      paddingBottom: 30,
+      transition: {
+        duration: "1",
+      },
+    },
+    open: {
+      height: getHeight(),
+      paddingBottom: 30,
+      transition: {
+        when: "beforeChildren", // <<-- does not work
+        duration: "1", /// <<-- works
+        // delayChildren: "1" // <<-- does not work
+      },
+    },
+  };
 
   return (
     <motion.div
@@ -84,12 +82,12 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
       <AnimatePresence mode="wait">
         {open && (
           <motion.div
-            className="text-custom-light-red text-xs lg:text-xs px-4 lg:px-8"
+            className="text-custom-light-red text-xs lg:text-xs px-4 lg:px-8 pb-5"
             key="child"
-            variants={ChildVariants}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, marginBottom: 0 }}
             animate={{
               opacity: 1,
+              marginBottom: answer.length > 12 ? 500 : "auto",
               transition: { delay: 0.5, duration: 1, ease: "easeInOut" },
             }}
             exit={{

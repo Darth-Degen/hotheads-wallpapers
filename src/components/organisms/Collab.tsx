@@ -34,7 +34,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
   return (
     <motion.div
-      className="flex flex-wrap items-center justify-center md:gap-x-8 md:gap-y-8 md:px-6 py-5"
+      className="flex flex-wrap items-center justify-center gap-2 md:gap-x-8 md:gap-y-8  py-5 px-0"
       variants={container}
       initial="hidden"
       animate="show"

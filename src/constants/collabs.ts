@@ -13,14 +13,14 @@ export const collabs: Collab[] = [
   {
     id: 1,
     src:"/images/collabs/blinx.png",
-    label:"Hot Heads x Hyblinxx",
+    label:"Hyblinxx",
     twitter:"https://twitter.com/hyblinxx",
     url:"https://exchange.art/single/4vB3AQQ1WNyFhmDLgDshV1mbptrmBxzBRqaG3faWRdzb"  
   },
   {
     id: 2,
     src:"/images/collabs/observer.mp4",
-    label:"Hot Heads x Observer",
+    label:"Observer",
     twitter:"https://twitter.com/",
     isVideo: true,
     url:"https://exchange.art/single/BB74ktLKARwcoK1PKp71NxMJ6qr5qnSeBEsdtWbpPVbM"   
@@ -28,42 +28,42 @@ export const collabs: Collab[] = [
   {
     id: 3,
     src:"/images/collabs/rgb.png",
-    label:"Hot Heads x RGB",
+    label:"RGB",
     twitter:"https://twitter.com/HotHeadsNFT", 
     url:"https://exchange.art/single/2Gr2wxYFJLp2F54svtcm4L6zSNre1yVUmPXKZu7tdGqS" 
   },
   {
     id: 4,
     src:"/images/collabs/rupture.png",
-    label:"Hot Heads x Rupture",
+    label:"Rupture",
     twitter:"https://twitter.com/HotHeadsNFT", 
     url:"https://exchange.art/single/8B8AZiRT4LCzoSMbsTAVpBYm4ntCPiipgGU1coh9xMe3" 
   },
   {
     id: 5,
     src:"/images/collabs/scum.png",
-    label:"Hot Heads x Scum",
+    label:"Scum",
     twitter:"https://twitter.com/SCUMSOL", 
     url:"https://exchange.art/single/EZ7HMtZKHgbuYZmchVJjLU8N5rpVuFSSqhPUDFA3y7ZF" 
   },
   {
     id: 6,
     src:"/images/collabs/sdnt.png",
-    label:"Hot Heads x SDNT",
+    label:"SDNT",
     twitter:"https://twitter.com/HotHeadsNFT", 
     url:"https://exchange.art/single/DjNnqpuUjh5EV997CwEfuiG8Bschnm8uTq3qqGkf6Wtp" 
   },
   {
     id: 7,
     src:"/images/collabs/utopia.png",
-    label:"Hot Heads x Utopia",
+    label:"Utopia",
     twitter:"https://twitter.com/HotHeadsNFT", 
     url:"https://exchange.art/single/3pcEKugt4SdB3HCyC1tXdZUuUeT4pZmXRCtYPwNjX7rz" 
   },
   {
     id: 8,
     src:"/images/collabs/zenom.gif",
-    label:"Hot Heads x Zen0m",
+    label:"Zen0m",
     twitter:"https://twitter.com/zen0m", 
     url:"https://exchange.art/single/HZmmCbFAquwmLgiuXJz6xs47jiZfULYz2usbnNPAKXk4" 
   },

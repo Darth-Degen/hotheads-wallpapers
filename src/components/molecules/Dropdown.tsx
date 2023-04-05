@@ -1,9 +1,9 @@
 import { dropdownAnimations, dropdownItemsAnimations } from "@constants";
 import { DropdownButton, DropdownItem } from "@components";
 import { Collection } from "@types";
-import { Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useOutsideAlerter } from "@hooks";
 interface Props {
   handleClick: (id: number) => void;
   setDidHover: Dispatch<SetStateAction<boolean>>;
@@ -23,15 +23,19 @@ const Dropdown: FC<Props> = (props: Props) => {
     disabled = false,
   } = props;
 
+  const ref = useRef(null);
+  useOutsideAlerter(ref, () => setDidHover(false));
+
   return (
     <div
       onMouseEnter={() => {
         if (!disabled) setDidHover(true);
       }}
-      onMouseLeave={() => {
-        if (!disabled) setDidHover(false);
-      }}
+      // onMouseLeave={() => {
+      //   if (!disabled) setDidHover(false);
+      // }}
       className="lg:self-end"
+      ref={ref}
     >
       <DropdownButton isActive={didHover} label={label} disabled={disabled} />
       <AnimatePresence mode="wait">

@@ -18,34 +18,33 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
     if (id < 10) return ("00" + id) as string;
     return ("0" + id) as string;
   };
-
   return (
     <div
       className={`rounded-lg md:rounded relative flex flex-col items-center w-full gap-3 py-1`}
     >
       <motion.div
-        className="medium-frame relative cursor-pointer  w-[200px] h-[200px] "
+        className="medium-frame relative cursor-pointer w-[250px] h-[250px] overflow-hidden"
         onClick={() => setImageModal(item.src)}
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.2, ease: "easeInOut" }}
       >
         {item.isVideo ? (
-          <video width="300" height="300" controls autoPlay loop>
+          <video width="300" height="300" controls loop>
             <source src={item.src} type="video/mp4" />
           </video>
         ) : (
           <Image
             src={item.src}
             alt={`Colab-${index}`}
-            className="rounded-sm"
             // height={300}
             // width={300}
             style={{ objectFit: "cover" }}
             fill
+            className="rounded-sm "
           />
         )}
       </motion.div>
-      <p className="hh-name text-center w-full text-[10px] max-w-[200px]">
+      <p className="hh-name text-center w-full text-[9px] md:text-[10px] max-w-[200px]">
         {item.label}
       </p>
       <div className="flex gap-2">
@@ -56,7 +55,7 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
           <ExchangeIcon size={30} />
         </div>
         <div className=" transition-all duration-100` hover:outline hover:outline-white rounded-full">
-          <TwitterIcon />
+          <TwitterIcon url={item.twitter} />
         </div>
       </div>
     </div>
