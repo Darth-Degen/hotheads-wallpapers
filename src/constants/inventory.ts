@@ -246,7 +246,7 @@ export const inventory: Inventory[] = [
   {
     id: 30, 
     hash: "Hot Head #030",
-    banners:["030.jpg"],
+    banners:["030.png"],
     memes:["30.png"],
     pfp: ["pSKBafhmlmuCipSt5HQM9n-WyFeYTg7TCzQWzY5yPdA.png","image.png"],
     wallpapers: ["image0.jpg"],

@@ -61,7 +61,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
   return (
     <div
       className="container flex flex-col w-full  items-center justify-start 
-    rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[500px] lg:min-h-[560px] xl:min-h-[580px] 2xl:min-h-[600px]  px-2"
+    rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[500px]  px-2"
     >
       <Dropdown
         handleClick={selectClick}

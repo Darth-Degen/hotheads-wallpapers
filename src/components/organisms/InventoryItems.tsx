@@ -12,7 +12,29 @@ import { Inventory } from "@types";
 import { InventoryItem } from "@components";
 import { Metadata } from "@metaplex-foundation/js";
 import { useWallet } from "@solana/wallet-adapter-react";
+interface Tab {
+  name: string;
+  icon: string;
+}
 
+const _tabs: Tab[] = [
+  {
+    name: "PFP",
+    icon: "user.svg",
+  },
+  {
+    name: "Banners",
+    icon: "image.svg",
+  },
+  {
+    name: "Wallpapers",
+    icon: "laptop.svg",
+  },
+  {
+    name: "Memes",
+    icon: "smiley.svg",
+  },
+];
 interface Props {
   hasToken?: boolean;
   activeTab: number;
@@ -132,7 +154,7 @@ const InventoryItems: FC<Props> = (props: Props) => {
               ) {
                 return (
                   <div key="empty" className="text-xs">
-                    NO ASSETS FOUND FOR {item.id}
+                    NO {_tabs[activeTab].name} FOUND
                   </div>
                 );
               }
