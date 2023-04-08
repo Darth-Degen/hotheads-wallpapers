@@ -33,10 +33,10 @@ const Home: NextPage = () => {
         tokens.map(async (token) => {
           if (token.name.includes("Hot Head")) {
             const uri = token.uri;
-            // console.log(token.name);
+            console.log(token.name);
             try {
               await axios.get(uri).then((r) => {
-                // console.log(uri, r.data);
+                console.log(uri, r.data);
                 jsonArr.push(r.data);
               });
             } catch (e: any) {

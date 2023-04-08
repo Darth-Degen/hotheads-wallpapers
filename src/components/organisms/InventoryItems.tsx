@@ -99,10 +99,6 @@ const InventoryItems: FC<Props> = (props: Props) => {
     filterInventory();
   }, [filterInventory]);
 
-  useEffect(() => {
-    console.log("xx inventoryData ", inventoryData);
-  }, [inventoryData]);
-
   return (
     <motion.div
       className="container-child flex flex-wrap items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
@@ -111,71 +107,41 @@ const InventoryItems: FC<Props> = (props: Props) => {
       {...midEnterAnimation}
     >
       {inventoryData &&
-        inventoryData
-          // .filter((filterItem) => {
-          //   //show user assets if connected
-          //   if (
-          //     selectedToken === -1 &&
-          //     connection &&
-          //     publicKey &&
-          //     tokens &&
-          //     tokens.reduce((hit, tok) => {
-          //       if (tok?.name === filterItem.hash) {
-          //         console.log("connected ", tok?.name);
-          //         return true;
-          //       }
-          //       return hit;
-          //     }, false)
-          //   ) {
-          //     return true;
-          //   }
-          //   //show assets if selected
-          //   if (selectedToken > -1 && filterItem.id === selectedToken) {
-          //     console.log("selected ", selectedToken);
-          //     return true;
-          //   } else if (selectedToken > -1 && filterItem.id !== selectedToken) {
-          //     return false;
-          //   }
-          //   //show all if disconnected
-          //   if (!connection || !publicKey || (publicKey && !hasToken)) {
-          //     return true;
-          //   }
-          // })
-          .map((item: Inventory, index: number) => {
+        inventoryData.map((item: Inventory, index: number) => {
+          if (
+            item[tabs[activeTab] as keyof Inventory] &&
+            Array.isArray(item[tabs[activeTab] as keyof Inventory])
+          ) {
+            //show no assets message
             if (
-              item[tabs[activeTab] as keyof Inventory] &&
-              Array.isArray(item[tabs[activeTab] as keyof Inventory])
-            ) {
-              //show no assets message
-              if (
-                (selectedToken > -1 || (publicKey && hasToken)) &&
-                //@ts-ignore
-                item[tabs[activeTab] as keyof Inventory].length === 0
-              ) {
-                return (
-                  <div key="empty" className="text-xs">
-                    NO {_tabs[activeTab].name} FOUND
-                  </div>
-                );
-              }
-              //render view
+              (selectedToken > -1 || (publicKey && hasToken && index === 0)) &&
               //@ts-ignore
-              if (item[tabs[activeTab] as keyof Inventory].length > 0) {
-                //@ts-ignore
-                return item[tabs[activeTab] as keyof Inventory].map(
-                  (src: string) => (
-                    <InventoryItem
-                      key={item.id}
-                      src={src}
-                      setImageModal={setImageModal}
-                      index={selectedToken > -1 ? selectedToken : item.id}
-                      activeTab={activeTab}
-                    />
-                  )
-                );
-              }
+              item[tabs[activeTab] as keyof Inventory].length === 0
+            ) {
+              return (
+                <div key={`empty ${Math.random()}`} className="text-xs">
+                  NO {_tabs[activeTab].name} FOUND
+                </div>
+              );
             }
-          })}
+            //render view
+            //@ts-ignore
+            if (item[tabs[activeTab] as keyof Inventory].length > 0) {
+              //@ts-ignore
+              return item[tabs[activeTab] as keyof Inventory].map(
+                (src: string) => (
+                  <InventoryItem
+                    key={`${Math.random()} ${item.id}`}
+                    src={src}
+                    setImageModal={setImageModal}
+                    index={selectedToken > -1 ? selectedToken : item.id}
+                    activeTab={activeTab}
+                  />
+                )
+              );
+            }
+          }
+        })}
     </motion.div>
   );
 };

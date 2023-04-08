@@ -46,6 +46,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
 
   const [didHover, setDidHover] = useState<boolean>(false);
   const [selectedToken, setSelectedToken] = useState<number>(-1);
+  const [counter, setCounter] = useState<number>(0);
 
   const { publicKey } = useWallet();
 
@@ -57,6 +58,15 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
   useEffect(() => {
     if (publicKey) setSelectedToken(-1);
   }, [publicKey]);
+
+  //used to alternate views
+  useEffect(() => {
+    setCounter((prevState) => prevState + 1);
+  }, [selectedToken, activeTab]);
+
+  useEffect(() => {
+    console.log("counter ", counter, counter % 2);
+  }, [counter]);
 
   return (
     <div
@@ -80,7 +90,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
       <div className="flex flex-col md:flex-row gap-0.5 flex-wrap items-center justify-center md:gap-4 w-full pt-6">
         {_tabs.map((item: Tab, index) => (
           <InventoryTabNav
-            key={index}
+            key={`${item.name} ${index}`}
             item={item}
             index={index}
             isActive={activeTab === index}
@@ -89,7 +99,9 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
         ))}
       </div>
       {/* multiple layouts resolve image duplication bug */}
-      {selectedToken > -1 && selectedToken % 2 === 0 && (
+
+      {/* drop down  */}
+      {selectedToken > -1 && counter % 2 === 0 && (
         <InventoryItems
           hasToken={hasToken}
           activeTab={activeTab}
@@ -98,7 +110,8 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
           tokens={tokens}
         />
       )}
-      {selectedToken > -1 && selectedToken % 2 === 1 && (
+      {/* drop down */}
+      {selectedToken > -1 && counter % 2 === 1 && (
         <InventoryItems
           hasToken={hasToken}
           activeTab={activeTab}
@@ -107,7 +120,8 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
           tokens={tokens}
         />
       )}
-      {selectedToken === -1 && publicKey && (
+      {/* signed in */}
+      {selectedToken === -1 && publicKey && counter % 2 === 0 && (
         <InventoryItems
           hasToken={hasToken}
           activeTab={activeTab}
@@ -116,6 +130,16 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
           tokens={tokens}
         />
       )}
+      {selectedToken === -1 && publicKey && counter % 2 === 1 && (
+        <InventoryItems
+          hasToken={hasToken}
+          activeTab={activeTab}
+          selectedToken={selectedToken}
+          setImageModal={setImageModal}
+          tokens={tokens}
+        />
+      )}
+      {/* signed out */}
       {selectedToken === -1 && !publicKey && (
         <InventoryItems
           hasToken={hasToken}
