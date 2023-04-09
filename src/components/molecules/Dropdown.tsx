@@ -49,7 +49,7 @@ const Dropdown: FC<Props> = (props: Props) => {
           >
             <motion.ul className="rounded divide-y-4 divide-custom-light-gray-2 border-4 border-custom-light-gray-2 shadow max-h-[200px] overflow-y-auto z-50 ">
               <DropdownItem
-                item={{ id: -1, src: "", url: "" }}
+                item={{ id: -1, src: "", url: "", name: "" }}
                 handleClick={handleClick}
                 variants={dropdownItemsAnimations}
               />
