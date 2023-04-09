@@ -8,10 +8,11 @@ interface GalleryItemProps {
   setImageModal: Dispatch<SetStateAction<string>>;
   src: string;
   url: string;
+  name: string;
 }
 
 const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
-  const { index, setImageModal, src, url } = props;
+  const { index, setImageModal, src, url, name } = props;
   const [progrss, setProgress] = useState<number>(0);
   // const ref = useRef(null) as RefObject<HTMLDivElement> | undefined;
 
@@ -55,9 +56,10 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
           </div>
         )}
       </motion.div>
-      <p className="hh-name text-center mt-4 mb-1 w-full text-[10px]  max-w-[200px]">
-        #{getId(index)}
-      </p>
+      <div className="hh-name text-center mt-4 mb-1 w-full text-[10px] max-w-[200px]">
+        <p className="text-sm whitespace-nowrap">{name}</p>
+        <p className="text-[#FFC812]">#{getId(index)}</p>
+      </div>
     </div>
   );
 };

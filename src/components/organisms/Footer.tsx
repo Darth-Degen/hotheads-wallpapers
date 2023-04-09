@@ -44,7 +44,7 @@ const Footer: FC = () => {
                 alt="Discord"
                 width={288 / 7}
                 height={189 / 7}
-                className="transition-opacity duration-300 opacity-70 hover:opacity-100"
+                className="transition-opacity duration-300 "
               />
             </a>
           </div>
@@ -59,7 +59,7 @@ const Footer: FC = () => {
                 alt="Twitter"
                 width={213 / 7}
                 height={213 / 7}
-                className="transition-opacity duration-300 opacity-70 hover:opacity-100"
+                className="transition-opacity duration-300 "
               />
             </a>
           </div>
@@ -70,7 +70,7 @@ const Footer: FC = () => {
                 alt="About"
                 width={216 / 7}
                 height={240 / 7}
-                className="transition-opacity duration-300 opacity-70 hover:opacity-100"
+                className="transition-opacity duration-300 "
               />
             </Link>
           </div>
@@ -81,7 +81,7 @@ const Footer: FC = () => {
                 alt="Inventory"
                 width={216 / 7}
                 height={189 / 7}
-                className="transition-opacity duration-300 opacity-70 hover:opacity-100"
+                className="transition-opacity duration-300 "
               />
             </Link>
           </div>

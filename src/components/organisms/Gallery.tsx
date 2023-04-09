@@ -63,6 +63,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
                 setImageModal={setImageModal}
                 src={item.src}
                 url={item.url}
+                name={item.name}
               />
             </ScrollItem>
           );

@@ -36,7 +36,7 @@ const Home: NextPage = () => {
             console.log(token.name);
             try {
               await axios.get(uri).then((r) => {
-                console.log(uri, r.data);
+                // console.log(uri, r.data);
                 jsonArr.push(r.data);
               });
             } catch (e: any) {
