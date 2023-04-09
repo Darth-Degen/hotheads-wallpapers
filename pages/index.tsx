@@ -9,10 +9,7 @@ import { midEnterAnimation } from "@constants";
 const Home: NextPage = () => {
   return (
     <>
-      <PageHead
-        title="Hot Heads"
-        description="Welcome to your Hot Heads asset portfolio"
-      />
+      <PageHead title="Hot Heads" description="Welcome to the Underworld" />
       <motion.div
         className="bg-main bg-cover bg-fixed h-screen w-screen bg-custom-black flex flex-col justify-center items-center "
         {...midEnterAnimation}
