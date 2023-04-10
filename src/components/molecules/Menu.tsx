@@ -42,14 +42,14 @@ const Menu: FC<Props> = (props: Props) => {
             key="main-menu"
             // onMouseLeave={() => toggleMenu(false)}
             initial={{ width: 0, opacity: 0 }}
-            animate={{ width: isTablet ? winWidth - 15 : 768, opacity: 1 }}
+            animate={{ width: isTablet ? winWidth : 768, opacity: 1 }}
             exit={{
               width: 0,
               transition: { duration: 0.5 },
               opacity: 1,
             }}
             transition={{ duration: 0.7 }}
-            className="bg-custom-black fixed top-0 right-0 z-50 shadow-xl rounded-l-lg font-daysOne"
+            className="bg-custom-black fixed top-0 right-0 z-50 shadow-xl lg:rounded-l-lg font-daysOne"
             onClick={() => toggleMenu(false)}
           >
             <motion.div
@@ -59,7 +59,7 @@ const Menu: FC<Props> = (props: Props) => {
               animate="open"
               exit="closed"
             >
-              <div className="flex flex-col items-center justify-start 2xl:items-start pt-[35%] sm:pt-[20%] h-full text-2xl uppercase ">
+              <div className="flex flex-col items-center justify-start 2xl:items-start pt-[35%] sm:pt-[20%] h-full text-2xl uppercase mr-[14px]">
                 <NavItem href="/about">About</NavItem>
                 <NavItem href="/gallery">Gallery</NavItem>
                 <NavItem href="/inventory">Inventory</NavItem>

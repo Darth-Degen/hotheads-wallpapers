@@ -18,7 +18,7 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer className="px-8 py-4 abolute lg:fixed bottom-0 w-full bg-transparent">
+    <footer className="px-8 py-4 abolute bottom-0 w-full bg-transparent w-screen">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <motion.div
           className="md:w-1/3"
@@ -96,9 +96,6 @@ const Footer: FC = () => {
               rel="noreferrer"
             >
               <div className=" flex flex-row-reverse md:flex-col gap-2 md:gap-0 items-center font-daysOne">
-                {/* <div
-                  className={`hidden md:block rounded-2xl text-3xl w-min border border-white px-3`}
-                > */}
                 <motion.div
                   className="rounded"
                   {...containerAnimation}
@@ -107,8 +104,6 @@ const Footer: FC = () => {
                 >
                   <ExpIcon color={"white"} />
                 </motion.div>
-                {/* </div> */}
-                {/* <p className={`mt-1.5 text-white`}>Powered by EXP</p> */}
               </div>
             </a>
           </div>

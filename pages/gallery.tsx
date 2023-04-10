@@ -17,11 +17,11 @@ const Home: NextPage = () => {
 
   return (
     <PageLayout header="Gallery">
-      <motion.div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-5 pt-5">
+      <motion.div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-10 lg:gap-5 pt-5">
         {/* toggle  */}
         <TabBar tabs={tabs} handleTabChange={handleTabChange} />
         {/* content */}
-        <div className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full flex flex-col gap-10 px-2 md:px-5">
+        <div className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full flex flex-col gap-10">
           <AnimatePresence mode="wait">
             {tabId === 0 ? (
               <motion.div {...midExitAnimation} key="hot-heads">

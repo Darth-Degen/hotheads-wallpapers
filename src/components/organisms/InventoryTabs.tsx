@@ -70,8 +70,8 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
 
   return (
     <div
-      className="container flex flex-col w-full  items-center justify-start 
-    rounded md:rounded-2xl lg:rounded-[80px] py-8 min-h-[500px]  px-2"
+      className="container flex flex-col w-full items-center justify-start min-h-[500px] h-full"
+      // className="container flex flex-col w-full items-center justify-start "
     >
       <Dropdown
         handleClick={selectClick}
@@ -87,7 +87,7 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
         collections={collections}
         disabled={publicKey !== null}
       />
-      <div className="flex flex-col md:flex-row gap-0.5 flex-wrap items-center justify-center md:gap-4 w-full pt-6">
+      <div className="flex flex-col md:flex-row gap-0.5 flex-wrap items-center justify-center md:gap-4 w-full pt-6 mr-[16px] lg:mr-auto">
         {_tabs.map((item: Tab, index) => (
           <InventoryTabNav
             key={`${item.name} ${index}`}

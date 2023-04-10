@@ -68,9 +68,9 @@ export const fastEnterAnimation = {
 }
 
 export const scaleExitAnimation = {
-  initial:{ opacity: 0, scale: 0.5 },
+  initial:{ opacity: 0, scale: 1 },
   animate:{ opacity: 1, scale: 1 },
-  exit:{ opacity: 0, scale: 0.5 },
+  exit:{ opacity: 0, scale: 1 },
   transition:{ duration: 0.4, ease: "easeInOut" },
 }
 //variants

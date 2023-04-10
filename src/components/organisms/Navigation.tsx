@@ -62,7 +62,7 @@ const Navigation: FC = () => {
           </div>
           {/* {router.asPath === "/inventory" && ( */}
           <motion.div
-            className="absolute md:fixed left-1/2 md:left-auto -translate-x-1/2 md:-translate-x-0 top-5 md:right-28 lg:right-10 z-10"
+            className="absolute md:fixed left-1/2 md:left-auto -translate-x-1/2 md:-translate-x-0 top-5 md:right-28 lg:right-10 z-0"
             // {...enterAnimation}
           >
             <WalletMultiButton

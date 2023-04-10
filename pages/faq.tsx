@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <PageLayout header="FAQ">
       <div className="w-full h-full md:px-8 md:pt-8 flex flex-col items-center gap-5 pt-5">
-        <div className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full w-full flex flex-col items-center px-0 md:px-5 py-5 md:py-10">
+        <div className="container overflow-y-hidden lg:overflow-y-auto overflow-x-hidden h-full w-full flex flex-col items-center  mt-6 lg:mt-14">
           {data.map((item, index) => (
             <ScrollItem key={index}>
               <FAQ question={item.question} answer={item.answer} />
@@ -33,16 +33,22 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
   const getHeight = (): string => {
     // winWidth < 420 ? : answer.length > 140 ? "15rem" :"14rem" : answer.length > 140 ? "15rem" : "12rem",
     if (winWidth < 420) {
-      if (answer.length > 140) return "21rem";
-      else return "16rem";
+      if (answer.length > 130) return "23rem";
+      else return "18rem";
     } else {
-      if (answer.length > 140) return "15rem";
+      if (answer.length > 130) return "15rem";
       else return "12rem";
     }
   };
+
   const ParentVariants = {
     closed: {
-      height: winWidth < 420 ? "11rem" : "8rem",
+      height:
+        winWidth < 420 && question.length > 25
+          ? "13rem"
+          : winWidth < 420
+          ? "11rem"
+          : "8rem",
       paddingBottom: 30,
       transition: {
         duration: "1",

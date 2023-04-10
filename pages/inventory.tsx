@@ -72,7 +72,7 @@ const Home: NextPage = () => {
     <PageLayout header="Inventory">
       {didMount && (
         <div className="h-full px-0 md:px-6 lg:px-10 flex flex-col w-full items-center gap-4">
-          <div className="text-sm text-center h-6 py-7 md:pt-6 md:pb-4 flex flex-col w-full items-center justify-center">
+          <div className="text-sm text-center h-6 py-10 flex flex-col w-full items-center justify-center">
             <AnimatePresence mode="wait">
               {error && (
                 <div className="text-red-500 text-sm text-center">
