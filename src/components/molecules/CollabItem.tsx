@@ -56,17 +56,6 @@ const CollabItem: FC<CollabItemProps> = (props: CollabItemProps) => {
       <p className="hh-name text-center w-full text-[9px] md:text-[10px] max-w-[200px]">
         {item.label}
       </p>
-      {/* <div className="flex gap-2">
-        <div
-          className={`cursor-pointer hover:outline hover:outline-white rounded-full transition-all duration-100`}
-          onClick={() => window.open(item.url, "_blank", "noreferrer")}
-        >
-          <ExchangeIcon size={30} />
-        </div>
-        <div className=" transition-all duration-100` hover:outline hover:outline-white rounded-full">
-          <TwitterIcon url={item.twitter} />
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -51,10 +51,10 @@ const Home: NextPage = () => {
         ) : (
           <Image
             src={imageModal}
-            fill={true}
+            style={{ objectFit: "contain" }}
+            fill
             alt="Image"
             objectFit="contain"
-            className={`rounded`}
             onLoadingComplete={() => setImageLoaded(true)}
           />
         )}

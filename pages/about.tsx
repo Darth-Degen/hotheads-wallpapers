@@ -24,7 +24,7 @@ const About: NextPage = () => {
           <AnimatePresence mode="wait">
             {tabId === 0 ? (
               <motion.div
-                className="h-full flex flex-col gap-10 px-2 md:px-10 py-6"
+                className="h-full flex flex-col gap-10 px-2 md:px-10 pb-6 pt-11"
                 {...midExitAnimation}
                 key="info"
               >
@@ -42,7 +42,7 @@ const About: NextPage = () => {
                 <ScrollItem key="info-3">
                   <ListItem>
                     The project is founded and created by Sikedelic, a long time
-                    contributor in the Web 3 space
+                    contributor in the Web 3 space.
                   </ListItem>
                 </ScrollItem>
                 <ScrollItem key="info-4">

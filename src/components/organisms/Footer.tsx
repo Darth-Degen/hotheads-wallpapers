@@ -18,7 +18,7 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer className="px-8 py-4 abolute bottom-0 w-full bg-transparent w-screen">
+    <footer className="px-8 py-4 lg:pb-0 abolute bottom-0 bg-transparent w-screen">
       <div className="flex flex-col md:flex-row items-center gap-4">
         <motion.div
           className="md:w-1/3"
@@ -86,27 +86,25 @@ const Footer: FC = () => {
             </Link>
           </div>
         </div>
-        <div className="md:w-1/3 flex justify-end gap-2">
+        <div className="md:w-1/3 flex justify-end z-0">
           {/* exp */}
-          <div className="flex xl:w-1/4 justify-end ">
-            <a
-              className="relative cursor-pointer whitespace-nowrap"
-              href="https://twitter.com/sol_exp"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className=" flex flex-row-reverse md:flex-col gap-2 md:gap-0 items-center font-daysOne">
-                <motion.div
-                  className="rounded"
-                  {...containerAnimation}
-                  onMouseEnter={() => setAnimate(true)}
-                  onMouseLeave={() => setAnimate(false)}
-                >
-                  <ExpIcon color={"white"} />
-                </motion.div>
-              </div>
-            </a>
-          </div>
+          <a
+            className="relative cursor-pointer whitespace-nowrap"
+            href="https://twitter.com/sol_exp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="flex flex-row-reverse md:flex-col gap-2 md:gap-0 items-center font-daysOne">
+              <motion.div
+                className="rounded"
+                {...containerAnimation}
+                onMouseEnter={() => setAnimate(true)}
+                onMouseLeave={() => setAnimate(false)}
+              >
+                <ExpIcon color={"white"} />
+              </motion.div>
+            </div>
+          </a>
         </div>
       </div>
     </footer>

@@ -17,7 +17,7 @@ const PageLayout: FC<Props> = (props: Props) => {
   }, []);
 
   return (
-    <div className="bg-main bg-cover bg-fixed relative flex flex-col justify-start min-h-screen lg:h-screen transition-colors ease-in-out duration-300 bg-dark overflow-none">
+    <div className="bg-main bg-cover bg-fixed relative flex flex-col justify-between min-h-screen lg:h-screen transition-colors ease-in-out duration-300 bg-dark overflow-none">
       <PageHead title="Hot Heads" description="Welcome to the Underworld" />
       <Navigation />
       <main className="flex flex-col flex-grow justify-start items-center h-full w-full px-0 md:px-16 lg:px-44 2xl:px-[15%] mb-0 lg:mb-auto lg:pb-6 py-0 2xl:py-6 4xl:py-[8%]">
