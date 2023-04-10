@@ -86,24 +86,15 @@ const Footer: FC = () => {
             </Link>
           </div>
         </div>
-        <div className="md:w-1/3 flex justify-end z-0">
+        <div className="md:w-1/3 flex justify-end">
           {/* exp */}
           <a
-            className="relative cursor-pointer whitespace-nowrap"
+            className="cursor-pointer whitespace-nowrap"
             href="https://twitter.com/sol_exp"
             target="_blank"
             rel="noreferrer"
           >
-            <div className="flex flex-row-reverse md:flex-col gap-2 md:gap-0 items-center font-daysOne">
-              <motion.div
-                className="rounded"
-                {...containerAnimation}
-                onMouseEnter={() => setAnimate(true)}
-                onMouseLeave={() => setAnimate(false)}
-              >
-                <ExpIcon color={"white"} />
-              </motion.div>
-            </div>
+            <ExpIcon color={"white"} />
           </a>
         </div>
       </div>

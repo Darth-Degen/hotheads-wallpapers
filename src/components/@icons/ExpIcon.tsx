@@ -8,7 +8,7 @@ interface Props extends SVGProps<SVGSVGElement> {
 const ExpIcon: FC<Props> = (props: Props) => {
   const { color = "white", type = "single" } = props;
   return (
-    <div key="exp-logo" className="-z-10">
+    <div key="exp-logo" className="">
       <svg
         version="1.1"
         id="Layer_4"
