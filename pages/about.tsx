@@ -16,7 +16,7 @@ const About: NextPage = () => {
 
   return (
     <PageLayout header="About">
-      <div className="w-full h-full md:p-8 flex flex-col items-center gap-10 lg:gap-5 pt-5">
+      <div className="w-full h-full md:px-8 flex flex-col items-center gap-10 lg:gap-5 pt-5">
         {/* toggle  */}
         <TabBar tabs={tabs} handleTabChange={handleTabChange} />
         {/* content */}
@@ -24,7 +24,7 @@ const About: NextPage = () => {
           <AnimatePresence mode="wait">
             {tabId === 0 ? (
               <motion.div
-                className="h-full flex flex-col gap-10 px-2 md:px-10 pb-6 pt-11"
+                className="h-full flex flex-col gap-10 px-2 md:px-10   pt-11"
                 {...midExitAnimation}
                 key="info"
               >
