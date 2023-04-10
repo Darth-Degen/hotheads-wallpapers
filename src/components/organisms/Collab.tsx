@@ -1,16 +1,16 @@
 import { Dispatch, FC, SetStateAction } from "react";
-import { CollabItem, GalleryItem, ScrollItem } from "@components";
+import { CollabItem, ScrollItem } from "@components";
 
-import { Collab, Collection } from "@types";
+import { Collab } from "@types";
 import { useWindowSize } from "@hooks";
 import { motion } from "framer-motion";
 
-interface GalleryProps {
+interface CollabProps {
   collabs: Collab[];
   setImageModal: Dispatch<SetStateAction<string>>;
 }
 
-const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
+const Collab: FC<CollabProps> = (props: CollabProps) => {
   const { collabs, setImageModal } = props;
   const [winWidth, winHeight] = useWindowSize();
 
@@ -34,7 +34,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
   return (
     <motion.div
-      className="flex flex-wrap items-center justify-center gap-2 md:gap-x-8 md:gap-y-8  py-5 px-0"
+      className="flex flex-wrap items-center justify-center gap-2 md:gap-x-8 md:gap-y-3  py-5 px-0"
       variants={container}
       initial="hidden"
       animate="show"
@@ -61,4 +61,4 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
   );
 };
 
-export default Gallery;
+export default Collab;

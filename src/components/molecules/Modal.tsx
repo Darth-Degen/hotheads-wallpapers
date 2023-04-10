@@ -28,14 +28,13 @@ const Modal: FC<Props> = (props: Props) => {
           {...scaleExitAnimation}
         >
           <div
-            className={`h-screen w-screen lg:h-[75vh] lg:w-[75vh] bg-opacity-50 md:bg-opacity-90
+            className={`h-screen w-screen lg:h-[75vh] lg:w-[75vh] bg-opacity-50 md:bg-opacity-90  flex items-center
               md:rounded-lg absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 `}
             // onClick={(e) => e.stopPropagation()}
           >
-            <div className="rounded">
+            <div className=" flex flex-col justify-center items-center gap-4">
               <motion.div
-                className="cursor-pointer absolute left-[47%] top-[10%] lg:-top-12 z-50
-              rounded-full transition-all duration-100 bg-white p-0.5 hover:outline hover:outline-white"
+                className="cursor-pointer rounded-full transition-all duration-100 bg-white p-0.5 hover:outline hover:outline-white"
                 onClick={() => close("")}
                 whileTap={{ scale: 0.96 }}
               >

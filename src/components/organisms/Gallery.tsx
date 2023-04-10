@@ -42,7 +42,7 @@ const Gallery: FC<GalleryProps> = (props: GalleryProps) => {
 
   return (
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-2 md:gap-x-8 md:gap-y-3 md:px-6  py-5"
+      className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-2 md:gap-x-8 md:gap-y-3 md:px-6 py-5"
       variants={container}
       initial="hidden"
       animate="show"

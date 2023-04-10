@@ -40,13 +40,7 @@ const GalleryItem: FC<GalleryItemProps> = (props: GalleryItemProps) => {
         transition={{ duration: 0.2, ease: "easeInOut" }}
         onClick={() => setImageModal(src)}
       >
-        <Image
-          src={src}
-          alt={`HH-${index}`}
-          width={200}
-          height={200}
-          className=""
-        />
+        <Image src={src} alt={`HH-${index}`} width={200} height={200} />
         {url && (
           <div
             className="absolute top-1.5 right-1.5 md:top-2.5 md:right-2.5 cursor-pointer hover:outline hover:outline-white rounded-full transition-all duration-100"
