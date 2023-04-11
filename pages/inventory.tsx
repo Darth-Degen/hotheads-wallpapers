@@ -151,14 +151,20 @@ const Home: NextPage = () => {
         close={setImageModal}
         contentLoaded={imageLoaded}
       >
-        <Image
-          src={imageModal}
-          fill={true}
-          alt="Image"
-          objectFit="contain"
-          className={`rounded`}
-          // onLoadingComplete={() => setImageLoaded(true)}
-        />
+        {imageModal.endsWith(".mp4") || imageModal.endsWith(".mov") ? (
+          <video controls loop>
+            <source src={imageModal} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src={imageModal}
+            fill={true}
+            alt="Image"
+            objectFit="contain"
+            className={`rounded`}
+            // onLoadingComplete={() => setImageLoaded(true)}
+          />
+        )}
       </Modal>
     </PageLayout>
   );
