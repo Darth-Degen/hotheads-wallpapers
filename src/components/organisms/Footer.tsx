@@ -18,7 +18,10 @@ const Footer: FC = () => {
   };
 
   return (
-    <footer className="px-8 py-4 lg:pb-0 abolute bottom-0 bg-transparent w-screen">
+    <motion.footer
+      className="px-8 py-4 lg:pb-0 abolute bottom-0 bg-transparent w-screen"
+      {...midEnterAnimation}
+    >
       <div className="flex flex-col md:flex-row items-center gap-4">
         <motion.div
           className="md:w-1/3"
@@ -86,7 +89,10 @@ const Footer: FC = () => {
             </Link>
           </div>
         </div>
-        <div className="md:w-1/3 flex justify-end">
+        <motion.div
+          className="md:w-1/3 flex justify-end"
+          {...midEnterAnimation}
+        >
           {/* exp */}
           <a
             className="cursor-pointer whitespace-nowrap"
@@ -96,9 +102,9 @@ const Footer: FC = () => {
           >
             <ExpIcon color={"white"} />
           </a>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
