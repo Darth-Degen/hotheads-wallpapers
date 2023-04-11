@@ -32,7 +32,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
 
   const getHeight = (): string => {
     // winWidth < 420 ? : answer.length > 140 ? "15rem" :"14rem" : answer.length > 140 ? "15rem" : "12rem",
-    if (winWidth < 420) {
+    if (winWidth < 450) {
       if (answer.length > 130) return "23rem";
       else return "18rem";
     } else {
@@ -44,10 +44,10 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
   const ParentVariants = {
     closed: {
       height:
-        winWidth < 420 && question.length > 25
-          ? "13rem"
-          : winWidth < 420
-          ? "11rem"
+        winWidth < 450 && question.length > 25
+          ? "12rem"
+          : winWidth < 450
+          ? "10rem"
           : "8rem",
       paddingBottom: 30,
       transition: {
@@ -76,7 +76,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
         toggleOpen(!open);
       }}
     >
-      <div className="pb-6 text-xs md:text-base">{question}</div>
+      <div className="pb-6 text-sm md:text-base">{question}</div>
       <button
         className=" p-3"
         onClick={() => {
