@@ -35,8 +35,8 @@ const Form: FC<Props> = (props: Props) => {
       <h2 className="text-xl text-center text-gray-200 pb-4">Customize</h2>
       <Dropdown
         handleClick={selectClick}
-        setDidHover={setDidHover}
-        didHover={didHover}
+        // setDidHover={setDidHover}
+        // didHover={didHover}
         label={
           tokenId === -1
             ? "Select ID"
