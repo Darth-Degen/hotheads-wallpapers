@@ -103,7 +103,7 @@ const InventoryItems: FC<Props> = (props: Props) => {
     <motion.div
       className="container-child flex flex-wrap items-center justify-center gap-4 gap-x-6 overflow-x-clip overflow-y-auto h-full px-4 md:px-10 py-8"
       key="inventory-grid"
-      {...midEnterAnimation}
+      // {...midEnterAnimation}
     >
       {inventoryData &&
         inventoryData.map((item: Inventory, index: number) => {

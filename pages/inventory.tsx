@@ -18,8 +18,12 @@ const Home: NextPage = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
   const [imageModal, setImageModal] = useState<string>("");
   const [imageLoaded, setImageLoaded] = useState<boolean>(false);
+
   const { connection } = useConnection();
   const { publicKey } = useWallet();
+
+  const [selectedToken, setSelectedToken] = useState<number>(-1);
+  const [counter, setCounter] = useState<number>(0);
 
   const getTokens = useCallback(async () => {
     try {
@@ -67,6 +71,11 @@ const Home: NextPage = () => {
     }
     setError(false);
   }, [connection, publicKey]);
+
+  //used to alternate views
+  useEffect(() => {
+    setCounter((prevState) => prevState + 1);
+  }, [selectedToken, activeTab]);
 
   return (
     <PageLayout header="Inventory">
@@ -127,6 +136,12 @@ const Home: NextPage = () => {
             setActiveTab={setActiveTab}
             tokens={metadata as Metadata[] | undefined}
             setImageModal={setImageModal}
+            selectedToken={selectedToken}
+            setSelectedToken={setSelectedToken}
+            counter={counter}
+            setCounter={setCounter}
+            // didHover={didHover}
+            // setDidHover={setDidHover}
           />
         </div>
       )}

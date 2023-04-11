@@ -1,13 +1,13 @@
 import { dropdownAnimations, dropdownItemsAnimations } from "@constants";
 import { DropdownButton, DropdownItem } from "@components";
 import { Collection } from "@types";
-import { Dispatch, FC, SetStateAction, useRef } from "react";
+import { Dispatch, FC, SetStateAction, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOutsideAlerter } from "@hooks";
 interface Props {
   handleClick: (id: number) => void;
-  setDidHover: Dispatch<SetStateAction<boolean>>;
-  didHover: boolean;
+  // setDidHover: Dispatch<SetStateAction<boolean>>;
+  // didHover: boolean;
   label: string;
   collections: Collection[];
   disabled?: boolean;
@@ -16,13 +16,14 @@ interface Props {
 const Dropdown: FC<Props> = (props: Props) => {
   const {
     handleClick,
-    setDidHover,
-    didHover,
+    // setDidHover,
+    // didHover,
     label,
     collections,
     disabled = false,
   } = props;
 
+  const [didHover, setDidHover] = useState<boolean>(false);
   const ref = useRef(null);
   useOutsideAlerter(ref, () => setDidHover(false));
 
@@ -52,6 +53,7 @@ const Dropdown: FC<Props> = (props: Props) => {
                 item={{ id: -1, src: "", url: "", name: "" }}
                 handleClick={handleClick}
                 variants={dropdownItemsAnimations}
+                setDidHover={setDidHover}
               />
               {collections &&
                 collections.map((item: Collection) => (
@@ -60,6 +62,7 @@ const Dropdown: FC<Props> = (props: Props) => {
                     handleClick={handleClick}
                     key={item.id}
                     variants={dropdownItemsAnimations}
+                    setDidHover={setDidHover}
                   />
                 ))}
             </motion.ul>

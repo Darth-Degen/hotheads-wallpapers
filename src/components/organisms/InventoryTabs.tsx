@@ -34,6 +34,12 @@ interface InventoryTabsProps {
   setActiveTab: Dispatch<SetStateAction<number>>;
   tokens: Metadata[] | undefined;
   setImageModal: Dispatch<SetStateAction<string>>;
+  selectedToken: number;
+  setSelectedToken: Dispatch<SetStateAction<number>>;
+  counter: number;
+  setCounter: Dispatch<SetStateAction<number>>;
+  // didHover: boolean;
+  // setDidHover: Dispatch<SetStateAction<boolean>>;
 }
 const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
   const {
@@ -42,31 +48,33 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
     setActiveTab,
     tokens,
     setImageModal,
+    selectedToken,
+    setSelectedToken,
+    counter,
+    setCounter,
+    // didHover,
+    // setDidHover,
   } = props;
 
-  const [didHover, setDidHover] = useState<boolean>(false);
-  const [selectedToken, setSelectedToken] = useState<number>(-1);
-  const [counter, setCounter] = useState<number>(0);
+  // const [didHover, setDidHover] = useState<boolean>(false);
+  // const [selectedToken, setSelectedToken] = useState<number>(-1);
+  // const [counter, setCounter] = useState<number>(0);
 
   const { publicKey } = useWallet();
 
   const selectClick = (id: number) => {
     setSelectedToken(id);
-    setDidHover(false);
+    // setDidHover(false);
   };
 
   useEffect(() => {
     if (publicKey) setSelectedToken(-1);
   }, [publicKey]);
 
-  //used to alternate views
-  useEffect(() => {
-    setCounter((prevState) => prevState + 1);
-  }, [selectedToken, activeTab]);
-
-  useEffect(() => {
-    console.log("counter ", counter, counter % 2);
-  }, [counter]);
+  // //used to alternate views
+  // useEffect(() => {
+  //   setCounter((prevState) => prevState + 1);
+  // }, [selectedToken, activeTab]);
 
   return (
     <div
@@ -75,8 +83,8 @@ const InventoryTabs: FC<InventoryTabsProps> = (props: InventoryTabsProps) => {
     >
       <Dropdown
         handleClick={selectClick}
-        setDidHover={setDidHover}
-        didHover={didHover}
+        // setDidHover={setDidHover}
+        // didHover={didHover}
         label={
           selectedToken === -1
             ? "SELECT"

@@ -32,7 +32,7 @@ const InventoryItem: FC<InventoryItemProps> = (props: InventoryItemProps) => {
       <ScrollItem>
         <motion.div
           className={`rounded-xl flex flex-col items-center justify-center gap-4`}
-          {...midEnterAnimation}
+          // {...midEnterAnimation}
         >
           <motion.div
             onClick={() => setImageModal(formattedSrc)}
