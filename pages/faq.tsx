@@ -76,7 +76,7 @@ const FAQ: FC<FAQProps> = (props: FAQProps) => {
         toggleOpen(!open);
       }}
     >
-      <div className="pb-6">{question}</div>
+      <div className="pb-6 text-xs md:text-base">{question}</div>
       <button
         className=" p-3"
         onClick={() => {
