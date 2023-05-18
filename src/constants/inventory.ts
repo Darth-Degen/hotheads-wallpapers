@@ -534,14 +534,14 @@ export const inventory: Inventory[] = [
     pfp: ["image.jpg"],
     wallpapers: [],
   },
-  // {
-  //   id: 66, 
-  //   hash: "Hot Head #066",
-  //   banners:["066.jpg"],
-  //   memes:[],
-  //   pfp: ["image.png"],
-  //   wallpapers: [],
-  // },
+  {
+    id: 66, 
+    hash: "Hot Head #066",
+    banners:[],
+    memes:[],
+    pfp: ["image.png"],
+    wallpapers: [],
+  },
   // {
   //   id:67, 
   //   hash: "Hot Head #067",
