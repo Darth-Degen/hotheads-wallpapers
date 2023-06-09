@@ -402,28 +402,28 @@ export const collections: Collection[] = [
   },
   {
     id: 66,
-    src:"/images/hotheads/hh_66/PFP/image.png",
+    src:"/images/hotheads/hh_66/PFP/image.webp",
+    url:"https://exchange.art/single/HSaGL936yTJV8kSdEW5zEVJFyBkEAwqFneM83inQvaDg",
+    name:"Bali"
+  },
+  {
+    id: 67,
+    src:"/images/hotheads/hh_67/PFP/image.png",
     url:"https://exchange.art/single/GKoWn68zenvmVR4EMzXbbrQzADUDtk1cdhePzkG4VgdR",
     name:"VHS"
   },
-  // {
-  //   id: 67,
-  //   src:"/images/hotheads/hh_67/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
-  // {
-  //   id: 68,
-  //   src:"/images/hotheads/hh_68/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
-  // {
-  //   id: 69,
-  //   src:"/images/hotheads/hh_69/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
+  {
+    id: 68,
+    src:"/images/hotheads/hh_68/PFP/image.webp",
+    url:"https://exchange.art/single/6F6KNWYkT1psrrnG69ELcqff1RH55Dasq23bmr5sHVpT",
+    name:"Rose"
+  },
+  {
+    id: 69,
+    src:"/images/hotheads/hh_69/PFP/image.webp",
+    url:"https://exchange.art/single/AQTxsYE6EmeAomsJ8bPnEEjFZQkg6T1hXN2vVobG8bn8",
+    name:"Hippie"
+  },
   /* 70's */
   // {
   //   id: 70,
