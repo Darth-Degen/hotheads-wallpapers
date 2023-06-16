@@ -425,12 +425,12 @@ export const collections: Collection[] = [
     name:"Hippie"
   },
   /* 70's */
-  // {
-  //   id: 70,
-  //   src:"/images/hotheads/hh_70/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
+  {
+    id: 70,
+    src:"/images/hotheads/hh_70/PFP/image.webp",
+    url:"https://exchange.art/single/BcurHPXPenBUkWeCRLeiNPR9JEwkaeRnmUDrYM6ARKto",
+    name:"Circuit"
+  },
   // {
   //   id: 71,
   //   src:"/images/hotheads/hh_71/PFP/image.png",
