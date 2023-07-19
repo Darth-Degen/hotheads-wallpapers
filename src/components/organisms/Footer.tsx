@@ -96,7 +96,7 @@ const Footer: FC = () => {
           {/* exp */}
           <a
             className="cursor-pointer whitespace-nowrap"
-            href="https://twitter.com/sol_exp"
+            href="https://twitter.com/expstudio_"
             target="_blank"
             rel="noreferrer"
           >
