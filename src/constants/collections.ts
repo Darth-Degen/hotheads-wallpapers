@@ -431,24 +431,24 @@ export const collections: Collection[] = [
     url:"https://exchange.art/single/BcurHPXPenBUkWeCRLeiNPR9JEwkaeRnmUDrYM6ARKto",
     name:"Circuit"
   },
-  // {
-  //   id: 71,
-  //   src:"/images/hotheads/hh_71/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
-  // {
-  //   id: 72,
-  //   src:"/images/hotheads/hh_72/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
-  // {
-  //   id: 73,
-  //   src:"/images/hotheads/hh_73/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
+  {
+    id: 71,
+    src:"/images/hotheads/hh_71/PFP/image.webp",
+    url:"https://exchange.art/single/AK8CLzEnkQbe3n79ofgmoCnKJM6BEZW5mZ15f1ib8X9y",
+    name:"Ace"
+  },
+  {
+    id: 72,
+    src:"/images/hotheads/hh_72/PFP/image.webp",
+    url:"https://exchange.art/single/BLb3yhwCy9BK4duERUu4Dkg8G395exXUXo62547BfHsZ",
+    name:"Cam"
+  },
+  {
+    id: 73,
+    src:"/images/hotheads/hh_73/PFP/image.webp",
+    url:"https://exchange.art/single/DwZBDRDstRESxsMFs7rSSR3vYw8HtbrVZ38r1ygScRNa",
+    name:"Graffiti"
+  },
   // {
   //   id: 74,
   //   src:"/images/hotheads/hh_74/PFP/image.png",
