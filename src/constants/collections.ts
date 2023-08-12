@@ -449,18 +449,18 @@ export const collections: Collection[] = [
     url:"https://exchange.art/single/DwZBDRDstRESxsMFs7rSSR3vYw8HtbrVZ38r1ygScRNa",
     name:"Graffiti"
   },
-  // {
-  //   id: 74,
-  //   src:"/images/hotheads/hh_74/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
-  // {
-  //   id: 75,
-  //   src:"/images/hotheads/hh_75/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
+  {
+    id: 74,
+    src:"/images/hotheads/hh_74/PFP/image.webp",
+    url:"https://exchange.art/single/3nkgGdaYQYqkWPzPsVAgPKDJknEzJYqw5wydq9TWVBZM",
+    name:"Lava"
+  },
+  {
+    id: 75,
+    src:"/images/hotheads/hh_75/PFP/image.webp",
+    url:"https://exchange.art/single/79AQEmA6niktBm3L4Q5Mfo2ReEPt6nus2aAZTFBcuCno",
+    name:"Golfer"
+  },
   // {
   //   id: 76,
   //   src:"/images/hotheads/hh_76/PFP/image.png",
