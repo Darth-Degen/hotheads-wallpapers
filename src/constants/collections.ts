@@ -461,88 +461,88 @@ export const collections: Collection[] = [
     url:"https://exchange.art/single/79AQEmA6niktBm3L4Q5Mfo2ReEPt6nus2aAZTFBcuCno",
     name:"Golfer"
   },
-  // {
-  //   id: 76,
-  //   src:"/images/hotheads/hh_76/PFP/image.png",
-  //   url:"",
-    // name:""
-  // },
+  {
+    id: 76,
+    src:"/images/hotheads/hh_76/PFP/image.webp",
+    url:"https://exchange.art/single/3jguBbwrFBJZWKFVLaXMavx7MTMoRRWX3fsqZ1ZbR2GG",
+    name:"Skater"
+  },
   // {
   //   id: 77,
-  //   src:"/images/hotheads/hh_77/PFP/image.png",
+  //   src:"/images/hotheads/hh_77/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 78,
-  //   src:"/images/hotheads/hh_78/PFP/image.png",
+  //   src:"/images/hotheads/hh_78/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 79,
-  //   src:"/images/hotheads/hh_79/PFP/image.png",
+  //   src:"/images/hotheads/hh_79/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   /* 80's */
   // {
   //   id: 80,
-  //   src:"/images/hotheads/hh_80/PFP/image.png",
+  //   src:"/images/hotheads/hh_80/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 81,
-  //   src:"/images/hotheads/hh_81/PFP/image.png",
+  //   src:"/images/hotheads/hh_81/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 82,
-  //   src:"/images/hotheads/hh_82/PFP/image.png",
+  //   src:"/images/hotheads/hh_82/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 83,
-  //   src:"/images/hotheads/hh_83/PFP/image.png",
+  //   src:"/images/hotheads/hh_83/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 84,
-  //   src:"/images/hotheads/hh_84/PFP/image.png",
+  //   src:"/images/hotheads/hh_84/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 85,
-  //   src:"/images/hotheads/hh_85/PFP/image.png",
+  //   src:"/images/hotheads/hh_85/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 86,
-  //   src:"/images/hotheads/hh_86/PFP/image.png",
+  //   src:"/images/hotheads/hh_86/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 87,
-  //   src:"/images/hotheads/hh_87/PFP/image.png",
+  //   src:"/images/hotheads/hh_87/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 88,
-  //   src:"/images/hotheads/hh_88/PFP/image.png",
+  //   src:"/images/hotheads/hh_88/PFP/image.webp",
   //   url:"",
     // name:""
   // },
   // {
   //   id: 89,
-  //   src:"/images/hotheads/hh_89/PFP/image.png",
+  //   src:"/images/hotheads/hh_89/PFP/image.webp",
   //   url:"",
     // name:""
   // },
