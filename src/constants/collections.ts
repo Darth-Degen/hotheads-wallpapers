@@ -467,18 +467,18 @@ export const collections: Collection[] = [
     url:"https://exchange.art/single/3jguBbwrFBJZWKFVLaXMavx7MTMoRRWX3fsqZ1ZbR2GG",
     name:"Skater"
   },
-  // {
-  //   id: 77,
-  //   src:"/images/hotheads/hh_77/PFP/image.webp",
-  //   url:"",
-    // name:""
-  // },
-  // {
-  //   id: 78,
-  //   src:"/images/hotheads/hh_78/PFP/image.webp",
-  //   url:"",
-    // name:""
-  // },
+  {
+    id: 77,
+    src:"/images/hotheads/hh_77/PFP/image.png",
+    url:"https://exchange.art/single/91VGVeCtjGbrhpX28TaoGTko3YGmvWJNtJe8SeFYtefZ",
+    name:"Trader"
+  },
+  {
+    id: 78,
+    src:"/images/hotheads/hh_78/PFP/image.png",
+    url:"https://exchange.art/single/7SP6LJfE4m9npBKGz9ysgmRoFkEMPx3xfLJbVdzpUFV5",
+    name:"Chroma"
+  },
   // {
   //   id: 79,
   //   src:"/images/hotheads/hh_79/PFP/image.webp",

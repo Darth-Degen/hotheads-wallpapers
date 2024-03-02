@@ -79,6 +79,13 @@ export const collabs: Collab[] = [
     src:"/images/collabs/katabasis.png",
     label:"Katabasis",
     twitter:"https://twitter.com/HotHeadsNFT", 
-    url:"https://exchange.art/series/The%20Underworld%20Chronicles/nfts" 
+    url:"https://exchange.art/editions/GVsRBNPKUBRDYeJ54SEhWHHC4FSBvyUfZB9z6ysBoG4d" 
+  },
+  {
+    id: 11,
+    src:"/images/collabs/hydra.png",
+    label:"The Lernaean Hydra",
+    twitter:"https://twitter.com/HotHeadsNFT", 
+    url:"https://exchange.art/editions/FKz6qhyhVrRVt7DpA7kAHULTRTrC288WvSUqtkeW9PUx" 
   },
 ];

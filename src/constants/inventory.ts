@@ -614,5 +614,19 @@ export const inventory: Inventory[] = [
     memes:[],
     pfp: ["image.webp"],
     wallpapers: [],
-  },
+  },{
+    id: 77, 
+    hash: "Hot Head #077",
+    banners:[],
+    memes:[],
+    pfp: ["image.png"],
+    wallpapers: [],
+  },{
+    id: 78, 
+    hash: "Hot Head #078",
+    banners:[],
+    memes:[],
+    pfp: ["image.png"],
+    wallpapers: [],
+  }
 ];
