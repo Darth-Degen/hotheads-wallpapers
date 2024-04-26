@@ -38,7 +38,7 @@ const Footer: FC = () => {
           <div className="cursor-pointer ">
             {" "}
             <a
-              href="https://discord.com/invite/hotheads"
+              href="https://discord.gg/FhuqPwXmER"
               rel="noreferrer"
               target="_blank"
             >

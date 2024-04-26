@@ -7,7 +7,7 @@ const DiscordIcon: FC = () => {
   return (
     <motion.a
       {...midClickAnimation}
-      href="https://discord.com/invite/hotheads"
+      href="https://discord.gg/FhuqPwXmER"
       rel="noreferrer"
       target="_blank"
     >
