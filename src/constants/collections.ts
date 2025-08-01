@@ -479,12 +479,12 @@ export const collections: Collection[] = [
     url:"https://exchange.art/single/7SP6LJfE4m9npBKGz9ysgmRoFkEMPx3xfLJbVdzpUFV5",
     name:"Chroma"
   },
-  // {
-  //   id: 79,
-  //   src:"/images/hotheads/hh_79/PFP/image.webp",
-  //   url:"",
-    // name:""
-  // },
+  {
+    id: 79,
+    src:"/images/hotheads/hh_79/PFP/image.jpg",
+    url:"https://exchange.art/single/4ngHD95Bqm6sCuoFfxFZe1ksZLtJ7ZRaR7ecg5jVJio7",
+    name:"Sentinel"
+  },
   /* 80's */
   // {
   //   id: 80,
